@@ -1,0 +1,681 @@
+11:20:04 **** Build of configuration Debug for project W5100S_Loopback ****
+make all 
+Building file: ../src/syscalls/syscalls.c
+Invoking: Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DSTM32F10X_HD -DSTM32F103VC -DDEBUG -DUSE_STDPERIPH_DRIVER -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/STMicroelectronics" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\stm_lib" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\syscalls" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\cmsis" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\cmsis_boot" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\stm_lib\inc" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\ioLibrary_Driver" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\ioLibrary_Driver\Ethernet" -std=gnu11 -MMD -MP -MF"src/syscalls/syscalls.d" -MT"src/syscalls/syscalls.o" -c -o "src/syscalls/syscalls.o" "../src/syscalls/syscalls.c"
+../src/syscalls/syscalls.c: In function 'link':
+../src/syscalls/syscalls.c:33:16: warning: unused parameter 'old' [-Wunused-parameter]
+ int link(char *old, char *new)
+                ^
+../src/syscalls/syscalls.c:33:27: warning: unused parameter 'new' [-Wunused-parameter]
+ int link(char *old, char *new)
+                           ^
+../src/syscalls/syscalls.c: In function '_close':
+../src/syscalls/syscalls.c:39:16: warning: unused parameter 'file' [-Wunused-parameter]
+ int _close(int file)
+                ^
+../src/syscalls/syscalls.c: In function '_fstat':
+../src/syscalls/syscalls.c:45:16: warning: unused parameter 'file' [-Wunused-parameter]
+ int _fstat(int file, struct stat *st)
+                ^
+../src/syscalls/syscalls.c: In function '_isatty':
+../src/syscalls/syscalls.c:52:17: warning: unused parameter 'file' [-Wunused-parameter]
+ int _isatty(int file)
+                 ^
+../src/syscalls/syscalls.c: In function '_lseek':
+../src/syscalls/syscalls.c:58:16: warning: unused parameter 'file' [-Wunused-parameter]
+ int _lseek(int file, int ptr, int dir)
+                ^
+../src/syscalls/syscalls.c:58:26: warning: unused parameter 'ptr' [-Wunused-parameter]
+ int _lseek(int file, int ptr, int dir)
+                          ^
+../src/syscalls/syscalls.c:58:35: warning: unused parameter 'dir' [-Wunused-parameter]
+ int _lseek(int file, int ptr, int dir)
+                                   ^
+Finished building: ../src/syscalls/syscalls.c
+ 
+Building file: ../src/stm_lib/src/misc.c
+Invoking: Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DSTM32F10X_HD -DSTM32F103VC -DDEBUG -DUSE_STDPERIPH_DRIVER -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/STMicroelectronics" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\stm_lib" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\syscalls" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\cmsis" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\cmsis_boot" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\stm_lib\inc" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\ioLibrary_Driver" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\ioLibrary_Driver\Ethernet" -std=gnu11 -MMD -MP -MF"src/stm_lib/src/misc.d" -MT"src/stm_lib/src/misc.o" -c -o "src/stm_lib/src/misc.o" "../src/stm_lib/src/misc.c"
+Finished building: ../src/stm_lib/src/misc.c
+ 
+Building file: ../src/stm_lib/src/stm32f10x_exti.c
+Invoking: Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DSTM32F10X_HD -DSTM32F103VC -DDEBUG -DUSE_STDPERIPH_DRIVER -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/STMicroelectronics" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\stm_lib" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\syscalls" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\cmsis" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\cmsis_boot" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\stm_lib\inc" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\ioLibrary_Driver" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\ioLibrary_Driver\Ethernet" -std=gnu11 -MMD -MP -MF"src/stm_lib/src/stm32f10x_exti.d" -MT"src/stm_lib/src/stm32f10x_exti.o" -c -o "src/stm_lib/src/stm32f10x_exti.o" "../src/stm_lib/src/stm32f10x_exti.c"
+Finished building: ../src/stm_lib/src/stm32f10x_exti.c
+ 
+Building file: ../src/stm_lib/src/stm32f10x_flash.c
+Invoking: Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DSTM32F10X_HD -DSTM32F103VC -DDEBUG -DUSE_STDPERIPH_DRIVER -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/STMicroelectronics" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\stm_lib" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\syscalls" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\cmsis" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\cmsis_boot" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\stm_lib\inc" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\ioLibrary_Driver" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\ioLibrary_Driver\Ethernet" -std=gnu11 -MMD -MP -MF"src/stm_lib/src/stm32f10x_flash.d" -MT"src/stm_lib/src/stm32f10x_flash.o" -c -o "src/stm_lib/src/stm32f10x_flash.o" "../src/stm_lib/src/stm32f10x_flash.c"
+Finished building: ../src/stm_lib/src/stm32f10x_flash.c
+ 
+Building file: ../src/stm_lib/src/stm32f10x_fsmc.c
+Invoking: Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DSTM32F10X_HD -DSTM32F103VC -DDEBUG -DUSE_STDPERIPH_DRIVER -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/STMicroelectronics" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\stm_lib" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\syscalls" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\cmsis" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\cmsis_boot" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\stm_lib\inc" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\ioLibrary_Driver" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\ioLibrary_Driver\Ethernet" -std=gnu11 -MMD -MP -MF"src/stm_lib/src/stm32f10x_fsmc.d" -MT"src/stm_lib/src/stm32f10x_fsmc.o" -c -o "src/stm_lib/src/stm32f10x_fsmc.o" "../src/stm_lib/src/stm32f10x_fsmc.c"
+Finished building: ../src/stm_lib/src/stm32f10x_fsmc.c
+ 
+Building file: ../src/stm_lib/src/stm32f10x_gpio.c
+Invoking: Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DSTM32F10X_HD -DSTM32F103VC -DDEBUG -DUSE_STDPERIPH_DRIVER -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/STMicroelectronics" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\stm_lib" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\syscalls" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\cmsis" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\cmsis_boot" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\stm_lib\inc" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\ioLibrary_Driver" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\ioLibrary_Driver\Ethernet" -std=gnu11 -MMD -MP -MF"src/stm_lib/src/stm32f10x_gpio.d" -MT"src/stm_lib/src/stm32f10x_gpio.o" -c -o "src/stm_lib/src/stm32f10x_gpio.o" "../src/stm_lib/src/stm32f10x_gpio.c"
+Finished building: ../src/stm_lib/src/stm32f10x_gpio.c
+ 
+Building file: ../src/stm_lib/src/stm32f10x_rcc.c
+Invoking: Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DSTM32F10X_HD -DSTM32F103VC -DDEBUG -DUSE_STDPERIPH_DRIVER -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/STMicroelectronics" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\stm_lib" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\syscalls" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\cmsis" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\cmsis_boot" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\stm_lib\inc" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\ioLibrary_Driver" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\ioLibrary_Driver\Ethernet" -std=gnu11 -MMD -MP -MF"src/stm_lib/src/stm32f10x_rcc.d" -MT"src/stm_lib/src/stm32f10x_rcc.o" -c -o "src/stm_lib/src/stm32f10x_rcc.o" "../src/stm_lib/src/stm32f10x_rcc.c"
+Finished building: ../src/stm_lib/src/stm32f10x_rcc.c
+ 
+Building file: ../src/stm_lib/src/stm32f10x_spi.c
+Invoking: Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DSTM32F10X_HD -DSTM32F103VC -DDEBUG -DUSE_STDPERIPH_DRIVER -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/STMicroelectronics" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\stm_lib" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\syscalls" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\cmsis" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\cmsis_boot" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\stm_lib\inc" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\ioLibrary_Driver" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\ioLibrary_Driver\Ethernet" -std=gnu11 -MMD -MP -MF"src/stm_lib/src/stm32f10x_spi.d" -MT"src/stm_lib/src/stm32f10x_spi.o" -c -o "src/stm_lib/src/stm32f10x_spi.o" "../src/stm_lib/src/stm32f10x_spi.c"
+Finished building: ../src/stm_lib/src/stm32f10x_spi.c
+ 
+Building file: ../src/stm_lib/src/stm32f10x_tim.c
+Invoking: Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DSTM32F10X_HD -DSTM32F103VC -DDEBUG -DUSE_STDPERIPH_DRIVER -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/STMicroelectronics" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\stm_lib" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\syscalls" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\cmsis" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\cmsis_boot" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\stm_lib\inc" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\ioLibrary_Driver" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\ioLibrary_Driver\Ethernet" -std=gnu11 -MMD -MP -MF"src/stm_lib/src/stm32f10x_tim.d" -MT"src/stm_lib/src/stm32f10x_tim.o" -c -o "src/stm_lib/src/stm32f10x_tim.o" "../src/stm_lib/src/stm32f10x_tim.c"
+Finished building: ../src/stm_lib/src/stm32f10x_tim.c
+ 
+Building file: ../src/stm_lib/src/stm32f10x_usart.c
+Invoking: Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DSTM32F10X_HD -DSTM32F103VC -DDEBUG -DUSE_STDPERIPH_DRIVER -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/STMicroelectronics" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\stm_lib" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\syscalls" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\cmsis" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\cmsis_boot" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\stm_lib\inc" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\ioLibrary_Driver" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\ioLibrary_Driver\Ethernet" -std=gnu11 -MMD -MP -MF"src/stm_lib/src/stm32f10x_usart.d" -MT"src/stm_lib/src/stm32f10x_usart.o" -c -o "src/stm_lib/src/stm32f10x_usart.o" "../src/stm_lib/src/stm32f10x_usart.c"
+Finished building: ../src/stm_lib/src/stm32f10x_usart.c
+ 
+Building file: ../src/ioLibrary_Driver/Internet/httpServer/httpParser.c
+Invoking: Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DSTM32F10X_HD -DSTM32F103VC -DDEBUG -DUSE_STDPERIPH_DRIVER -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/STMicroelectronics" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\stm_lib" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\syscalls" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\cmsis" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\cmsis_boot" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\stm_lib\inc" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\ioLibrary_Driver" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\ioLibrary_Driver\Ethernet" -std=gnu11 -MMD -MP -MF"src/ioLibrary_Driver/Internet/httpServer/httpParser.d" -MT"src/ioLibrary_Driver/Internet/httpServer/httpParser.o" -c -o "src/ioLibrary_Driver/Internet/httpServer/httpParser.o" "../src/ioLibrary_Driver/Internet/httpServer/httpParser.c"
+Finished building: ../src/ioLibrary_Driver/Internet/httpServer/httpParser.c
+ 
+Building file: ../src/ioLibrary_Driver/Internet/httpServer/httpServer.c
+Invoking: Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DSTM32F10X_HD -DSTM32F103VC -DDEBUG -DUSE_STDPERIPH_DRIVER -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/STMicroelectronics" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\stm_lib" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\syscalls" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\cmsis" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\cmsis_boot" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\stm_lib\inc" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\ioLibrary_Driver" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\ioLibrary_Driver\Ethernet" -std=gnu11 -MMD -MP -MF"src/ioLibrary_Driver/Internet/httpServer/httpServer.d" -MT"src/ioLibrary_Driver/Internet/httpServer/httpServer.o" -c -o "src/ioLibrary_Driver/Internet/httpServer/httpServer.o" "../src/ioLibrary_Driver/Internet/httpServer/httpServer.c"
+Finished building: ../src/ioLibrary_Driver/Internet/httpServer/httpServer.c
+ 
+Building file: ../src/ioLibrary_Driver/Internet/httpServer/httpUtil.c
+Invoking: Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DSTM32F10X_HD -DSTM32F103VC -DDEBUG -DUSE_STDPERIPH_DRIVER -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/STMicroelectronics" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\stm_lib" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\syscalls" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\cmsis" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\cmsis_boot" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\stm_lib\inc" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\ioLibrary_Driver" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\ioLibrary_Driver\Ethernet" -std=gnu11 -MMD -MP -MF"src/ioLibrary_Driver/Internet/httpServer/httpUtil.d" -MT"src/ioLibrary_Driver/Internet/httpServer/httpUtil.o" -c -o "src/ioLibrary_Driver/Internet/httpServer/httpUtil.o" "../src/ioLibrary_Driver/Internet/httpServer/httpUtil.c"
+Finished building: ../src/ioLibrary_Driver/Internet/httpServer/httpUtil.c
+ 
+Building file: ../src/ioLibrary_Driver/Internet/TFTP/netutil.c
+Invoking: Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DSTM32F10X_HD -DSTM32F103VC -DDEBUG -DUSE_STDPERIPH_DRIVER -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/STMicroelectronics" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\stm_lib" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\syscalls" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\cmsis" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\cmsis_boot" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\stm_lib\inc" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\ioLibrary_Driver" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\ioLibrary_Driver\Ethernet" -std=gnu11 -MMD -MP -MF"src/ioLibrary_Driver/Internet/TFTP/netutil.d" -MT"src/ioLibrary_Driver/Internet/TFTP/netutil.o" -c -o "src/ioLibrary_Driver/Internet/TFTP/netutil.o" "../src/ioLibrary_Driver/Internet/TFTP/netutil.c"
+../src/ioLibrary_Driver/Internet/TFTP/netutil.c: In function 'inet_ntoa':
+../src/ioLibrary_Driver/Internet/TFTP/netutil.c:16:26: warning: format '%d' expects argument of type 'int', but argument 3 has type 'long int' [-Wformat=]
+  sprintf((char*)addr_str,"%d.%d.%d.%d",(int32_t)(addr>>24 & 0xFF),(int32_t)(addr>>16 & 0xFF),(int32_t)(addr>>8 & 0xFF),(int32_t)(addr & 0xFF));
+                          ^
+../src/ioLibrary_Driver/Internet/TFTP/netutil.c:16:26: warning: format '%d' expects argument of type 'int', but argument 4 has type 'long int' [-Wformat=]
+../src/ioLibrary_Driver/Internet/TFTP/netutil.c:16:26: warning: format '%d' expects argument of type 'int', but argument 5 has type 'long int' [-Wformat=]
+../src/ioLibrary_Driver/Internet/TFTP/netutil.c:16:26: warning: format '%d' expects argument of type 'int', but argument 6 has type 'long int' [-Wformat=]
+../src/ioLibrary_Driver/Internet/TFTP/netutil.c: In function 'inet_ntoa_pad':
+../src/ioLibrary_Driver/Internet/TFTP/netutil.c:31:26: warning: format '%d' expects argument of type 'int', but argument 3 has type 'long int' [-Wformat=]
+  sprintf((char*)addr_str,"%03d.%03d.%03d.%03d",(int32_t)(addr>>24 & 0xFF),(int32_t)(addr>>16 & 0xFF),(int32_t)(addr>>8 & 0xFF),(int32_t)(addr & 0xFF));
+                          ^
+../src/ioLibrary_Driver/Internet/TFTP/netutil.c:31:26: warning: format '%d' expects argument of type 'int', but argument 4 has type 'long int' [-Wformat=]
+../src/ioLibrary_Driver/Internet/TFTP/netutil.c:31:26: warning: format '%d' expects argument of type 'int', but argument 5 has type 'long int' [-Wformat=]
+../src/ioLibrary_Driver/Internet/TFTP/netutil.c:31:26: warning: format '%d' expects argument of type 'int', but argument 6 has type 'long int' [-Wformat=]
+Finished building: ../src/ioLibrary_Driver/Internet/TFTP/netutil.c
+ 
+Building file: ../src/ioLibrary_Driver/Internet/TFTP/tftp.c
+Invoking: Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DSTM32F10X_HD -DSTM32F103VC -DDEBUG -DUSE_STDPERIPH_DRIVER -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/STMicroelectronics" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\stm_lib" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\syscalls" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\cmsis" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\cmsis_boot" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\stm_lib\inc" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\ioLibrary_Driver" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\ioLibrary_Driver\Ethernet" -std=gnu11 -MMD -MP -MF"src/ioLibrary_Driver/Internet/TFTP/tftp.d" -MT"src/ioLibrary_Driver/Internet/TFTP/tftp.o" -c -o "src/ioLibrary_Driver/Internet/TFTP/tftp.o" "../src/ioLibrary_Driver/Internet/TFTP/tftp.c"
+../src/ioLibrary_Driver/Internet/TFTP/tftp.c: In function 'send_udp_packet':
+../src/ioLibrary_Driver/Internet/TFTP/tftp.c:151:13: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  if(snd_len != len) {
+             ^
+../src/ioLibrary_Driver/Internet/TFTP/tftp.c: In function 'recv_udp_packet':
+../src/ioLibrary_Driver/Internet/TFTP/tftp.c:181:16: warning: comparison is always false due to limited range of data type [-Wtype-limits]
+    if(recv_len < 0) {
+                ^
+../src/ioLibrary_Driver/Internet/TFTP/tftp.c: In function 'process_tftp_option':
+../src/ioLibrary_Driver/Internet/TFTP/tftp.c:234:42: warning: unused parameter 'msg' [-Wunused-parameter]
+ static void process_tftp_option(uint8_t *msg, uint32_t msg_len)
+                                          ^
+../src/ioLibrary_Driver/Internet/TFTP/tftp.c:234:56: warning: unused parameter 'msg_len' [-Wunused-parameter]
+ static void process_tftp_option(uint8_t *msg, uint32_t msg_len)
+                                                        ^
+In file included from ../src/ioLibrary_Driver/Internet/TFTP/tftp.c:10:0:
+../src/ioLibrary_Driver/Internet/TFTP/tftp.c: In function 'send_tftp_rrq':
+../src/ioLibrary_Driver/Internet/TFTP/tftp.h:26:13: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+             printf(format, ##args); \
+             ^
+../src/ioLibrary_Driver/Internet/TFTP/tftp.c:266:2: note: in expansion of macro 'DBG_PRINT'
+  DBG_PRINT(IPC_DBG, ">> TFTP RRQ : FileName(%s), Mode(%s)\r\n", filename, mode);
+  ^
+../src/ioLibrary_Driver/Internet/TFTP/tftp.c: In function 'recv_tftp_rrq':
+../src/ioLibrary_Driver/Internet/TFTP/tftp.c:395:36: warning: unused parameter 'msg' [-Wunused-parameter]
+ static void recv_tftp_rrq(uint8_t *msg, uint32_t msg_len)
+                                    ^
+../src/ioLibrary_Driver/Internet/TFTP/tftp.c:395:50: warning: unused parameter 'msg_len' [-Wunused-parameter]
+ static void recv_tftp_rrq(uint8_t *msg, uint32_t msg_len)
+                                                  ^
+../src/ioLibrary_Driver/Internet/TFTP/tftp.c: In function 'recv_tftp_wrq':
+../src/ioLibrary_Driver/Internet/TFTP/tftp.c:400:36: warning: unused parameter 'msg' [-Wunused-parameter]
+ static void recv_tftp_wrq(uint8_t *msg, uint32_t msg_len)
+                                    ^
+../src/ioLibrary_Driver/Internet/TFTP/tftp.c:400:50: warning: unused parameter 'msg_len' [-Wunused-parameter]
+ static void recv_tftp_wrq(uint8_t *msg, uint32_t msg_len)
+                                                  ^
+../src/ioLibrary_Driver/Internet/TFTP/tftp.c: In function 'recv_tftp_ack':
+../src/ioLibrary_Driver/Internet/TFTP/tftp.c:459:36: warning: unused parameter 'msg' [-Wunused-parameter]
+ static void recv_tftp_ack(uint8_t *msg, uint32_t msg_len)
+                                    ^
+../src/ioLibrary_Driver/Internet/TFTP/tftp.c:459:50: warning: unused parameter 'msg_len' [-Wunused-parameter]
+ static void recv_tftp_ack(uint8_t *msg, uint32_t msg_len)
+                                                  ^
+../src/ioLibrary_Driver/Internet/TFTP/tftp.c: In function 'recv_tftp_error':
+../src/ioLibrary_Driver/Internet/TFTP/tftp.c:509:52: warning: unused parameter 'msg_len' [-Wunused-parameter]
+ static void recv_tftp_error(uint8_t *msg, uint32_t msg_len)
+                                                    ^
+../src/ioLibrary_Driver/Internet/TFTP/tftp.c: In function 'TFTP_run':
+../src/ioLibrary_Driver/Internet/TFTP/tftp.c:633:9: warning: comparison is always false due to limited range of data type [-Wtype-limits]
+  if(len < 0) {
+         ^
+Finished building: ../src/ioLibrary_Driver/Internet/TFTP/tftp.c
+ 
+Building file: ../src/ioLibrary_Driver/Internet/SNTP/sntp.c
+Invoking: Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DSTM32F10X_HD -DSTM32F103VC -DDEBUG -DUSE_STDPERIPH_DRIVER -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/STMicroelectronics" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\stm_lib" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\syscalls" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\cmsis" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\cmsis_boot" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\stm_lib\inc" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\ioLibrary_Driver" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\ioLibrary_Driver\Ethernet" -std=gnu11 -MMD -MP -MF"src/ioLibrary_Driver/Internet/SNTP/sntp.d" -MT"src/ioLibrary_Driver/Internet/SNTP/sntp.o" -c -o "src/ioLibrary_Driver/Internet/SNTP/sntp.o" "../src/ioLibrary_Driver/Internet/SNTP/sntp.c"
+Finished building: ../src/ioLibrary_Driver/Internet/SNTP/sntp.c
+ 
+Building file: ../src/ioLibrary_Driver/Internet/FTPServer/ftpd.c
+Invoking: Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DSTM32F10X_HD -DSTM32F103VC -DDEBUG -DUSE_STDPERIPH_DRIVER -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/STMicroelectronics" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\stm_lib" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\syscalls" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\cmsis" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\cmsis_boot" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\stm_lib\inc" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\ioLibrary_Driver" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\ioLibrary_Driver\Ethernet" -std=gnu11 -MMD -MP -MF"src/ioLibrary_Driver/Internet/FTPServer/ftpd.d" -MT"src/ioLibrary_Driver/Internet/FTPServer/ftpd.o" -c -o "src/ioLibrary_Driver/Internet/FTPServer/ftpd.o" "../src/ioLibrary_Driver/Internet/FTPServer/ftpd.c"
+In file included from ../src/ioLibrary_Driver/Internet/FTPServer/ftpd.c:18:0:
+../src/ioLibrary_Driver/Internet/FTPServer/stdio_private.h:39:0: warning: "__SRD" redefined
+ #define __SRD 0x0001  /* OK to read */
+ ^
+In file included from ../src/ioLibrary_Driver/Internet/FTPServer/ftpd.c:13:0:
+c:\program files (x86)\gnu tools arm embedded\5.4 2016q2\arm-none-eabi\include\stdio.h:70:0: note: this is the location of the previous definition
+ #define __SRD 0x0004  /* OK to read */
+ ^
+In file included from ../src/ioLibrary_Driver/Internet/FTPServer/ftpd.c:18:0:
+../src/ioLibrary_Driver/Internet/FTPServer/stdio_private.h:40:0: warning: "__SWR" redefined
+ #define __SWR 0x0002  /* OK to write */
+ ^
+In file included from ../src/ioLibrary_Driver/Internet/FTPServer/ftpd.c:13:0:
+c:\program files (x86)\gnu tools arm embedded\5.4 2016q2\arm-none-eabi\include\stdio.h:71:0: note: this is the location of the previous definition
+ #define __SWR 0x0008  /* OK to write */
+ ^
+In file included from ../src/ioLibrary_Driver/Internet/FTPServer/ftpd.c:18:0:
+../src/ioLibrary_Driver/Internet/FTPServer/stdio_private.h:41:0: warning: "__SSTR" redefined
+ #define __SSTR 0x0004  /* this is an sprintf/snprintf string */
+ ^
+In file included from ../src/ioLibrary_Driver/Internet/FTPServer/ftpd.c:13:0:
+c:\program files (x86)\gnu tools arm embedded\5.4 2016q2\arm-none-eabi\include\stdio.h:78:0: note: this is the location of the previous definition
+ #define __SSTR 0x0200  /* this is an sprintf/snprintf string */
+ ^
+In file included from ../src/ioLibrary_Driver/Internet/FTPServer/ftpd.c:18:0:
+../src/ioLibrary_Driver/Internet/FTPServer/stdio_private.h:43:0: warning: "__SERR" redefined
+ #define __SERR 0x0010  /* found error */
+ ^
+In file included from ../src/ioLibrary_Driver/Internet/FTPServer/ftpd.c:13:0:
+c:\program files (x86)\gnu tools arm embedded\5.4 2016q2\arm-none-eabi\include\stdio.h:75:0: note: this is the location of the previous definition
+ #define __SERR 0x0040  /* found error */
+ ^
+../src/ioLibrary_Driver/Internet/FTPServer/ftpd.c: In function 'fsprintf':
+../src/ioLibrary_Driver/Internet/FTPServer/ftpd.c:108:22: warning: unused parameter 's' [-Wunused-parameter]
+ int fsprintf(uint8_t s, const char *format, ...)
+                      ^
+../src/ioLibrary_Driver/Internet/FTPServer/ftpd.c:108:37: warning: unused parameter 'format' [-Wunused-parameter]
+ int fsprintf(uint8_t s, const char *format, ...)
+                                     ^
+../src/ioLibrary_Driver/Internet/FTPServer/ftpd.c: In function 'ftpd_run':
+../src/ioLibrary_Driver/Internet/FTPServer/ftpd.c:292:25: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+          size = sprintf(dbuf, "drwxr-xr-x 1 ftp ftp 0 Dec 31 2014 $Recycle.Bin\r\n-rwxr-xr-x 1 ftp ftp 512 Dec 31 2014 test.txt\r\n");
+                         ^
+In file included from c:\program files (x86)\gnu tools arm embedded\5.4 2016q2\arm-none-eabi\include\stdio.h:29:0,
+                 from ../src/ioLibrary_Driver/Internet/FTPServer/ftpd.c:13:
+c:\program files (x86)\gnu tools arm embedded\5.4 2016q2\arm-none-eabi\include\stdio.h:231:5: note: expected 'char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+../src/ioLibrary_Driver/Internet/FTPServer/ftpd.c:294:23: warning: pointer targets in passing argument 1 of 'strlen' differ in signedness [-Wpointer-sign]
+         size = strlen(dbuf);
+                       ^
+In file included from c:\program files (x86)\gnu tools arm embedded\5.4 2016q2\arm-none-eabi\include\stdio.h:29:0,
+                 from ../src/ioLibrary_Driver/Internet/FTPServer/ftpd.c:13:
+c:\program files (x86)\gnu tools arm embedded\5.4 2016q2\arm-none-eabi\include\string.h:33:9: note: expected 'const char *' but argument is of type 'uint8_t * {aka unsigned char *}'
+ size_t  _EXFUN(strlen,(const char *));
+         ^
+../src/ioLibrary_Driver/Internet/FTPServer/ftpd.c:298:24: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+         size = sprintf(dbuf, "226 Successfully transferred \"%s\"\r\n", ftp.workingdir);
+                        ^
+In file included from c:\program files (x86)\gnu tools arm embedded\5.4 2016q2\arm-none-eabi\include\stdio.h:29:0,
+                 from ../src/ioLibrary_Driver/Internet/FTPServer/ftpd.c:13:
+c:\program files (x86)\gnu tools arm embedded\5.4 2016q2\arm-none-eabi\include\stdio.h:231:5: note: expected 'char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+../src/ioLibrary_Driver/Internet/FTPServer/ftpd.c:351:26: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+       blocklen = sprintf(dbuf, "%s", ftp.filename);
+                          ^
+In file included from c:\program files (x86)\gnu tools arm embedded\5.4 2016q2\arm-none-eabi\include\stdio.h:29:0,
+                 from ../src/ioLibrary_Driver/Internet/FTPServer/ftpd.c:13:
+c:\program files (x86)\gnu tools arm embedded\5.4 2016q2\arm-none-eabi\include\stdio.h:231:5: note: expected 'char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+../src/ioLibrary_Driver/Internet/FTPServer/ftpd.c:362:24: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+         size = sprintf(dbuf, "226 Successfully transferred \"%s\"\r\n", ftp.filename);
+                        ^
+In file included from c:\program files (x86)\gnu tools arm embedded\5.4 2016q2\arm-none-eabi\include\stdio.h:29:0,
+                 from ../src/ioLibrary_Driver/Internet/FTPServer/ftpd.c:13:
+c:\program files (x86)\gnu tools arm embedded\5.4 2016q2\arm-none-eabi\include\stdio.h:231:5: note: expected 'char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+../src/ioLibrary_Driver/Internet/FTPServer/ftpd.c:465:24: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+         size = sprintf(dbuf, "226 Successfully transferred \"%s\"\r\n", ftp.filename);
+                        ^
+In file included from c:\program files (x86)\gnu tools arm embedded\5.4 2016q2\arm-none-eabi\include\stdio.h:29:0,
+                 from ../src/ioLibrary_Driver/Internet/FTPServer/ftpd.c:13:
+c:\program files (x86)\gnu tools arm embedded\5.4 2016q2\arm-none-eabi\include\stdio.h:231:5: note: expected 'char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+../src/ioLibrary_Driver/Internet/FTPServer/ftpd.c:150:21: warning: unused variable 'send_byte' [-Wunused-variable]
+  uint32_t blocklen, send_byte, recv_byte;
+                     ^
+../src/ioLibrary_Driver/Internet/FTPServer/ftpd.c:148:21: warning: unused variable 'i' [-Wunused-variable]
+  uint16_t size = 0, i;
+                     ^
+../src/ioLibrary_Driver/Internet/FTPServer/ftpd.c: In function 'ftplogin':
+../src/ioLibrary_Driver/Internet/FTPServer/ftpd.c:906:22: warning: unused parameter 'pass' [-Wunused-parameter]
+ char ftplogin(char * pass)
+                      ^
+../src/ioLibrary_Driver/Internet/FTPServer/ftpd.c: In function 'pport':
+../src/ioLibrary_Driver/Internet/FTPServer/ftpd.c:933:32: warning: implicit declaration of function 'atoi' [-Wimplicit-function-declaration]
+   remote_ip.cVal[i] = (uint8_t)atoi(tok, 10);
+                                ^
+../src/ioLibrary_Driver/Internet/FTPServer/ftpd.c: In function 'fsprintf':
+../src/ioLibrary_Driver/Internet/FTPServer/ftpd.c:126:9: warning: 'i' is used uninitialized in this function [-Wuninitialized]
+  return i;
+         ^
+Finished building: ../src/ioLibrary_Driver/Internet/FTPServer/ftpd.c
+ 
+Building file: ../src/ioLibrary_Driver/Internet/FTPClient/ftpc.c
+Invoking: Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DSTM32F10X_HD -DSTM32F103VC -DDEBUG -DUSE_STDPERIPH_DRIVER -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/STMicroelectronics" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\stm_lib" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\syscalls" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\cmsis" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\cmsis_boot" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\stm_lib\inc" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\ioLibrary_Driver" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\ioLibrary_Driver\Ethernet" -std=gnu11 -MMD -MP -MF"src/ioLibrary_Driver/Internet/FTPClient/ftpc.d" -MT"src/ioLibrary_Driver/Internet/FTPClient/ftpc.o" -c -o "src/ioLibrary_Driver/Internet/FTPClient/ftpc.o" "../src/ioLibrary_Driver/Internet/FTPClient/ftpc.c"
+In file included from ../src/ioLibrary_Driver/Internet/FTPClient/../../../ioLibrary_Driver/Internet/FTPClient/ftpc.h:10:0,
+                 from ../src/ioLibrary_Driver/Internet/FTPClient/ftpc.c:1:
+../src/ioLibrary_Driver/Internet/FTPClient/../../../ioLibrary_Driver/Internet/FTPClient/stdio_private.h:39:0: warning: "__SRD" redefined
+ #define __SRD 0x0001  /* OK to read */
+ ^
+In file included from ../src/ioLibrary_Driver/Internet/FTPClient/../../../ioLibrary_Driver/Internet/FTPClient/ftpc.h:5:0,
+                 from ../src/ioLibrary_Driver/Internet/FTPClient/ftpc.c:1:
+c:\program files (x86)\gnu tools arm embedded\5.4 2016q2\arm-none-eabi\include\stdio.h:70:0: note: this is the location of the previous definition
+ #define __SRD 0x0004  /* OK to read */
+ ^
+In file included from ../src/ioLibrary_Driver/Internet/FTPClient/../../../ioLibrary_Driver/Internet/FTPClient/ftpc.h:10:0,
+                 from ../src/ioLibrary_Driver/Internet/FTPClient/ftpc.c:1:
+../src/ioLibrary_Driver/Internet/FTPClient/../../../ioLibrary_Driver/Internet/FTPClient/stdio_private.h:40:0: warning: "__SWR" redefined
+ #define __SWR 0x0002  /* OK to write */
+ ^
+In file included from ../src/ioLibrary_Driver/Internet/FTPClient/../../../ioLibrary_Driver/Internet/FTPClient/ftpc.h:5:0,
+                 from ../src/ioLibrary_Driver/Internet/FTPClient/ftpc.c:1:
+c:\program files (x86)\gnu tools arm embedded\5.4 2016q2\arm-none-eabi\include\stdio.h:71:0: note: this is the location of the previous definition
+ #define __SWR 0x0008  /* OK to write */
+ ^
+In file included from ../src/ioLibrary_Driver/Internet/FTPClient/../../../ioLibrary_Driver/Internet/FTPClient/ftpc.h:10:0,
+                 from ../src/ioLibrary_Driver/Internet/FTPClient/ftpc.c:1:
+../src/ioLibrary_Driver/Internet/FTPClient/../../../ioLibrary_Driver/Internet/FTPClient/stdio_private.h:41:0: warning: "__SSTR" redefined
+ #define __SSTR 0x0004  /* this is an sprintf/snprintf string */
+ ^
+In file included from ../src/ioLibrary_Driver/Internet/FTPClient/../../../ioLibrary_Driver/Internet/FTPClient/ftpc.h:5:0,
+                 from ../src/ioLibrary_Driver/Internet/FTPClient/ftpc.c:1:
+c:\program files (x86)\gnu tools arm embedded\5.4 2016q2\arm-none-eabi\include\stdio.h:78:0: note: this is the location of the previous definition
+ #define __SSTR 0x0200  /* this is an sprintf/snprintf string */
+ ^
+In file included from ../src/ioLibrary_Driver/Internet/FTPClient/../../../ioLibrary_Driver/Internet/FTPClient/ftpc.h:10:0,
+                 from ../src/ioLibrary_Driver/Internet/FTPClient/ftpc.c:1:
+../src/ioLibrary_Driver/Internet/FTPClient/../../../ioLibrary_Driver/Internet/FTPClient/stdio_private.h:43:0: warning: "__SERR" redefined
+ #define __SERR 0x0010  /* found error */
+ ^
+In file included from ../src/ioLibrary_Driver/Internet/FTPClient/../../../ioLibrary_Driver/Internet/FTPClient/ftpc.h:5:0,
+                 from ../src/ioLibrary_Driver/Internet/FTPClient/ftpc.c:1:
+c:\program files (x86)\gnu tools arm embedded\5.4 2016q2\arm-none-eabi\include\stdio.h:75:0: note: this is the location of the previous definition
+ #define __SERR 0x0040  /* found error */
+ ^
+In file included from ../src/ioLibrary_Driver/Internet/FTPClient/ftpc.c:1:0:
+../src/ioLibrary_Driver/Internet/FTPClient/../../../ioLibrary_Driver/Internet/FTPClient/ftpc.h:27:17: warning: extra tokens at end of #ifndef directive
+ #ifndef ftp_getc()
+                 ^
+../src/ioLibrary_Driver/Internet/FTPClient/ftpc.c: In function 'ftpc_run':
+../src/ioLibrary_Driver/Internet/FTPClient/ftpc.c:32:28: warning: unused parameter 'dbuf' [-Wunused-parameter]
+ uint8_t ftpc_run(uint8_t * dbuf)
+                            ^
+../src/ioLibrary_Driver/Internet/FTPClient/ftpc.c: In function 'proc_ftpc':
+../src/ioLibrary_Driver/Internet/FTPClient/ftpc.c:478:12: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+    sprintf(dat,"USER %s\r\n", User_Keyboard_MSG());
+            ^
+In file included from c:\program files (x86)\gnu tools arm embedded\5.4 2016q2\arm-none-eabi\include\stdio.h:29:0,
+                 from ../src/ioLibrary_Driver/Internet/FTPClient/../../../ioLibrary_Driver/Internet/FTPClient/ftpc.h:5,
+                 from ../src/ioLibrary_Driver/Internet/FTPClient/ftpc.c:1:
+c:\program files (x86)\gnu tools arm embedded\5.4 2016q2\arm-none-eabi\include\stdio.h:231:5: note: expected 'char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+../src/ioLibrary_Driver/Internet/FTPClient/ftpc.c:480:43: warning: pointer targets in passing argument 1 of 'strlen' differ in signedness [-Wpointer-sign]
+    send(CTRL_SOCK, (uint8_t *)dat, strlen(dat));
+                                           ^
+In file included from c:\program files (x86)\gnu tools arm embedded\5.4 2016q2\arm-none-eabi\include\stdio.h:29:0,
+                 from ../src/ioLibrary_Driver/Internet/FTPClient/../../../ioLibrary_Driver/Internet/FTPClient/ftpc.h:5,
+                 from ../src/ioLibrary_Driver/Internet/FTPClient/ftpc.c:1:
+c:\program files (x86)\gnu tools arm embedded\5.4 2016q2\arm-none-eabi\include\string.h:33:9: note: expected 'const char *' but argument is of type 'uint8_t * {aka unsigned char *}'
+ size_t  _EXFUN(strlen,(const char *));
+         ^
+../src/ioLibrary_Driver/Internet/FTPClient/ftpc.c:485:12: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+    sprintf(dat,"PASS %s\r\n", User_Keyboard_MSG());
+            ^
+In file included from c:\program files (x86)\gnu tools arm embedded\5.4 2016q2\arm-none-eabi\include\stdio.h:29:0,
+                 from ../src/ioLibrary_Driver/Internet/FTPClient/../../../ioLibrary_Driver/Internet/FTPClient/ftpc.h:5,
+                 from ../src/ioLibrary_Driver/Internet/FTPClient/ftpc.c:1:
+c:\program files (x86)\gnu tools arm embedded\5.4 2016q2\arm-none-eabi\include\stdio.h:231:5: note: expected 'char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+../src/ioLibrary_Driver/Internet/FTPClient/ftpc.c:487:43: warning: pointer targets in passing argument 1 of 'strlen' differ in signedness [-Wpointer-sign]
+    send(CTRL_SOCK, (uint8_t *)dat, strlen(dat));
+                                           ^
+In file included from c:\program files (x86)\gnu tools arm embedded\5.4 2016q2\arm-none-eabi\include\stdio.h:29:0,
+                 from ../src/ioLibrary_Driver/Internet/FTPClient/../../../ioLibrary_Driver/Internet/FTPClient/ftpc.h:5,
+                 from ../src/ioLibrary_Driver/Internet/FTPClient/ftpc.c:1:
+c:\program files (x86)\gnu tools arm embedded\5.4 2016q2\arm-none-eabi\include\string.h:33:9: note: expected 'const char *' but argument is of type 'uint8_t * {aka unsigned char *}'
+ size_t  _EXFUN(strlen,(const char *));
+         ^
+../src/ioLibrary_Driver/Internet/FTPClient/ftpc.c:492:12: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+    sprintf(dat,"TYPE %c\r\n", TransferAscii);
+            ^
+In file included from c:\program files (x86)\gnu tools arm embedded\5.4 2016q2\arm-none-eabi\include\stdio.h:29:0,
+                 from ../src/ioLibrary_Driver/Internet/FTPClient/../../../ioLibrary_Driver/Internet/FTPClient/ftpc.h:5,
+                 from ../src/ioLibrary_Driver/Internet/FTPClient/ftpc.c:1:
+c:\program files (x86)\gnu tools arm embedded\5.4 2016q2\arm-none-eabi\include\stdio.h:231:5: note: expected 'char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+../src/ioLibrary_Driver/Internet/FTPClient/ftpc.c:494:43: warning: pointer targets in passing argument 1 of 'strlen' differ in signedness [-Wpointer-sign]
+    send(CTRL_SOCK, (uint8_t *)dat, strlen(dat));
+                                           ^
+In file included from c:\program files (x86)\gnu tools arm embedded\5.4 2016q2\arm-none-eabi\include\stdio.h:29:0,
+                 from ../src/ioLibrary_Driver/Internet/FTPClient/../../../ioLibrary_Driver/Internet/FTPClient/ftpc.h:5,
+                 from ../src/ioLibrary_Driver/Internet/FTPClient/ftpc.c:1:
+c:\program files (x86)\gnu tools arm embedded\5.4 2016q2\arm-none-eabi\include\string.h:33:9: note: expected 'const char *' but argument is of type 'uint8_t * {aka unsigned char *}'
+ size_t  _EXFUN(strlen,(const char *));
+         ^
+../src/ioLibrary_Driver/Internet/FTPClient/ftpc.c: In function 'pportc':
+../src/ioLibrary_Driver/Internet/FTPClient/ftpc.c:556:32: warning: implicit declaration of function 'atoi' [-Wimplicit-function-declaration]
+   remote_ip.cVal[i] = (uint8_t)atoi(tok, 10);
+                                ^
+../src/ioLibrary_Driver/Internet/FTPClient/ftpc.c: In function 'User_Keyboard_MSG':
+../src/ioLibrary_Driver/Internet/FTPClient/ftpc.c:579:16: warning: implicit declaration of function 'ftp_getc' [-Wimplicit-function-declaration]
+   gMsgBuf[i] = ftp_getc();
+                ^
+Finished building: ../src/ioLibrary_Driver/Internet/FTPClient/ftpc.c
+ 
+Building file: ../src/ioLibrary_Driver/Internet/DNS/dns.c
+Invoking: Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DSTM32F10X_HD -DSTM32F103VC -DDEBUG -DUSE_STDPERIPH_DRIVER -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/STMicroelectronics" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\stm_lib" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\syscalls" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\cmsis" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\cmsis_boot" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\stm_lib\inc" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\ioLibrary_Driver" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\ioLibrary_Driver\Ethernet" -std=gnu11 -MMD -MP -MF"src/ioLibrary_Driver/Internet/DNS/dns.d" -MT"src/ioLibrary_Driver/Internet/DNS/dns.o" -c -o "src/ioLibrary_Driver/Internet/DNS/dns.o" "../src/ioLibrary_Driver/Internet/DNS/dns.c"
+Finished building: ../src/ioLibrary_Driver/Internet/DNS/dns.c
+ 
+Building file: ../src/ioLibrary_Driver/Internet/DHCP/dhcp.c
+Invoking: Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DSTM32F10X_HD -DSTM32F103VC -DDEBUG -DUSE_STDPERIPH_DRIVER -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/STMicroelectronics" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\stm_lib" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\syscalls" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\cmsis" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\cmsis_boot" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\stm_lib\inc" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\ioLibrary_Driver" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\ioLibrary_Driver\Ethernet" -std=gnu11 -MMD -MP -MF"src/ioLibrary_Driver/Internet/DHCP/dhcp.d" -MT"src/ioLibrary_Driver/Internet/DHCP/dhcp.o" -c -o "src/ioLibrary_Driver/Internet/DHCP/dhcp.o" "../src/ioLibrary_Driver/Internet/DHCP/dhcp.c"
+../src/ioLibrary_Driver/Internet/DHCP/dhcp.c: In function 'parseDHCPMSG':
+../src/ioLibrary_Driver/Internet/DHCP/dhcp.c:667:9: warning: 'type' may be used uninitialized in this function [-Wmaybe-uninitialized]
+  return type;
+         ^
+Finished building: ../src/ioLibrary_Driver/Internet/DHCP/dhcp.c
+ 
+Building file: ../src/ioLibrary_Driver/Ethernet/W5500/w5500.c
+Invoking: Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DSTM32F10X_HD -DSTM32F103VC -DDEBUG -DUSE_STDPERIPH_DRIVER -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/STMicroelectronics" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\stm_lib" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\syscalls" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\cmsis" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\cmsis_boot" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\stm_lib\inc" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\ioLibrary_Driver" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\ioLibrary_Driver\Ethernet" -std=gnu11 -MMD -MP -MF"src/ioLibrary_Driver/Ethernet/W5500/w5500.d" -MT"src/ioLibrary_Driver/Ethernet/W5500/w5500.o" -c -o "src/ioLibrary_Driver/Ethernet/W5500/w5500.o" "../src/ioLibrary_Driver/Ethernet/W5500/w5500.c"
+Finished building: ../src/ioLibrary_Driver/Ethernet/W5500/w5500.c
+ 
+Building file: ../src/ioLibrary_Driver/Ethernet/W5300/w5300.c
+Invoking: Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DSTM32F10X_HD -DSTM32F103VC -DDEBUG -DUSE_STDPERIPH_DRIVER -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/STMicroelectronics" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\stm_lib" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\syscalls" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\cmsis" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\cmsis_boot" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\stm_lib\inc" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\ioLibrary_Driver" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\ioLibrary_Driver\Ethernet" -std=gnu11 -MMD -MP -MF"src/ioLibrary_Driver/Ethernet/W5300/w5300.d" -MT"src/ioLibrary_Driver/Ethernet/W5300/w5300.o" -c -o "src/ioLibrary_Driver/Ethernet/W5300/w5300.o" "../src/ioLibrary_Driver/Ethernet/W5300/w5300.c"
+Finished building: ../src/ioLibrary_Driver/Ethernet/W5300/w5300.c
+ 
+Building file: ../src/ioLibrary_Driver/Ethernet/W5200/w5200.c
+Invoking: Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DSTM32F10X_HD -DSTM32F103VC -DDEBUG -DUSE_STDPERIPH_DRIVER -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/STMicroelectronics" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\stm_lib" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\syscalls" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\cmsis" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\cmsis_boot" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\stm_lib\inc" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\ioLibrary_Driver" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\ioLibrary_Driver\Ethernet" -std=gnu11 -MMD -MP -MF"src/ioLibrary_Driver/Ethernet/W5200/w5200.d" -MT"src/ioLibrary_Driver/Ethernet/W5200/w5200.o" -c -o "src/ioLibrary_Driver/Ethernet/W5200/w5200.o" "../src/ioLibrary_Driver/Ethernet/W5200/w5200.c"
+Finished building: ../src/ioLibrary_Driver/Ethernet/W5200/w5200.c
+ 
+Building file: ../src/ioLibrary_Driver/Ethernet/W5100S/w5100s.c
+Invoking: Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DSTM32F10X_HD -DSTM32F103VC -DDEBUG -DUSE_STDPERIPH_DRIVER -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/STMicroelectronics" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\stm_lib" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\syscalls" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\cmsis" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\cmsis_boot" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\stm_lib\inc" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\ioLibrary_Driver" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\ioLibrary_Driver\Ethernet" -std=gnu11 -MMD -MP -MF"src/ioLibrary_Driver/Ethernet/W5100S/w5100s.d" -MT"src/ioLibrary_Driver/Ethernet/W5100S/w5100s.o" -c -o "src/ioLibrary_Driver/Ethernet/W5100S/w5100s.o" "../src/ioLibrary_Driver/Ethernet/W5100S/w5100s.c"
+../src/ioLibrary_Driver/Ethernet/W5100S/w5100s.c: In function 'WIZCHIP_WRITE':
+../src/ioLibrary_Driver/Ethernet/W5100S/w5100s.c:49:6: warning: unused variable 'i' [-Wunused-variable]
+  int i;
+      ^
+../src/ioLibrary_Driver/Ethernet/W5100S/w5100s.c: In function 'WIZCHIP_READ':
+../src/ioLibrary_Driver/Ethernet/W5100S/w5100s.c:86:8: warning: unused variable 'i' [-Wunused-variable]
+    int i;
+        ^
+../src/ioLibrary_Driver/Ethernet/W5100S/w5100s.c: In function 'WIZCHIP_WRITE_BUF':
+../src/ioLibrary_Driver/Ethernet/W5100S/w5100s.c:127:12: warning: unused variable 'l' [-Wunused-variable]
+    int j,k,l;
+            ^
+../src/ioLibrary_Driver/Ethernet/W5100S/w5100s.c:127:10: warning: unused variable 'k' [-Wunused-variable]
+    int j,k,l;
+          ^
+../src/ioLibrary_Driver/Ethernet/W5100S/w5100s.c:127:8: warning: unused variable 'j' [-Wunused-variable]
+    int j,k,l;
+        ^
+Finished building: ../src/ioLibrary_Driver/Ethernet/W5100S/w5100s.c
+ 
+Building file: ../src/ioLibrary_Driver/Ethernet/W5100/w5100.c
+Invoking: Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DSTM32F10X_HD -DSTM32F103VC -DDEBUG -DUSE_STDPERIPH_DRIVER -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/STMicroelectronics" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\stm_lib" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\syscalls" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\cmsis" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\cmsis_boot" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\stm_lib\inc" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\ioLibrary_Driver" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\ioLibrary_Driver\Ethernet" -std=gnu11 -MMD -MP -MF"src/ioLibrary_Driver/Ethernet/W5100/w5100.d" -MT"src/ioLibrary_Driver/Ethernet/W5100/w5100.o" -c -o "src/ioLibrary_Driver/Ethernet/W5100/w5100.o" "../src/ioLibrary_Driver/Ethernet/W5100/w5100.c"
+Finished building: ../src/ioLibrary_Driver/Ethernet/W5100/w5100.c
+ 
+Building file: ../src/ioLibrary_Driver/Ethernet/socket.c
+Invoking: Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DSTM32F10X_HD -DSTM32F103VC -DDEBUG -DUSE_STDPERIPH_DRIVER -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/STMicroelectronics" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\stm_lib" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\syscalls" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\cmsis" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\cmsis_boot" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\stm_lib\inc" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\ioLibrary_Driver" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\ioLibrary_Driver\Ethernet" -std=gnu11 -MMD -MP -MF"src/ioLibrary_Driver/Ethernet/socket.d" -MT"src/ioLibrary_Driver/Ethernet/socket.o" -c -o "src/ioLibrary_Driver/Ethernet/socket.o" "../src/ioLibrary_Driver/Ethernet/socket.c"
+../src/ioLibrary_Driver/Ethernet/socket.c: In function 'sendto':
+../src/ioLibrary_Driver/Ethernet/socket.c:520:36: warning: suggest parentheses around comparison in operand of '&' [-Wparentheses]
+    if((taddr == 0) && (getSn_MR(sn)&Sn_MR_MACRAW != Sn_MR_MACRAW)) return SOCKERR_IPINVALID;
+                                    ^
+../src/ioLibrary_Driver/Ethernet/socket.c:521:36: warning: suggest parentheses around comparison in operand of '&' [-Wparentheses]
+    if((port  == 0) && (getSn_MR(sn)&Sn_MR_MACRAW != Sn_MR_MACRAW)) return SOCKERR_PORTZERO;
+                                    ^
+Finished building: ../src/ioLibrary_Driver/Ethernet/socket.c
+ 
+Building file: ../src/ioLibrary_Driver/Ethernet/wizchip_conf.c
+Invoking: Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DSTM32F10X_HD -DSTM32F103VC -DDEBUG -DUSE_STDPERIPH_DRIVER -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/STMicroelectronics" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\stm_lib" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\syscalls" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\cmsis" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\cmsis_boot" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\stm_lib\inc" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\ioLibrary_Driver" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\ioLibrary_Driver\Ethernet" -std=gnu11 -MMD -MP -MF"src/ioLibrary_Driver/Ethernet/wizchip_conf.d" -MT"src/ioLibrary_Driver/Ethernet/wizchip_conf.o" -c -o "src/ioLibrary_Driver/Ethernet/wizchip_conf.o" "../src/ioLibrary_Driver/Ethernet/wizchip_conf.c"
+../src/ioLibrary_Driver/Ethernet/wizchip_conf.c: In function 'wizchip_spi_writebyte':
+../src/ioLibrary_Driver/Ethernet/wizchip_conf.c:125:37: warning: unused parameter 'wb' [-Wunused-parameter]
+ void  wizchip_spi_writebyte(uint8_t wb) {}
+                                     ^
+../src/ioLibrary_Driver/Ethernet/wizchip_conf.c: In function 'wizchip_spi_readburst':
+../src/ioLibrary_Driver/Ethernet/wizchip_conf.c:133:38: warning: unused parameter 'pBuf' [-Wunused-parameter]
+ void  wizchip_spi_readburst(uint8_t* pBuf, uint16_t len)  {}
+                                      ^
+../src/ioLibrary_Driver/Ethernet/wizchip_conf.c:133:53: warning: unused parameter 'len' [-Wunused-parameter]
+ void  wizchip_spi_readburst(uint8_t* pBuf, uint16_t len)  {}
+                                                     ^
+../src/ioLibrary_Driver/Ethernet/wizchip_conf.c: In function 'wizchip_spi_writeburst':
+../src/ioLibrary_Driver/Ethernet/wizchip_conf.c:141:39: warning: unused parameter 'pBuf' [-Wunused-parameter]
+ void  wizchip_spi_writeburst(uint8_t* pBuf, uint16_t len) {}
+                                       ^
+../src/ioLibrary_Driver/Ethernet/wizchip_conf.c:141:54: warning: unused parameter 'len' [-Wunused-parameter]
+ void  wizchip_spi_writeburst(uint8_t* pBuf, uint16_t len) {}
+                                                      ^
+In file included from ../src/ioLibrary_Driver/Ethernet/wizchip_conf.c:55:0:
+../src/ioLibrary_Driver/Ethernet/wizchip_conf.c: At top level:
+../src/ioLibrary_Driver/Ethernet/wizchip_conf.h:105:37: warning: initializer-string for array of chars is too long
+ #define _WIZCHIP_ID_                "W5100S\0"
+                                     ^
+../src/ioLibrary_Driver/Ethernet/wizchip_conf.c:168:7: note: in expansion of macro '_WIZCHIP_ID_'
+       _WIZCHIP_ID_ ,
+       ^
+../src/ioLibrary_Driver/Ethernet/wizchip_conf.h:105:37: note: (near initialization for 'WIZCHIP.id')
+ #define _WIZCHIP_ID_                "W5100S\0"
+                                     ^
+../src/ioLibrary_Driver/Ethernet/wizchip_conf.c:168:7: note: in expansion of macro '_WIZCHIP_ID_'
+       _WIZCHIP_ID_ ,
+       ^
+../src/ioLibrary_Driver/Ethernet/wizchip_conf.c:166:7: warning: missing braces around initializer [-Wmissing-braces]
+       {
+       ^
+../src/ioLibrary_Driver/Ethernet/wizchip_conf.c:166:7: note: (near initialization for 'WIZCHIP')
+../src/ioLibrary_Driver/Ethernet/wizchip_conf.c: In function 'wizchip_setnetinfo':
+../src/ioLibrary_Driver/Ethernet/wizchip_conf.c:837:10: warning: unused variable 'k' [-Wunused-variable]
+  int i,j,k;
+          ^
+../src/ioLibrary_Driver/Ethernet/wizchip_conf.c:837:8: warning: unused variable 'j' [-Wunused-variable]
+  int i,j,k;
+        ^
+../src/ioLibrary_Driver/Ethernet/wizchip_conf.c:837:6: warning: unused variable 'i' [-Wunused-variable]
+  int i,j,k;
+      ^
+Finished building: ../src/ioLibrary_Driver/Ethernet/wizchip_conf.c
+ 
+Building file: ../src/ioLibrary_Driver/Application/loopback/loopback.c
+Invoking: Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DSTM32F10X_HD -DSTM32F103VC -DDEBUG -DUSE_STDPERIPH_DRIVER -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/STMicroelectronics" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\stm_lib" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\syscalls" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\cmsis" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\cmsis_boot" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\stm_lib\inc" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\ioLibrary_Driver" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\ioLibrary_Driver\Ethernet" -std=gnu11 -MMD -MP -MF"src/ioLibrary_Driver/Application/loopback/loopback.d" -MT"src/ioLibrary_Driver/Application/loopback/loopback.o" -c -o "src/ioLibrary_Driver/Application/loopback/loopback.o" "../src/ioLibrary_Driver/Application/loopback/loopback.c"
+Finished building: ../src/ioLibrary_Driver/Application/loopback/loopback.c
+ 
+Building file: ../src/cmsis_boot/startup/startup_stm32f10x_hd.c
+Invoking: Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DSTM32F10X_HD -DSTM32F103VC -DDEBUG -DUSE_STDPERIPH_DRIVER -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/STMicroelectronics" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\stm_lib" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\syscalls" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\cmsis" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\cmsis_boot" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\stm_lib\inc" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\ioLibrary_Driver" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\ioLibrary_Driver\Ethernet" -std=gnu11 -MMD -MP -MF"src/cmsis_boot/startup/startup_stm32f10x_hd.d" -MT"src/cmsis_boot/startup/startup_stm32f10x_hd.o" -c -o "src/cmsis_boot/startup/startup_stm32f10x_hd.o" "../src/cmsis_boot/startup/startup_stm32f10x_hd.c"
+Finished building: ../src/cmsis_boot/startup/startup_stm32f10x_hd.c
+ 
+Building file: ../src/cmsis_boot/system_stm32f10x.c
+Invoking: Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DSTM32F10X_HD -DSTM32F103VC -DDEBUG -DUSE_STDPERIPH_DRIVER -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/STMicroelectronics" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\stm_lib" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\syscalls" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\cmsis" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\cmsis_boot" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\stm_lib\inc" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\ioLibrary_Driver" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\ioLibrary_Driver\Ethernet" -std=gnu11 -MMD -MP -MF"src/cmsis_boot/system_stm32f10x.d" -MT"src/cmsis_boot/system_stm32f10x.o" -c -o "src/cmsis_boot/system_stm32f10x.o" "../src/cmsis_boot/system_stm32f10x.c"
+Finished building: ../src/cmsis_boot/system_stm32f10x.c
+ 
+Building file: ../src/HALInit.c
+Invoking: Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DSTM32F10X_HD -DSTM32F103VC -DDEBUG -DUSE_STDPERIPH_DRIVER -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/STMicroelectronics" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\stm_lib" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\syscalls" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\cmsis" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\cmsis_boot" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\stm_lib\inc" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\ioLibrary_Driver" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\ioLibrary_Driver\Ethernet" -std=gnu11 -MMD -MP -MF"src/HALInit.d" -MT"src/HALInit.o" -c -o "src/HALInit.o" "../src/HALInit.c"
+../src/HALInit.c: In function 'gpioInitialize':
+../src/HALInit.c:100:21: warning: unused variable 'NVIC_InitStructure' [-Wunused-variable]
+  NVIC_InitTypeDef   NVIC_InitStructure;
+                     ^
+../src/HALInit.c:99:21: warning: unused variable 'EXTI_InitStructure' [-Wunused-variable]
+  EXTI_InitTypeDef   EXTI_InitStructure;
+                     ^
+Finished building: ../src/HALInit.c
+ 
+Building file: ../src/W5100SRelFunctions.c
+Invoking: Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DSTM32F10X_HD -DSTM32F103VC -DDEBUG -DUSE_STDPERIPH_DRIVER -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/STMicroelectronics" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\stm_lib" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\syscalls" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\cmsis" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\cmsis_boot" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\stm_lib\inc" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\ioLibrary_Driver" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\ioLibrary_Driver\Ethernet" -std=gnu11 -MMD -MP -MF"src/W5100SRelFunctions.d" -MT"src/W5100SRelFunctions.o" -c -o "src/W5100SRelFunctions.o" "../src/W5100SRelFunctions.c"
+../src/W5100SRelFunctions.c: In function 'W5100SInitialze':
+../src/W5100SRelFunctions.c:16:3: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+   printf("W5100S initialized fail.\r\n");
+   ^
+../src/W5100SRelFunctions.c: In function 'W5100SReset':
+../src/W5100SRelFunctions.c:89:2: warning: implicit declaration of function 'CoTickDelay' [-Wimplicit-function-declaration]
+  CoTickDelay(10);
+  ^
+../src/W5100SRelFunctions.c:86:10: warning: variable 'k' set but not used [-Wunused-but-set-variable]
+  int i,j,k;
+          ^
+../src/W5100SRelFunctions.c:86:8: warning: unused variable 'j' [-Wunused-variable]
+  int i,j,k;
+        ^
+../src/W5100SRelFunctions.c:86:6: warning: unused variable 'i' [-Wunused-variable]
+  int i,j,k;
+      ^
+Finished building: ../src/W5100SRelFunctions.c
+ 
+Building file: ../src/_write.c
+Invoking: Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DSTM32F10X_HD -DSTM32F103VC -DDEBUG -DUSE_STDPERIPH_DRIVER -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/STMicroelectronics" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\stm_lib" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\syscalls" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\cmsis" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\cmsis_boot" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\stm_lib\inc" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\ioLibrary_Driver" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\ioLibrary_Driver\Ethernet" -std=gnu11 -MMD -MP -MF"src/_write.d" -MT"src/_write.o" -c -o "src/_write.o" "../src/_write.c"
+Finished building: ../src/_write.c
+ 
+Building file: ../src/main.c
+Invoking: Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DSTM32F10X_HD -DSTM32F103VC -DDEBUG -DUSE_STDPERIPH_DRIVER -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/STMicroelectronics" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\stm_lib" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\syscalls" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\cmsis" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\cmsis_boot" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\stm_lib\inc" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\ioLibrary_Driver" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\ioLibrary_Driver\Ethernet" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'main':
+../src/main.c:40:2: warning: implicit declaration of function 'timerInitialize' [-Wimplicit-function-declaration]
+  timerInitialize();
+  ^
+../src/main.c:62:2: warning: implicit declaration of function 'delay' [-Wimplicit-function-declaration]
+  delay(10);
+  ^
+../src/main.c:65:2: warning: implicit declaration of function 'W5100SInitialze' [-Wimplicit-function-declaration]
+  W5100SInitialze();
+  ^
+../src/main.c:75:2: warning: implicit declaration of function 'register_read' [-Wimplicit-function-declaration]
+  register_read();
+  ^
+../src/main.c:79:3: warning: implicit declaration of function 'loopback_tcps' [-Wimplicit-function-declaration]
+   loopback_tcps(0,ethBuf0,50000);
+   ^
+../src/main.c:36:17: warning: unused variable 'k' [-Wunused-variable]
+  volatile int j,k;
+                 ^
+../src/main.c:36:15: warning: unused variable 'j' [-Wunused-variable]
+  volatile int j,k;
+               ^
+../src/main.c:35:15: warning: unused variable 'i' [-Wunused-variable]
+  volatile int i;
+               ^
+../src/main.c: At top level:
+../src/main.c:83:6: warning: conflicting types for 'delay'
+ void delay(unsigned int count)
+      ^
+../src/main.c:62:2: note: previous implicit declaration of 'delay' was here
+  delay(10);
+  ^
+../src/main.c: In function 'delay':
+../src/main.c:87:13: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  while(temp > TIM2_gettimer()){}
+             ^
+Finished building: ../src/main.c
+ 
+Building file: ../src/msgq.c
+Invoking: Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DSTM32F10X_HD -DSTM32F103VC -DDEBUG -DUSE_STDPERIPH_DRIVER -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/STMicroelectronics" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\stm_lib" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\syscalls" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\cmsis" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\cmsis_boot" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\stm_lib\inc" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\ioLibrary_Driver" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\ioLibrary_Driver\Ethernet" -std=gnu11 -MMD -MP -MF"src/msgq.d" -MT"src/msgq.o" -c -o "src/msgq.o" "../src/msgq.c"
+../src/msgq.c: In function 'queue_put':
+../src/msgq.c:20:9: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+         printf("\n   Queue overflow.");
+         ^
+../src/msgq.c:25:25: warning: operation on 'serialMsgQueue.rear' may be undefined [-Wsequence-point]
+     serialMsgQueue.rear = ++(serialMsgQueue.rear) % serialMsgQueue.maxQSize;
+                         ^
+../src/msgq.c: In function 'queue_get':
+../src/msgq.c:36:26: warning: operation on 'serialMsgQueue.front' may be undefined [-Wsequence-point]
+     serialMsgQueue.front = ++(serialMsgQueue.front) % serialMsgQueue.maxQSize;
+                          ^
+Finished building: ../src/msgq.c
+ 
+Building file: ../src/serialCommand.c
+Invoking: Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DSTM32F10X_HD -DSTM32F103VC -DDEBUG -DUSE_STDPERIPH_DRIVER -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/STMicroelectronics" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\stm_lib" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\syscalls" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\cmsis" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\cmsis_boot" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\stm_lib\inc" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\ioLibrary_Driver" -I"D:\Wiznet\WIZnet_product\WIZ750SR_series\WIZ750SR\Rev1.1\04.Firmware_Source\Eclipse\workspace\W5100S_loopback\W5100S_Loopback\src\ioLibrary_Driver\Ethernet" -std=gnu11 -MMD -MP -MF"src/serialCommand.d" -MT"src/serialCommand.o" -c -o "src/serialCommand.o" "../src/serialCommand.c"
+../src/serialCommand.c: In function 'USART1_IRQHandler':
+../src/serialCommand.c:11:10: warning: unused variable 'recvData' [-Wunused-variable]
+  uint8_t recvData;
+          ^
+../src/serialCommand.c:10:13: warning: unused variable 'flagStatus' [-Wunused-variable]
+  FlagStatus flagStatus;
+             ^
+../src/serialCommand.c: In function '_write':
+../src/serialCommand.c:48:16: warning: unused parameter 'file' [-Wunused-parameter]
+ int _write(int file, char *ptr, int len)
+                ^
+../src/serialCommand.c: In function 'gets_echo':
+../src/serialCommand.c:95:16: warning: pointer targets in passing argument 1 of 'queue_get' differ in signedness [-Wpointer-sign]
+      queue_get(&buf[i]);
+                ^
+In file included from ../src/serialCommand.c:3:0:
+../src/msgq.h:16:5: note: expected 'char *' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int queue_get(char *data);
+     ^
+../src/serialCommand.c:106:16: warning: pointer targets in passing argument 2 of '_write' differ in signedness [-Wpointer-sign]
+       _write(0,&buf[i],1);
+                ^
+../src/serialCommand.c:48:5: note: expected 'char *' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int _write(int file, char *ptr, int len)
+     ^
+Finished building: ../src/serialCommand.c
+ 
+Building target: W5100S_Loopback.elf
+Invoking: Cross ARM GNU C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"W5100S_Loopback.map" --specs=nano.specs -o "W5100S_Loopback.elf"  ./src/syscalls/syscalls.o  ./src/stm_lib/src/misc.o ./src/stm_lib/src/stm32f10x_exti.o ./src/stm_lib/src/stm32f10x_flash.o ./src/stm_lib/src/stm32f10x_fsmc.o ./src/stm_lib/src/stm32f10x_gpio.o ./src/stm_lib/src/stm32f10x_rcc.o ./src/stm_lib/src/stm32f10x_spi.o ./src/stm_lib/src/stm32f10x_tim.o ./src/stm_lib/src/stm32f10x_usart.o  ./src/ioLibrary_Driver/Internet/httpServer/httpParser.o ./src/ioLibrary_Driver/Internet/httpServer/httpServer.o ./src/ioLibrary_Driver/Internet/httpServer/httpUtil.o  ./src/ioLibrary_Driver/Internet/TFTP/netutil.o ./src/ioLibrary_Driver/Internet/TFTP/tftp.o  ./src/ioLibrary_Driver/Internet/SNTP/sntp.o  ./src/ioLibrary_Driver/Internet/FTPServer/ftpd.o  ./src/ioLibrary_Driver/Internet/FTPClient/ftpc.o  ./src/ioLibrary_Driver/Internet/DNS/dns.o  ./src/ioLibrary_Driver/Internet/DHCP/dhcp.o  ./src/ioLibrary_Driver/Ethernet/W5500/w5500.o  ./src/ioLibrary_Driver/Ethernet/W5300/w5300.o  ./src/ioLibrary_Driver/Ethernet/W5200/w5200.o  ./src/ioLibrary_Driver/Ethernet/W5100S/w5100s.o  ./src/ioLibrary_Driver/Ethernet/W5100/w5100.o  ./src/ioLibrary_Driver/Ethernet/socket.o ./src/ioLibrary_Driver/Ethernet/wizchip_conf.o  ./src/ioLibrary_Driver/Application/loopback/loopback.o  ./src/cmsis_boot/startup/startup_stm32f10x_hd.o  ./src/cmsis_boot/system_stm32f10x.o  ./src/HALInit.o ./src/W5100SRelFunctions.o ./src/_write.o ./src/main.o ./src/msgq.o ./src/serialCommand.o   
+c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/bin/ld.exe: warning: cannot find entry symbol _start; defaulting to 0000015c
+Finished building target: W5100S_Loopback.elf
+ 
+Invoking: Cross ARM GNU Create Flash Image
+arm-none-eabi-objcopy -O binary "W5100S_Loopback.elf"  "W5100S_Loopback.bin"
+Finished building: W5100S_Loopback.bin
+ 
+Invoking: Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "W5100S_Loopback.elf"
+   text	   data	    bss	    dec	    hex	filename
+  11739	   1268	   8748	  21755	   54fb	W5100S_Loopback.elf
+Finished building: W5100S_Loopback.siz
+ 

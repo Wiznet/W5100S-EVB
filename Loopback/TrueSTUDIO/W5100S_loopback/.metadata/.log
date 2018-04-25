@@ -1,0 +1,144 @@
+!SESSION 2018-04-25 15:14:02.968 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_152
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=ko_KR
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY com.atollic.truestudio.productmanager 1 0 2018-04-25 15:14:24.432
+!MESSAGE Loading product manager
+
+!ENTRY com.atollic.truestudio.productmanager 1 0 2018-04-25 15:14:24.439
+!MESSAGE OS info: Windows 10, 10.0, x86
+
+!ENTRY TrueSTUDIO 1 0 2018-04-25 15:14:25.132
+!MESSAGE Target: STM32, Version: 9.0.0, Build date: 20180117-1023, Installation dir: /C:/Program Files (x86)/Atollic/TrueSTUDIO for STM32 9.0.0/ide/
+
+!ENTRY TrueSTUDIO 1 0 2018-04-25 15:14:25.133
+!MESSAGE Workspace: D:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\W5100S_loopback
+
+!ENTRY org.eclipse.jface 2 0 2018-04-25 15:14:26.222
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2018-04-25 15:14:26.222
+!MESSAGE A conflict occurred for ALT+CTRL+T:
+Binding(ALT+CTRL+T,
+	ParameterizedCommand(Command(org.eclipse.team.svn.ui.command.EditPropertiesCommand,Show Properties,
+		,
+		Category(org.eclipse.team.svn.ui.command.category,SVN,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@13ceb4e,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+CTRL+T,
+	ParameterizedCommand(Command(org.eclipse.tm.terminal.connector.local.command.launch,Open Local Terminal on Selection,
+		,
+		Category(org.eclipse.tm.terminal.view.ui.commands.category,터미널 명령어,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@1c72128,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY com.atollic.truestudio.integration.processorexpert 0 0 2018-04-25 15:14:29.809
+!MESSAGE Atollic TrueSTUDIO Processor Expert integration is up.
+
+!ENTRY edu.hawaii.ics.csdl.jupiter 1 0 2018-04-25 15:14:29.840
+!MESSAGE Code Review is up.
+
+!ENTRY com.atollic.truestudio.common.wizards 4 0 2018-04-25 15:18:11.545
+!MESSAGE Failed to find the correct FPU ABI, falling back to Soft. Value: 
+
+!ENTRY com.atollic.truestudio.common.wizards 4 0 2018-04-25 15:18:15.669
+!MESSAGE Failed to find the correct FPU ABI, falling back to Soft. Value: 
+
+!ENTRY com.atollic.truestudio.common.wizards 4 0 2018-04-25 15:18:38.676
+!MESSAGE Failed to find the correct FPU ABI, falling back to Soft. Value: 
+
+!ENTRY com.atollic.truestudio.mbs 4 0 2018-04-25 15:20:23.405
+!MESSAGE Failed to find device info
+
+!ENTRY com.atollic.truestudio.mbs 4 0 2018-04-25 15:20:23.411
+!MESSAGE Failed to find device info
+
+!ENTRY com.atollic.truestudio.mbs 4 0 2018-04-25 15:20:23.429
+!MESSAGE Failed to find device info
+
+!ENTRY com.atollic.truestudio.mbs 4 0 2018-04-25 15:20:23.430
+!MESSAGE Failed to find device info
+
+!ENTRY com.atollic.truestudio.mbs 2 0 2018-04-25 15:20:23.478
+!MESSAGE W5100S_loopback needs property 'com.atollic.truestudio.general.runtimelib.691714574' fixed. Fixing to 'com.atollic.truestudio.ld.general.clib.small'.
+
+!ENTRY com.atollic.truestudio.mbs 2 0 2018-04-25 15:20:23.478
+!MESSAGE Failed to get device info (Debug) for project W5100S_loopback
+
+!ENTRY com.atollic.truestudio.mbs 2 0 2018-04-25 15:20:23.479
+!MESSAGE Failed to get device info (Debug) for project W5100S_loopback
+
+!ENTRY com.atollic.truestudio.mbs 2 0 2018-04-25 15:20:23.479
+!MESSAGE Failed to get device info (Debug) for project W5100S_loopback
+
+!ENTRY com.atollic.truestudio.mbs 2 0 2018-04-25 15:20:23.480
+!MESSAGE W5100S_loopback needs property 'com.atollic.truestudio.general.runtimelib.702970579' fixed. Fixing to 'com.atollic.truestudio.ld.general.clib.small'.
+
+!ENTRY com.atollic.truestudio.mbs 2 0 2018-04-25 15:20:23.480
+!MESSAGE Failed to get device info (Release) for project W5100S_loopback
+
+!ENTRY com.atollic.truestudio.mbs 2 0 2018-04-25 15:20:23.480
+!MESSAGE Failed to get device info (Release) for project W5100S_loopback
+
+!ENTRY com.atollic.truestudio.mbs 2 0 2018-04-25 15:20:23.480
+!MESSAGE Failed to get device info (Release) for project W5100S_loopback
+
+!ENTRY com.atollic.truestudio.mbs 4 0 2018-04-25 15:20:23.506
+!MESSAGE Failed to find device info
+
+!ENTRY com.atollic.truestudio.mbs 4 0 2018-04-25 15:20:23.508
+!MESSAGE Failed to find device info
+
+!ENTRY com.atollic.truestudio.mbs 4 0 2018-04-25 15:20:23.513
+!MESSAGE Failed to find device info
+
+!ENTRY com.atollic.truestudio.mbs 4 0 2018-04-25 15:20:23.514
+!MESSAGE Failed to find device info
+
+!ENTRY com.atollic.truestudio.mbs 4 0 2018-04-25 15:20:23.566
+!MESSAGE Failed to find device info
+
+!ENTRY com.atollic.truestudio.mbs 4 0 2018-04-25 15:20:23.566
+!MESSAGE Failed to find device info
+
+!ENTRY com.atollic.truestudio.mbs 4 0 2018-04-25 15:20:26.202
+!MESSAGE Failed to find device info
+
+!ENTRY com.atollic.truestudio.mbs 4 0 2018-04-25 15:20:26.759
+!MESSAGE Failed to find device info
+
+!ENTRY com.atollic.truestudio.mbs 4 0 2018-04-25 15:20:27.293
+!MESSAGE Failed to find device info
+
+!ENTRY com.atollic.truestudio.mbs 4 0 2018-04-25 15:20:27.468
+!MESSAGE Failed to find device info
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-04-25 15:20:42.127
+!MESSAGE Indexed 'W5100S_loopback' (27 sources, 75 headers) in 1.49 sec: 7,441 declarations; 20,597 references; 1 unresolved inclusions; 34 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-04-25 15:21:28.265
+!MESSAGE Indexed 'loopback' (62 sources, 128 headers) in 2.21 sec: 11,326 declarations; 31,464 references; 3 unresolved inclusions; 52 syntax errors; 4,015 unresolved names (8.6%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-04-25 15:30:37.053
+!MESSAGE Indexed 'loopback' (62 sources, 128 headers) in 1.98 sec: 11,474 declarations; 35,828 references; 1 unresolved inclusions; 35 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-04-25 15:39:29.773
+!MESSAGE Indexed 'loopback' (62 sources, 128 headers) in 1.98 sec: 11,474 declarations; 35,828 references; 1 unresolved inclusions; 35 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-04-25 15:42:13.930
+!MESSAGE Indexed 'loopback' (62 sources, 128 headers) in 1.56 sec: 11,474 declarations; 35,828 references; 1 unresolved inclusions; 35 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-04-25 15:45:51.789
+!MESSAGE Indexed 'W5100S_loopback' (48 sources, 116 headers) in 1.99 sec: 10,128 declarations; 31,472 references; 1 unresolved inclusions; 35 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-04-25 15:52:54.019
+!MESSAGE Indexed 'loopback' (62 sources, 128 headers) in 1.87 sec: 11,474 declarations; 35,828 references; 1 unresolved inclusions; 35 syntax errors; 0 unresolved names (0%)
+
+!ENTRY com.atollic.truestudio.productmanager 1 0 2018-04-25 16:06:21.394
+!MESSAGE Unloading product manager

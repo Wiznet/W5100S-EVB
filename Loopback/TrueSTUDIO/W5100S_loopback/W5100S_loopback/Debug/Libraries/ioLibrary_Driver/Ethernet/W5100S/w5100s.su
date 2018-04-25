@@ -1,0 +1,14 @@
+w5100s.c:47:10:WIZCHIP_WRITE	16	static
+w5100s.c:83:10:WIZCHIP_READ	24	static
+w5100s.c:124:10:WIZCHIP_WRITE_BUF	32	static
+w5100s.c:181:10:WIZCHIP_READ_BUF	40	static
+w5100s.c:237:10:getSn_TX_FSR	32	static
+w5100s.c:254:10:getSn_RX_RSR	32	static
+w5100s.c:273:10:getSn_RxBASE	24	static
+w5100s.c:287:10:getSn_TxBASE	24	static
+w5100s.c:311:6:wiz_send_data	32	static
+w5100s.c:353:6:wiz_recv_data	32	static
+w5100s.c:385:6:wiz_recv_ignore	32	static
+w5100s.c:395:6:wiz_mdio_write	16	static
+w5100s.c:404:10:wiz_mdio_read	24	static
+w5100s.c:412:6:wiz_delay_ms	32	static

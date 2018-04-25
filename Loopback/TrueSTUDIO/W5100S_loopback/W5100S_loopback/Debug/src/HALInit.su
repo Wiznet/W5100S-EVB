@@ -1,0 +1,16 @@
+HALInit.c:17:6:HardFault_Handler	8	static
+HALInit.c:23:6:MemManage_Handler	8	static
+HALInit.c:29:6:NMI_Handler	8	static
+HALInit.c:35:6:BusFault_Handler	8	static
+HALInit.c:41:6:UsageFault_Handler	8	static
+HALInit.c:48:6:timerInitialize	24	static
+HALInit.c:72:6:TIM2_IRQHandler	8	static
+HALInit.c:78:6:TIM2_settimer	8	static
+HALInit.c:85:15:TIM2_gettimer	4	static
+HALInit.c:90:6:clockConfiguration	4	static
+HALInit.c:95:6:gpioInitialize	24	static
+HALInit.c:181:6:usartInitialize	32	static
+HALInit.c:215:6:spiInitailize	32	static
+HALInit.c:237:6:FSMCInitialize	16	static
+HALInit.c:316:6:FSMCLowSpeed	96	static
+HALInit.c:353:6:FSMCHighSpeed	96	static

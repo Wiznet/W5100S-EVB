@@ -1,0 +1,713 @@
+15:53:18 **** Rebuild of configuration Debug for project loopback ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c ..\src\HALInit.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32F10X_HD -DSTM32F103VC -DUSE_STDPERIPH_DRIVER -I../src -I../Libraries/STM32F10x_StdPeriph_Driver/inc -I../Libraries/CMSIS/Device/ST/STM32F10x/Include -I../Libraries/CMSIS/Include -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver\Ethernet -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -o src\HALInit.o 
+..\src\HALInit.c: In function 'gpioInitialize':
+..\src\HALInit.c:100:21: warning: unused variable 'NVIC_InitStructure' [-Wunused-variable]
+  NVIC_InitTypeDef   NVIC_InitStructure;
+                     ^~~~~~~~~~~~~~~~~~
+..\src\HALInit.c:99:21: warning: unused variable 'EXTI_InitStructure' [-Wunused-variable]
+  EXTI_InitTypeDef   EXTI_InitStructure;
+                     ^~~~~~~~~~~~~~~~~~
+arm-atollic-eabi-gcc -c ..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_crc.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32F10X_HD -DSTM32F103VC -DUSE_STDPERIPH_DRIVER -I../src -I../Libraries/STM32F10x_StdPeriph_Driver/inc -I../Libraries/CMSIS/Device/ST/STM32F10x/Include -I../Libraries/CMSIS/Include -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver\Ethernet -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -o Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_crc.o 
+arm-atollic-eabi-gcc -c ..\Libraries\ioLibrary_Driver\Ethernet\socket.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32F10X_HD -DSTM32F103VC -DUSE_STDPERIPH_DRIVER -I../src -I../Libraries/STM32F10x_StdPeriph_Driver/inc -I../Libraries/CMSIS/Device/ST/STM32F10x/Include -I../Libraries/CMSIS/Include -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver\Ethernet -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -o Libraries\ioLibrary_Driver\Ethernet\socket.o 
+..\Libraries\ioLibrary_Driver\Ethernet\socket.c: In function 'sendto':
+..\Libraries\ioLibrary_Driver\Ethernet\socket.c:520:36: warning: suggest parentheses around comparison in operand of '&' [-Wparentheses]
+    if((taddr == 0) && (getSn_MR(sn)&Sn_MR_MACRAW != Sn_MR_MACRAW)) return SOCKERR_IPINVALID;
+                                    ^
+..\Libraries\ioLibrary_Driver\Ethernet\socket.c:521:36: warning: suggest parentheses around comparison in operand of '&' [-Wparentheses]
+    if((port  == 0) && (getSn_MR(sn)&Sn_MR_MACRAW != Sn_MR_MACRAW)) return SOCKERR_PORTZERO;
+                                    ^
+arm-atollic-eabi-gcc -c ..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_adc.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32F10X_HD -DSTM32F103VC -DUSE_STDPERIPH_DRIVER -I../src -I../Libraries/STM32F10x_StdPeriph_Driver/inc -I../Libraries/CMSIS/Device/ST/STM32F10x/Include -I../Libraries/CMSIS/Include -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver\Ethernet -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -o Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_adc.o 
+arm-atollic-eabi-gcc -c ..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_iwdg.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32F10X_HD -DSTM32F103VC -DUSE_STDPERIPH_DRIVER -I../src -I../Libraries/STM32F10x_StdPeriph_Driver/inc -I../Libraries/CMSIS/Device/ST/STM32F10x/Include -I../Libraries/CMSIS/Include -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver\Ethernet -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -o Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_iwdg.o 
+arm-atollic-eabi-gcc -c ..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_pwr.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32F10X_HD -DSTM32F103VC -DUSE_STDPERIPH_DRIVER -I../src -I../Libraries/STM32F10x_StdPeriph_Driver/inc -I../Libraries/CMSIS/Device/ST/STM32F10x/Include -I../Libraries/CMSIS/Include -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver\Ethernet -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -o Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_pwr.o 
+arm-atollic-eabi-gcc -c ..\Libraries\ioLibrary_Driver\Internet\MQTT\mqtt_interface.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32F10X_HD -DSTM32F103VC -DUSE_STDPERIPH_DRIVER -I../src -I../Libraries/STM32F10x_StdPeriph_Driver/inc -I../Libraries/CMSIS/Device/ST/STM32F10x/Include -I../Libraries/CMSIS/Include -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver\Ethernet -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -o Libraries\ioLibrary_Driver\Internet\MQTT\mqtt_interface.o 
+..\Libraries\ioLibrary_Driver\Internet\MQTT\mqtt_interface.c: In function 'NewNetwork':
+..\Libraries\ioLibrary_Driver\Internet\MQTT\mqtt_interface.c:114:14: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+  n->mqttread = w5x00_read;
+              ^
+..\Libraries\ioLibrary_Driver\Internet\MQTT\mqtt_interface.c:115:15: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+  n->mqttwrite = w5x00_write;
+               ^
+..\Libraries\ioLibrary_Driver\Internet\MQTT\mqtt_interface.c: In function 'w5x00_read':
+..\Libraries\ioLibrary_Driver\Internet\MQTT\mqtt_interface.c:130:10: warning: implicit declaration of function 'recv' [-Wimplicit-function-declaration]
+   return recv(n->my_socket, buffer, len);
+          ^~~~
+..\Libraries\ioLibrary_Driver\Internet\MQTT\mqtt_interface.c: In function 'w5x00_write':
+..\Libraries\ioLibrary_Driver\Internet\MQTT\mqtt_interface.c:143:10: warning: implicit declaration of function 'send' [-Wimplicit-function-declaration]
+   return send(n->my_socket, buffer, len);
+          ^~~~
+..\Libraries\ioLibrary_Driver\Internet\MQTT\mqtt_interface.c: In function 'w5x00_disconnect':
+..\Libraries\ioLibrary_Driver\Internet\MQTT\mqtt_interface.c:153:2: warning: implicit declaration of function 'disconnect' [-Wimplicit-function-declaration]
+  disconnect(n->my_socket);
+  ^~~~~~~~~~
+..\Libraries\ioLibrary_Driver\Internet\MQTT\mqtt_interface.c: In function 'ConnectNetwork':
+..\Libraries\ioLibrary_Driver\Internet\MQTT\mqtt_interface.c:165:19: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+  uint8_t myport = 12345;
+                   ^~~~~
+..\Libraries\ioLibrary_Driver\Internet\MQTT\mqtt_interface.c:167:2: warning: implicit declaration of function 'socket' [-Wimplicit-function-declaration]
+  socket(n->my_socket,Sn_MR_TCP,myport,0);
+  ^~~~~~
+..\Libraries\ioLibrary_Driver\Internet\MQTT\mqtt_interface.c:168:2: warning: implicit declaration of function 'connect' [-Wimplicit-function-declaration]
+  connect(n->my_socket,ip,port);
+  ^~~~~~~
+..\Libraries\ioLibrary_Driver\Internet\MQTT\mqtt_interface.c: In function 'w5x00_read':
+..\Libraries\ioLibrary_Driver\Internet\MQTT\mqtt_interface.c:131:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+..\Libraries\ioLibrary_Driver\Internet\MQTT\mqtt_interface.c: In function 'w5x00_write':
+..\Libraries\ioLibrary_Driver\Internet\MQTT\mqtt_interface.c:144:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+..\Libraries\ioLibrary_Driver\Internet\MQTT\mqtt_interface.c: In function 'ConnectNetwork':
+..\Libraries\ioLibrary_Driver\Internet\MQTT\mqtt_interface.c:169:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+arm-atollic-eabi-gcc -c ..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_dac.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32F10X_HD -DSTM32F103VC -DUSE_STDPERIPH_DRIVER -I../src -I../Libraries/STM32F10x_StdPeriph_Driver/inc -I../Libraries/CMSIS/Device/ST/STM32F10x/Include -I../Libraries/CMSIS/Include -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver\Ethernet -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -o Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_dac.o 
+arm-atollic-eabi-gcc -c ..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_wwdg.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32F10X_HD -DSTM32F103VC -DUSE_STDPERIPH_DRIVER -I../src -I../Libraries/STM32F10x_StdPeriph_Driver/inc -I../Libraries/CMSIS/Device/ST/STM32F10x/Include -I../Libraries/CMSIS/Include -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver\Ethernet -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -o Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_wwdg.o 
+arm-atollic-eabi-gcc -c ..\Libraries\ioLibrary_Driver\Ethernet\W5100\w5100.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32F10X_HD -DSTM32F103VC -DUSE_STDPERIPH_DRIVER -I../src -I../Libraries/STM32F10x_StdPeriph_Driver/inc -I../Libraries/CMSIS/Device/ST/STM32F10x/Include -I../Libraries/CMSIS/Include -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver\Ethernet -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -o Libraries\ioLibrary_Driver\Ethernet\W5100\w5100.o 
+arm-atollic-eabi-gcc -c ..\Libraries\ioLibrary_Driver\Internet\SNTP\sntp.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32F10X_HD -DSTM32F103VC -DUSE_STDPERIPH_DRIVER -I../src -I../Libraries/STM32F10x_StdPeriph_Driver/inc -I../Libraries/CMSIS/Device/ST/STM32F10x/Include -I../Libraries/CMSIS/Include -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver\Ethernet -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -o Libraries\ioLibrary_Driver\Internet\SNTP\sntp.o 
+arm-atollic-eabi-gcc -c ..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_gpio.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32F10X_HD -DSTM32F103VC -DUSE_STDPERIPH_DRIVER -I../src -I../Libraries/STM32F10x_StdPeriph_Driver/inc -I../Libraries/CMSIS/Device/ST/STM32F10x/Include -I../Libraries/CMSIS/Include -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver\Ethernet -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -o Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_gpio.o 
+arm-atollic-eabi-gcc -c ..\Libraries\ioLibrary_Driver\Internet\MQTT\MQTTPacket\src\MQTTConnectServer.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32F10X_HD -DSTM32F103VC -DUSE_STDPERIPH_DRIVER -I../src -I../Libraries/STM32F10x_StdPeriph_Driver/inc -I../Libraries/CMSIS/Device/ST/STM32F10x/Include -I../Libraries/CMSIS/Include -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver\Ethernet -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -o Libraries\ioLibrary_Driver\Internet\MQTT\MQTTPacket\src\MQTTConnectServer.o 
+arm-atollic-eabi-gcc -c -mthumb -mcpu=cortex-m3 -DSTM32F10X_HD -DSTM32F103VC -DUSE_STDPERIPH_DRIVER -I../src -I../Libraries/STM32F10x_StdPeriph_Driver/inc -I../Libraries/CMSIS/Device/ST/STM32F10x/Include -I../Libraries/CMSIS/Include -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver\Ethernet -g -Wa,--warn -x assembler-with-cpp -o src\startup_stm32f10x_hd.o ..\src\startup_stm32f10x_hd.s 
+arm-atollic-eabi-gcc -c ..\Libraries\ioLibrary_Driver\Internet\TFTP\netutil.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32F10X_HD -DSTM32F103VC -DUSE_STDPERIPH_DRIVER -I../src -I../Libraries/STM32F10x_StdPeriph_Driver/inc -I../Libraries/CMSIS/Device/ST/STM32F10x/Include -I../Libraries/CMSIS/Include -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver\Ethernet -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -o Libraries\ioLibrary_Driver\Internet\TFTP\netutil.o 
+..\Libraries\ioLibrary_Driver\Internet\TFTP\netutil.c: In function 'inet_ntoa':
+..\Libraries\ioLibrary_Driver\Internet\TFTP\netutil.c:16:28: warning: format '%d' expects argument of type 'int', but argument 3 has type 'long int' [-Wformat=]
+  sprintf((char*)addr_str,"%d.%d.%d.%d",(int32_t)(addr>>24 & 0xFF),(int32_t)(addr>>16 & 0xFF),(int32_t)(addr>>8 & 0xFF),(int32_t)(addr & 0xFF));
+                            ^
+..\Libraries\ioLibrary_Driver\Internet\TFTP\netutil.c:16:31: warning: format '%d' expects argument of type 'int', but argument 4 has type 'long int' [-Wformat=]
+  sprintf((char*)addr_str,"%d.%d.%d.%d",(int32_t)(addr>>24 & 0xFF),(int32_t)(addr>>16 & 0xFF),(int32_t)(addr>>8 & 0xFF),(int32_t)(addr & 0xFF));
+                               ^
+..\Libraries\ioLibrary_Driver\Internet\TFTP\netutil.c:16:34: warning: format '%d' expects argument of type 'int', but argument 5 has type 'long int' [-Wformat=]
+  sprintf((char*)addr_str,"%d.%d.%d.%d",(int32_t)(addr>>24 & 0xFF),(int32_t)(addr>>16 & 0xFF),(int32_t)(addr>>8 & 0xFF),(int32_t)(addr & 0xFF));
+                                  ^
+..\Libraries\ioLibrary_Driver\Internet\TFTP\netutil.c:16:37: warning: format '%d' expects argument of type 'int', but argument 6 has type 'long int' [-Wformat=]
+  sprintf((char*)addr_str,"%d.%d.%d.%d",(int32_t)(addr>>24 & 0xFF),(int32_t)(addr>>16 & 0xFF),(int32_t)(addr>>8 & 0xFF),(int32_t)(addr & 0xFF));
+                                     ^
+..\Libraries\ioLibrary_Driver\Internet\TFTP\netutil.c: In function 'inet_ntoa_pad':
+..\Libraries\ioLibrary_Driver\Internet\TFTP\netutil.c:31:30: warning: format '%d' expects argument of type 'int', but argument 3 has type 'long int' [-Wformat=]
+  sprintf((char*)addr_str,"%03d.%03d.%03d.%03d",(int32_t)(addr>>24 & 0xFF),(int32_t)(addr>>16 & 0xFF),(int32_t)(addr>>8 & 0xFF),(int32_t)(addr & 0xFF));
+                              ^
+..\Libraries\ioLibrary_Driver\Internet\TFTP\netutil.c:31:35: warning: format '%d' expects argument of type 'int', but argument 4 has type 'long int' [-Wformat=]
+  sprintf((char*)addr_str,"%03d.%03d.%03d.%03d",(int32_t)(addr>>24 & 0xFF),(int32_t)(addr>>16 & 0xFF),(int32_t)(addr>>8 & 0xFF),(int32_t)(addr & 0xFF));
+                                   ^
+..\Libraries\ioLibrary_Driver\Internet\TFTP\netutil.c:31:40: warning: format '%d' expects argument of type 'int', but argument 5 has type 'long int' [-Wformat=]
+  sprintf((char*)addr_str,"%03d.%03d.%03d.%03d",(int32_t)(addr>>24 & 0xFF),(int32_t)(addr>>16 & 0xFF),(int32_t)(addr>>8 & 0xFF),(int32_t)(addr & 0xFF));
+                                        ^
+..\Libraries\ioLibrary_Driver\Internet\TFTP\netutil.c:31:45: warning: format '%d' expects argument of type 'int', but argument 6 has type 'long int' [-Wformat=]
+  sprintf((char*)addr_str,"%03d.%03d.%03d.%03d",(int32_t)(addr>>24 & 0xFF),(int32_t)(addr>>16 & 0xFF),(int32_t)(addr>>8 & 0xFF),(int32_t)(addr & 0xFF));
+                                             ^
+arm-atollic-eabi-gcc -c ..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_cec.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32F10X_HD -DSTM32F103VC -DUSE_STDPERIPH_DRIVER -I../src -I../Libraries/STM32F10x_StdPeriph_Driver/inc -I../Libraries/CMSIS/Device/ST/STM32F10x/Include -I../Libraries/CMSIS/Include -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver\Ethernet -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -o Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_cec.o 
+arm-atollic-eabi-gcc -c ..\Libraries\STM32F10x_StdPeriph_Driver\src\misc.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32F10X_HD -DSTM32F103VC -DUSE_STDPERIPH_DRIVER -I../src -I../Libraries/STM32F10x_StdPeriph_Driver/inc -I../Libraries/CMSIS/Device/ST/STM32F10x/Include -I../Libraries/CMSIS/Include -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver\Ethernet -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -o Libraries\STM32F10x_StdPeriph_Driver\src\misc.o 
+arm-atollic-eabi-gcc -c ..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_i2c.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32F10X_HD -DSTM32F103VC -DUSE_STDPERIPH_DRIVER -I../src -I../Libraries/STM32F10x_StdPeriph_Driver/inc -I../Libraries/CMSIS/Device/ST/STM32F10x/Include -I../Libraries/CMSIS/Include -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver\Ethernet -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -o Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_i2c.o 
+arm-atollic-eabi-gcc -c ..\Libraries\ioLibrary_Driver\Internet\FTPServer\ftpd.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32F10X_HD -DSTM32F103VC -DUSE_STDPERIPH_DRIVER -I../src -I../Libraries/STM32F10x_StdPeriph_Driver/inc -I../Libraries/CMSIS/Device/ST/STM32F10x/Include -I../Libraries/CMSIS/Include -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver\Ethernet -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -o Libraries\ioLibrary_Driver\Internet\FTPServer\ftpd.o 
+In file included from ..\Libraries\ioLibrary_Driver\Internet\FTPServer\ftpd.c:18:0:
+..\Libraries\ioLibrary_Driver\Internet\FTPServer\stdio_private.h:39:0: warning: "__SRD" redefined
+ #define __SRD 0x0001  /* OK to read */
+ 
+In file included from ..\Libraries\ioLibrary_Driver\Internet\FTPServer\ftpd.c:13:0:
+c:\program files (x86)\atollic\truestudio for stm32 9.0.0\armtools\arm-atollic-eabi\include\stdio.h:83:0: note: this is the location of the previous definition
+ #define __SRD 0x0004  /* OK to read */
+ 
+In file included from ..\Libraries\ioLibrary_Driver\Internet\FTPServer\ftpd.c:18:0:
+..\Libraries\ioLibrary_Driver\Internet\FTPServer\stdio_private.h:40:0: warning: "__SWR" redefined
+ #define __SWR 0x0002  /* OK to write */
+ 
+In file included from ..\Libraries\ioLibrary_Driver\Internet\FTPServer\ftpd.c:13:0:
+c:\program files (x86)\atollic\truestudio for stm32 9.0.0\armtools\arm-atollic-eabi\include\stdio.h:84:0: note: this is the location of the previous definition
+ #define __SWR 0x0008  /* OK to write */
+ 
+In file included from ..\Libraries\ioLibrary_Driver\Internet\FTPServer\ftpd.c:18:0:
+..\Libraries\ioLibrary_Driver\Internet\FTPServer\stdio_private.h:41:0: warning: "__SSTR" redefined
+ #define __SSTR 0x0004  /* this is an sprintf/snprintf string */
+ 
+In file included from ..\Libraries\ioLibrary_Driver\Internet\FTPServer\ftpd.c:13:0:
+c:\program files (x86)\atollic\truestudio for stm32 9.0.0\armtools\arm-atollic-eabi\include\stdio.h:91:0: note: this is the location of the previous definition
+ #define __SSTR 0x0200  /* this is an sprintf/snprintf string */
+ 
+In file included from ..\Libraries\ioLibrary_Driver\Internet\FTPServer\ftpd.c:18:0:
+..\Libraries\ioLibrary_Driver\Internet\FTPServer\stdio_private.h:43:0: warning: "__SERR" redefined
+ #define __SERR 0x0010  /* found error */
+ 
+In file included from ..\Libraries\ioLibrary_Driver\Internet\FTPServer\ftpd.c:13:0:
+c:\program files (x86)\atollic\truestudio for stm32 9.0.0\armtools\arm-atollic-eabi\include\stdio.h:88:0: note: this is the location of the previous definition
+ #define __SERR 0x0040  /* found error */
+ 
+..\Libraries\ioLibrary_Driver\Internet\FTPServer\ftpd.c: In function 'ftpd_run':
+..\Libraries\ioLibrary_Driver\Internet\FTPServer\ftpd.c:292:25: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+          size = sprintf(dbuf, "drwxr-xr-x 1 ftp ftp 0 Dec 31 2014 $Recycle.Bin\r\n-rwxr-xr-x 1 ftp ftp 512 Dec 31 2014 test.txt\r\n");
+                         ^~~~
+In file included from c:\program files (x86)\atollic\truestudio for stm32 9.0.0\armtools\arm-atollic-eabi\include\stdio.h:29:0,
+                 from ..\Libraries\ioLibrary_Driver\Internet\FTPServer\ftpd.c:13:
+c:\program files (x86)\atollic\truestudio for stm32 9.0.0\armtools\arm-atollic-eabi\include\stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+..\Libraries\ioLibrary_Driver\Internet\FTPServer\ftpd.c:294:23: warning: pointer targets in passing argument 1 of 'strlen' differ in signedness [-Wpointer-sign]
+         size = strlen(dbuf);
+                       ^~~~
+In file included from c:\program files (x86)\atollic\truestudio for stm32 9.0.0\armtools\arm-atollic-eabi\include\stdio.h:29:0,
+                 from ..\Libraries\ioLibrary_Driver\Internet\FTPServer\ftpd.c:13:
+c:\program files (x86)\atollic\truestudio for stm32 9.0.0\armtools\arm-atollic-eabi\include\string.h:37:9: note: expected 'const char *' but argument is of type 'uint8_t * {aka unsigned char *}'
+ size_t  _EXFUN(strlen,(const char *));
+         ^
+..\Libraries\ioLibrary_Driver\Internet\FTPServer\ftpd.c:298:24: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+         size = sprintf(dbuf, "226 Successfully transferred \"%s\"\r\n", ftp.workingdir);
+                        ^~~~
+In file included from c:\program files (x86)\atollic\truestudio for stm32 9.0.0\armtools\arm-atollic-eabi\include\stdio.h:29:0,
+                 from ..\Libraries\ioLibrary_Driver\Internet\FTPServer\ftpd.c:13:
+c:\program files (x86)\atollic\truestudio for stm32 9.0.0\armtools\arm-atollic-eabi\include\stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+..\Libraries\ioLibrary_Driver\Internet\FTPServer\ftpd.c:351:26: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+       blocklen = sprintf(dbuf, "%s", ftp.filename);
+                          ^~~~
+In file included from c:\program files (x86)\atollic\truestudio for stm32 9.0.0\armtools\arm-atollic-eabi\include\stdio.h:29:0,
+                 from ..\Libraries\ioLibrary_Driver\Internet\FTPServer\ftpd.c:13:
+c:\program files (x86)\atollic\truestudio for stm32 9.0.0\armtools\arm-atollic-eabi\include\stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+..\Libraries\ioLibrary_Driver\Internet\FTPServer\ftpd.c:362:24: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+         size = sprintf(dbuf, "226 Successfully transferred \"%s\"\r\n", ftp.filename);
+                        ^~~~
+In file included from c:\program files (x86)\atollic\truestudio for stm32 9.0.0\armtools\arm-atollic-eabi\include\stdio.h:29:0,
+                 from ..\Libraries\ioLibrary_Driver\Internet\FTPServer\ftpd.c:13:
+c:\program files (x86)\atollic\truestudio for stm32 9.0.0\armtools\arm-atollic-eabi\include\stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+..\Libraries\ioLibrary_Driver\Internet\FTPServer\ftpd.c:465:24: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+         size = sprintf(dbuf, "226 Successfully transferred \"%s\"\r\n", ftp.filename);
+                        ^~~~
+In file included from c:\program files (x86)\atollic\truestudio for stm32 9.0.0\armtools\arm-atollic-eabi\include\stdio.h:29:0,
+                 from ..\Libraries\ioLibrary_Driver\Internet\FTPServer\ftpd.c:13:
+c:\program files (x86)\atollic\truestudio for stm32 9.0.0\armtools\arm-atollic-eabi\include\stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+..\Libraries\ioLibrary_Driver\Internet\FTPServer\ftpd.c:150:21: warning: unused variable 'send_byte' [-Wunused-variable]
+  uint32_t blocklen, send_byte, recv_byte;
+                     ^~~~~~~~~
+..\Libraries\ioLibrary_Driver\Internet\FTPServer\ftpd.c:148:21: warning: unused variable 'i' [-Wunused-variable]
+  uint16_t size = 0, i;
+                     ^
+..\Libraries\ioLibrary_Driver\Internet\FTPServer\ftpd.c: In function 'pport':
+..\Libraries\ioLibrary_Driver\Internet\FTPServer\ftpd.c:933:32: warning: implicit declaration of function 'atoi' [-Wimplicit-function-declaration]
+   remote_ip.cVal[i] = (uint8_t)atoi(tok, 10);
+                                ^~~~
+..\Libraries\ioLibrary_Driver\Internet\FTPServer\ftpd.c: In function 'fsprintf':
+..\Libraries\ioLibrary_Driver\Internet\FTPServer\ftpd.c:126:9: warning: 'i' is used uninitialized in this function [-Wuninitialized]
+  return i;
+         ^
+arm-atollic-eabi-gcc -c ..\Libraries\ioLibrary_Driver\Internet\MQTT\MQTTPacket\src\MQTTPacket.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32F10X_HD -DSTM32F103VC -DUSE_STDPERIPH_DRIVER -I../src -I../Libraries/STM32F10x_StdPeriph_Driver/inc -I../Libraries/CMSIS/Device/ST/STM32F10x/Include -I../Libraries/CMSIS/Include -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver\Ethernet -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -o Libraries\ioLibrary_Driver\Internet\MQTT\MQTTPacket\src\MQTTPacket.o 
+arm-atollic-eabi-gcc -c ..\Libraries\ioLibrary_Driver\Internet\MQTT\MQTTPacket\src\MQTTFormat.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32F10X_HD -DSTM32F103VC -DUSE_STDPERIPH_DRIVER -I../src -I../Libraries/STM32F10x_StdPeriph_Driver/inc -I../Libraries/CMSIS/Device/ST/STM32F10x/Include -I../Libraries/CMSIS/Include -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver\Ethernet -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -o Libraries\ioLibrary_Driver\Internet\MQTT\MQTTPacket\src\MQTTFormat.o 
+..\Libraries\ioLibrary_Driver\Internet\MQTT\MQTTPacket\src\MQTTFormat.c: In function 'MQTTFormat_toClientString':
+..\Libraries\ioLibrary_Driver\Internet\MQTT\MQTTPacket\src\MQTTFormat.c:122:6: warning: variable 'strindex' set but not used [-Wunused-but-set-variable]
+  int strindex = 0;
+      ^~~~~~~~
+..\Libraries\ioLibrary_Driver\Internet\MQTT\MQTTPacket\src\MQTTFormat.c: In function 'MQTTFormat_toServerString':
+..\Libraries\ioLibrary_Driver\Internet\MQTT\MQTTPacket\src\MQTTFormat.c:190:6: warning: variable 'strindex' set but not used [-Wunused-but-set-variable]
+  int strindex = 0;
+      ^~~~~~~~
+arm-atollic-eabi-gcc -c ..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_dma.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32F10X_HD -DSTM32F103VC -DUSE_STDPERIPH_DRIVER -I../src -I../Libraries/STM32F10x_StdPeriph_Driver/inc -I../Libraries/CMSIS/Device/ST/STM32F10x/Include -I../Libraries/CMSIS/Include -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver\Ethernet -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -o Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_dma.o 
+arm-atollic-eabi-gcc -c ..\Libraries\ioLibrary_Driver\Internet\FTPClient\ftpc.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32F10X_HD -DSTM32F103VC -DUSE_STDPERIPH_DRIVER -I../src -I../Libraries/STM32F10x_StdPeriph_Driver/inc -I../Libraries/CMSIS/Device/ST/STM32F10x/Include -I../Libraries/CMSIS/Include -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver\Ethernet -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -o Libraries\ioLibrary_Driver\Internet\FTPClient\ftpc.o 
+In file included from ..\Libraries\ioLibrary_Driver\Internet\FTPClient\ftpc.h:10:0,
+                 from ..\Libraries\ioLibrary_Driver\Internet\FTPClient\ftpc.c:1:
+..\Libraries\ioLibrary_Driver\Internet\FTPClient\stdio_private.h:39:0: warning: "__SRD" redefined
+ #define __SRD 0x0001  /* OK to read */
+ 
+In file included from ..\Libraries\ioLibrary_Driver\Internet\FTPClient\ftpc.h:5:0,
+                 from ..\Libraries\ioLibrary_Driver\Internet\FTPClient\ftpc.c:1:
+c:\program files (x86)\atollic\truestudio for stm32 9.0.0\armtools\arm-atollic-eabi\include\stdio.h:83:0: note: this is the location of the previous definition
+ #define __SRD 0x0004  /* OK to read */
+ 
+In file included from ..\Libraries\ioLibrary_Driver\Internet\FTPClient\ftpc.h:10:0,
+                 from ..\Libraries\ioLibrary_Driver\Internet\FTPClient\ftpc.c:1:
+..\Libraries\ioLibrary_Driver\Internet\FTPClient\stdio_private.h:40:0: warning: "__SWR" redefined
+ #define __SWR 0x0002  /* OK to write */
+ 
+In file included from ..\Libraries\ioLibrary_Driver\Internet\FTPClient\ftpc.h:5:0,
+                 from ..\Libraries\ioLibrary_Driver\Internet\FTPClient\ftpc.c:1:
+c:\program files (x86)\atollic\truestudio for stm32 9.0.0\armtools\arm-atollic-eabi\include\stdio.h:84:0: note: this is the location of the previous definition
+ #define __SWR 0x0008  /* OK to write */
+ 
+In file included from ..\Libraries\ioLibrary_Driver\Internet\FTPClient\ftpc.h:10:0,
+                 from ..\Libraries\ioLibrary_Driver\Internet\FTPClient\ftpc.c:1:
+..\Libraries\ioLibrary_Driver\Internet\FTPClient\stdio_private.h:41:0: warning: "__SSTR" redefined
+ #define __SSTR 0x0004  /* this is an sprintf/snprintf string */
+ 
+In file included from ..\Libraries\ioLibrary_Driver\Internet\FTPClient\ftpc.h:5:0,
+                 from ..\Libraries\ioLibrary_Driver\Internet\FTPClient\ftpc.c:1:
+c:\program files (x86)\atollic\truestudio for stm32 9.0.0\armtools\arm-atollic-eabi\include\stdio.h:91:0: note: this is the location of the previous definition
+ #define __SSTR 0x0200  /* this is an sprintf/snprintf string */
+ 
+In file included from ..\Libraries\ioLibrary_Driver\Internet\FTPClient\ftpc.h:10:0,
+                 from ..\Libraries\ioLibrary_Driver\Internet\FTPClient\ftpc.c:1:
+..\Libraries\ioLibrary_Driver\Internet\FTPClient\stdio_private.h:43:0: warning: "__SERR" redefined
+ #define __SERR 0x0010  /* found error */
+ 
+In file included from ..\Libraries\ioLibrary_Driver\Internet\FTPClient\ftpc.h:5:0,
+                 from ..\Libraries\ioLibrary_Driver\Internet\FTPClient\ftpc.c:1:
+c:\program files (x86)\atollic\truestudio for stm32 9.0.0\armtools\arm-atollic-eabi\include\stdio.h:88:0: note: this is the location of the previous definition
+ #define __SERR 0x0040  /* found error */
+ 
+In file included from ..\Libraries\ioLibrary_Driver\Internet\FTPClient\ftpc.c:1:0:
+..\Libraries\ioLibrary_Driver\Internet\FTPClient\ftpc.h:27:17: warning: extra tokens at end of #ifndef directive
+ #ifndef ftp_getc()
+                 ^
+..\Libraries\ioLibrary_Driver\Internet\FTPClient\ftpc.c: In function 'proc_ftpc':
+..\Libraries\ioLibrary_Driver\Internet\FTPClient\ftpc.c:478:12: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+    sprintf(dat,"USER %s\r\n", User_Keyboard_MSG());
+            ^~~
+In file included from c:\program files (x86)\atollic\truestudio for stm32 9.0.0\armtools\arm-atollic-eabi\include\stdio.h:29:0,
+                 from ..\Libraries\ioLibrary_Driver\Internet\FTPClient\ftpc.h:5,
+                 from ..\Libraries\ioLibrary_Driver\Internet\FTPClient\ftpc.c:1:
+c:\program files (x86)\atollic\truestudio for stm32 9.0.0\armtools\arm-atollic-eabi\include\stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+..\Libraries\ioLibrary_Driver\Internet\FTPClient\ftpc.c:480:43: warning: pointer targets in passing argument 1 of 'strlen' differ in signedness [-Wpointer-sign]
+    send(CTRL_SOCK, (uint8_t *)dat, strlen(dat));
+                                           ^~~
+In file included from c:\program files (x86)\atollic\truestudio for stm32 9.0.0\armtools\arm-atollic-eabi\include\stdio.h:29:0,
+                 from ..\Libraries\ioLibrary_Driver\Internet\FTPClient\ftpc.h:5,
+                 from ..\Libraries\ioLibrary_Driver\Internet\FTPClient\ftpc.c:1:
+c:\program files (x86)\atollic\truestudio for stm32 9.0.0\armtools\arm-atollic-eabi\include\string.h:37:9: note: expected 'const char *' but argument is of type 'uint8_t * {aka unsigned char *}'
+ size_t  _EXFUN(strlen,(const char *));
+         ^
+..\Libraries\ioLibrary_Driver\Internet\FTPClient\ftpc.c:485:12: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+    sprintf(dat,"PASS %s\r\n", User_Keyboard_MSG());
+            ^~~
+In file included from c:\program files (x86)\atollic\truestudio for stm32 9.0.0\armtools\arm-atollic-eabi\include\stdio.h:29:0,
+                 from ..\Libraries\ioLibrary_Driver\Internet\FTPClient\ftpc.h:5,
+                 from ..\Libraries\ioLibrary_Driver\Internet\FTPClient\ftpc.c:1:
+c:\program files (x86)\atollic\truestudio for stm32 9.0.0\armtools\arm-atollic-eabi\include\stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+..\Libraries\ioLibrary_Driver\Internet\FTPClient\ftpc.c:487:43: warning: pointer targets in passing argument 1 of 'strlen' differ in signedness [-Wpointer-sign]
+    send(CTRL_SOCK, (uint8_t *)dat, strlen(dat));
+                                           ^~~
+In file included from c:\program files (x86)\atollic\truestudio for stm32 9.0.0\armtools\arm-atollic-eabi\include\stdio.h:29:0,
+                 from ..\Libraries\ioLibrary_Driver\Internet\FTPClient\ftpc.h:5,
+                 from ..\Libraries\ioLibrary_Driver\Internet\FTPClient\ftpc.c:1:
+c:\program files (x86)\atollic\truestudio for stm32 9.0.0\armtools\arm-atollic-eabi\include\string.h:37:9: note: expected 'const char *' but argument is of type 'uint8_t * {aka unsigned char *}'
+ size_t  _EXFUN(strlen,(const char *));
+         ^
+..\Libraries\ioLibrary_Driver\Internet\FTPClient\ftpc.c:492:12: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+    sprintf(dat,"TYPE %c\r\n", TransferAscii);
+            ^~~
+In file included from c:\program files (x86)\atollic\truestudio for stm32 9.0.0\armtools\arm-atollic-eabi\include\stdio.h:29:0,
+                 from ..\Libraries\ioLibrary_Driver\Internet\FTPClient\ftpc.h:5,
+                 from ..\Libraries\ioLibrary_Driver\Internet\FTPClient\ftpc.c:1:
+c:\program files (x86)\atollic\truestudio for stm32 9.0.0\armtools\arm-atollic-eabi\include\stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+..\Libraries\ioLibrary_Driver\Internet\FTPClient\ftpc.c:494:43: warning: pointer targets in passing argument 1 of 'strlen' differ in signedness [-Wpointer-sign]
+    send(CTRL_SOCK, (uint8_t *)dat, strlen(dat));
+                                           ^~~
+In file included from c:\program files (x86)\atollic\truestudio for stm32 9.0.0\armtools\arm-atollic-eabi\include\stdio.h:29:0,
+                 from ..\Libraries\ioLibrary_Driver\Internet\FTPClient\ftpc.h:5,
+                 from ..\Libraries\ioLibrary_Driver\Internet\FTPClient\ftpc.c:1:
+c:\program files (x86)\atollic\truestudio for stm32 9.0.0\armtools\arm-atollic-eabi\include\string.h:37:9: note: expected 'const char *' but argument is of type 'uint8_t * {aka unsigned char *}'
+ size_t  _EXFUN(strlen,(const char *));
+         ^
+..\Libraries\ioLibrary_Driver\Internet\FTPClient\ftpc.c: In function 'pportc':
+..\Libraries\ioLibrary_Driver\Internet\FTPClient\ftpc.c:556:32: warning: implicit declaration of function 'atoi' [-Wimplicit-function-declaration]
+   remote_ip.cVal[i] = (uint8_t)atoi(tok, 10);
+                                ^~~~
+..\Libraries\ioLibrary_Driver\Internet\FTPClient\ftpc.c: In function 'User_Keyboard_MSG':
+..\Libraries\ioLibrary_Driver\Internet\FTPClient\ftpc.c:579:16: warning: implicit declaration of function 'ftp_getc' [-Wimplicit-function-declaration]
+   gMsgBuf[i] = ftp_getc();
+                ^~~~~~~~
+arm-atollic-eabi-gcc -c ..\src\system_stm32f10x.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32F10X_HD -DSTM32F103VC -DUSE_STDPERIPH_DRIVER -I../src -I../Libraries/STM32F10x_StdPeriph_Driver/inc -I../Libraries/CMSIS/Device/ST/STM32F10x/Include -I../Libraries/CMSIS/Include -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver\Ethernet -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -o src\system_stm32f10x.o 
+arm-atollic-eabi-gcc -c ..\Libraries\ioLibrary_Driver\Internet\MQTT\MQTTPacket\src\MQTTUnsubscribeServer.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32F10X_HD -DSTM32F103VC -DUSE_STDPERIPH_DRIVER -I../src -I../Libraries/STM32F10x_StdPeriph_Driver/inc -I../Libraries/CMSIS/Device/ST/STM32F10x/Include -I../Libraries/CMSIS/Include -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver\Ethernet -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -o Libraries\ioLibrary_Driver\Internet\MQTT\MQTTPacket\src\MQTTUnsubscribeServer.o 
+arm-atollic-eabi-gcc -c ..\Libraries\ioLibrary_Driver\Ethernet\wizchip_conf.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32F10X_HD -DSTM32F103VC -DUSE_STDPERIPH_DRIVER -I../src -I../Libraries/STM32F10x_StdPeriph_Driver/inc -I../Libraries/CMSIS/Device/ST/STM32F10x/Include -I../Libraries/CMSIS/Include -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver\Ethernet -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -o Libraries\ioLibrary_Driver\Ethernet\wizchip_conf.o 
+In file included from ..\Libraries\ioLibrary_Driver\Ethernet\wizchip_conf.c:55:0:
+..\Libraries\ioLibrary_Driver\Ethernet\wizchip_conf.h:105:37: warning: initializer-string for array of chars is too long
+ #define _WIZCHIP_ID_                "W5100S\0"
+                                     ^
+..\Libraries\ioLibrary_Driver\Ethernet\wizchip_conf.c:168:7: note: in expansion of macro '_WIZCHIP_ID_'
+       _WIZCHIP_ID_ ,
+       ^~~~~~~~~~~~
+..\Libraries\ioLibrary_Driver\Ethernet\wizchip_conf.h:105:37: note: (near initialization for 'WIZCHIP.id')
+ #define _WIZCHIP_ID_                "W5100S\0"
+                                     ^
+..\Libraries\ioLibrary_Driver\Ethernet\wizchip_conf.c:168:7: note: in expansion of macro '_WIZCHIP_ID_'
+       _WIZCHIP_ID_ ,
+       ^~~~~~~~~~~~
+..\Libraries\ioLibrary_Driver\Ethernet\wizchip_conf.c:166:7: warning: missing braces around initializer [-Wmissing-braces]
+       {
+       ^
+..\Libraries\ioLibrary_Driver\Ethernet\wizchip_conf.c:166:7: note: (near initialization for 'WIZCHIP')
+..\Libraries\ioLibrary_Driver\Ethernet\wizchip_conf.c: In function 'wizchip_setnetinfo':
+..\Libraries\ioLibrary_Driver\Ethernet\wizchip_conf.c:837:10: warning: unused variable 'k' [-Wunused-variable]
+  int i,j,k;
+          ^
+..\Libraries\ioLibrary_Driver\Ethernet\wizchip_conf.c:837:8: warning: unused variable 'j' [-Wunused-variable]
+  int i,j,k;
+        ^
+..\Libraries\ioLibrary_Driver\Ethernet\wizchip_conf.c:837:6: warning: unused variable 'i' [-Wunused-variable]
+  int i,j,k;
+      ^
+arm-atollic-eabi-gcc -c ..\Libraries\ioLibrary_Driver\Internet\TFTP\tftp.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32F10X_HD -DSTM32F103VC -DUSE_STDPERIPH_DRIVER -I../src -I../Libraries/STM32F10x_StdPeriph_Driver/inc -I../Libraries/CMSIS/Device/ST/STM32F10x/Include -I../Libraries/CMSIS/Include -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver\Ethernet -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -o Libraries\ioLibrary_Driver\Internet\TFTP\tftp.o 
+In file included from ..\Libraries\ioLibrary_Driver\Internet\TFTP\tftp.c:10:0:
+..\Libraries\ioLibrary_Driver\Internet\TFTP\tftp.c: In function 'send_tftp_rrq':
+..\Libraries\ioLibrary_Driver\Internet\TFTP\tftp.h:26:13: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+             printf(format, ##args); \
+             ^
+..\Libraries\ioLibrary_Driver\Internet\TFTP\tftp.c:266:2: note: in expansion of macro 'DBG_PRINT'
+  DBG_PRINT(IPC_DBG, ">> TFTP RRQ : FileName(%s), Mode(%s)\r\n", filename, mode);
+  ^~~~~~~~~
+..\Libraries\ioLibrary_Driver\Internet\TFTP\tftp.h:26:13: warning: incompatible implicit declaration of built-in function 'printf'
+             printf(format, ##args); \
+             ^
+..\Libraries\ioLibrary_Driver\Internet\TFTP\tftp.c:266:2: note: in expansion of macro 'DBG_PRINT'
+  DBG_PRINT(IPC_DBG, ">> TFTP RRQ : FileName(%s), Mode(%s)\r\n", filename, mode);
+  ^~~~~~~~~
+..\Libraries\ioLibrary_Driver\Internet\TFTP\tftp.h:26:13: note: include '<stdio.h>' or provide a declaration of 'printf'
+             printf(format, ##args); \
+             ^
+..\Libraries\ioLibrary_Driver\Internet\TFTP\tftp.c:266:2: note: in expansion of macro 'DBG_PRINT'
+  DBG_PRINT(IPC_DBG, ">> TFTP RRQ : FileName(%s), Mode(%s)\r\n", filename, mode);
+  ^~~~~~~~~
+..\Libraries\ioLibrary_Driver\Internet\TFTP\tftp.c: In function 'send_tftp_ack':
+..\Libraries\ioLibrary_Driver\Internet\TFTP\tftp.h:26:13: warning: incompatible implicit declaration of built-in function 'printf'
+             printf(format, ##args); \
+             ^
+..\Libraries\ioLibrary_Driver\Internet\TFTP\tftp.c:340:2: note: in expansion of macro 'DBG_PRINT'
+  DBG_PRINT(IPC_DBG, ">> TFTP ACK : Block Number(%d)\r\n", block_number);
+  ^~~~~~~~~
+..\Libraries\ioLibrary_Driver\Internet\TFTP\tftp.h:26:13: note: include '<stdio.h>' or provide a declaration of 'printf'
+             printf(format, ##args); \
+             ^
+..\Libraries\ioLibrary_Driver\Internet\TFTP\tftp.c:340:2: note: in expansion of macro 'DBG_PRINT'
+  DBG_PRINT(IPC_DBG, ">> TFTP ACK : Block Number(%d)\r\n", block_number);
+  ^~~~~~~~~
+..\Libraries\ioLibrary_Driver\Internet\TFTP\tftp.c: In function 'recv_tftp_data':
+..\Libraries\ioLibrary_Driver\Internet\TFTP\tftp.h:26:13: warning: incompatible implicit declaration of built-in function 'printf'
+             printf(format, ##args); \
+             ^
+..\Libraries\ioLibrary_Driver\Internet\TFTP\tftp.c:412:2: note: in expansion of macro 'DBG_PRINT'
+  DBG_PRINT(IPC_DBG, "<< TFTP_DATA : opcode(%d), block_num(%d)\r\n", data->opcode, data->block_num);
+  ^~~~~~~~~
+..\Libraries\ioLibrary_Driver\Internet\TFTP\tftp.h:26:13: note: include '<stdio.h>' or provide a declaration of 'printf'
+             printf(format, ##args); \
+             ^
+..\Libraries\ioLibrary_Driver\Internet\TFTP\tftp.c:412:2: note: in expansion of macro 'DBG_PRINT'
+  DBG_PRINT(IPC_DBG, "<< TFTP_DATA : opcode(%d), block_num(%d)\r\n", data->opcode, data->block_num);
+  ^~~~~~~~~
+..\Libraries\ioLibrary_Driver\Internet\TFTP\tftp.c: In function 'recv_tftp_ack':
+..\Libraries\ioLibrary_Driver\Internet\TFTP\tftp.h:26:13: warning: incompatible implicit declaration of built-in function 'printf'
+             printf(format, ##args); \
+             ^
+..\Libraries\ioLibrary_Driver\Internet\TFTP\tftp.c:462:2: note: in expansion of macro 'DBG_PRINT'
+  DBG_PRINT(IPC_DBG, "<< TFTP_ACK : \r\n");
+  ^~~~~~~~~
+..\Libraries\ioLibrary_Driver\Internet\TFTP\tftp.h:26:13: note: include '<stdio.h>' or provide a declaration of 'printf'
+             printf(format, ##args); \
+             ^
+..\Libraries\ioLibrary_Driver\Internet\TFTP\tftp.c:462:2: note: in expansion of macro 'DBG_PRINT'
+  DBG_PRINT(IPC_DBG, "<< TFTP_ACK : \r\n");
+  ^~~~~~~~~
+..\Libraries\ioLibrary_Driver\Internet\TFTP\tftp.c: In function 'recv_tftp_oack':
+..\Libraries\ioLibrary_Driver\Internet\TFTP\tftp.h:26:13: warning: incompatible implicit declaration of built-in function 'printf'
+             printf(format, ##args); \
+             ^
+..\Libraries\ioLibrary_Driver\Internet\TFTP\tftp.c:482:2: note: in expansion of macro 'DBG_PRINT'
+  DBG_PRINT(IPC_DBG, "<< TFTP_OACK : \r\n");
+  ^~~~~~~~~
+..\Libraries\ioLibrary_Driver\Internet\TFTP\tftp.h:26:13: note: include '<stdio.h>' or provide a declaration of 'printf'
+             printf(format, ##args); \
+             ^
+..\Libraries\ioLibrary_Driver\Internet\TFTP\tftp.c:482:2: note: in expansion of macro 'DBG_PRINT'
+  DBG_PRINT(IPC_DBG, "<< TFTP_OACK : \r\n");
+  ^~~~~~~~~
+..\Libraries\ioLibrary_Driver\Internet\TFTP\tftp.c: In function 'recv_tftp_error':
+..\Libraries\ioLibrary_Driver\Internet\TFTP\tftp.h:26:13: warning: incompatible implicit declaration of built-in function 'printf'
+             printf(format, ##args); \
+             ^
+..\Libraries\ioLibrary_Driver\Internet\TFTP\tftp.c:517:2: note: in expansion of macro 'DBG_PRINT'
+  DBG_PRINT(IPC_DBG, "<< TFTP_ERROR : %d (%s)\r\n", data->error_code, data->error_msg);
+  ^~~~~~~~~
+..\Libraries\ioLibrary_Driver\Internet\TFTP\tftp.h:26:13: note: include '<stdio.h>' or provide a declaration of 'printf'
+             printf(format, ##args); \
+             ^
+..\Libraries\ioLibrary_Driver\Internet\TFTP\tftp.c:517:2: note: in expansion of macro 'DBG_PRINT'
+  DBG_PRINT(IPC_DBG, "<< TFTP_ERROR : %d (%s)\r\n", data->error_code, data->error_msg);
+  ^~~~~~~~~
+..\Libraries\ioLibrary_Driver\Internet\TFTP\tftp.h:26:13: warning: incompatible implicit declaration of built-in function 'printf'
+             printf(format, ##args); \
+             ^
+..\Libraries\ioLibrary_Driver\Internet\TFTP\tftp.c:518:2: note: in expansion of macro 'DBG_PRINT'
+  DBG_PRINT(ERROR_DBG, "[%s] Error Code : %d (%s)\r\n", __func__, data->error_code, data->error_msg);
+  ^~~~~~~~~
+..\Libraries\ioLibrary_Driver\Internet\TFTP\tftp.h:26:13: note: include '<stdio.h>' or provide a declaration of 'printf'
+             printf(format, ##args); \
+             ^
+..\Libraries\ioLibrary_Driver\Internet\TFTP\tftp.c:518:2: note: in expansion of macro 'DBG_PRINT'
+  DBG_PRINT(ERROR_DBG, "[%s] Error Code : %d (%s)\r\n", __func__, data->error_code, data->error_msg);
+  ^~~~~~~~~
+..\Libraries\ioLibrary_Driver\Internet\TFTP\tftp.c: In function 'recv_tftp_packet':
+..\Libraries\ioLibrary_Driver\Internet\TFTP\tftp.h:26:13: warning: incompatible implicit declaration of built-in function 'printf'
+             printf(format, ##args); \
+             ^
+..\Libraries\ioLibrary_Driver\Internet\TFTP\tftp.c:531:3: note: in expansion of macro 'DBG_PRINT'
+   DBG_PRINT(ERROR_DBG, "[%s] Server IP faults\r\n", __func__);
+   ^~~~~~~~~
+..\Libraries\ioLibrary_Driver\Internet\TFTP\tftp.h:26:13: note: include '<stdio.h>' or provide a declaration of 'printf'
+             printf(format, ##args); \
+             ^
+..\Libraries\ioLibrary_Driver\Internet\TFTP\tftp.c:531:3: note: in expansion of macro 'DBG_PRINT'
+   DBG_PRINT(ERROR_DBG, "[%s] Server IP faults\r\n", __func__);
+   ^~~~~~~~~
+..\Libraries\ioLibrary_Driver\Internet\TFTP\tftp.h:26:13: warning: incompatible implicit declaration of built-in function 'printf'
+             printf(format, ##args); \
+             ^
+..\Libraries\ioLibrary_Driver\Internet\TFTP\tftp.c:532:3: note: in expansion of macro 'DBG_PRINT'
+   DBG_PRINT(ERROR_DBG, "from IP : %08x, Server IP : %08x\r\n", from_ip, get_server_ip());
+   ^~~~~~~~~
+..\Libraries\ioLibrary_Driver\Internet\TFTP\tftp.h:26:13: note: include '<stdio.h>' or provide a declaration of 'printf'
+             printf(format, ##args); \
+             ^
+..\Libraries\ioLibrary_Driver\Internet\TFTP\tftp.c:532:3: note: in expansion of macro 'DBG_PRINT'
+   DBG_PRINT(ERROR_DBG, "from IP : %08x, Server IP : %08x\r\n", from_ip, get_server_ip());
+   ^~~~~~~~~
+..\Libraries\ioLibrary_Driver\Internet\TFTP\tftp.c:532:24: warning: format '%x' expects argument of type 'unsigned int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+   DBG_PRINT(ERROR_DBG, "from IP : %08x, Server IP : %08x\r\n", from_ip, get_server_ip());
+                        ^
+..\Libraries\ioLibrary_Driver\Internet\TFTP\tftp.h:26:20: note: in definition of macro 'DBG_PRINT'
+             printf(format, ##args); \
+                    ^~~~~~
+..\Libraries\ioLibrary_Driver\Internet\TFTP\tftp.c:532:24: warning: format '%x' expects argument of type 'unsigned int', but argument 3 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+   DBG_PRINT(ERROR_DBG, "from IP : %08x, Server IP : %08x\r\n", from_ip, get_server_ip());
+                        ^
+..\Libraries\ioLibrary_Driver\Internet\TFTP\tftp.h:26:20: note: in definition of macro 'DBG_PRINT'
+             printf(format, ##args); \
+                    ^~~~~~
+..\Libraries\ioLibrary_Driver\Internet\TFTP\tftp.h:26:13: warning: incompatible implicit declaration of built-in function 'printf'
+             printf(format, ##args); \
+             ^
+..\Libraries\ioLibrary_Driver\Internet\TFTP\tftp.c:543:3: note: in expansion of macro 'DBG_PRINT'
+   DBG_PRINT(INFO_DBG, "[%s] Set Server Port : %d\r\n", __func__, from_port);
+   ^~~~~~~~~
+..\Libraries\ioLibrary_Driver\Internet\TFTP\tftp.h:26:13: note: include '<stdio.h>' or provide a declaration of 'printf'
+             printf(format, ##args); \
+             ^
+..\Libraries\ioLibrary_Driver\Internet\TFTP\tftp.c:543:3: note: in expansion of macro 'DBG_PRINT'
+   DBG_PRINT(INFO_DBG, "[%s] Set Server Port : %d\r\n", __func__, from_port);
+   ^~~~~~~~~
+..\Libraries\ioLibrary_Driver\Internet\TFTP\tftp.c: In function 'TFTP_run':
+..\Libraries\ioLibrary_Driver\Internet\TFTP\tftp.h:26:13: warning: incompatible implicit declaration of built-in function 'printf'
+             printf(format, ##args); \
+             ^
+..\Libraries\ioLibrary_Driver\Internet\TFTP\tftp.c:635:3: note: in expansion of macro 'DBG_PRINT'
+   DBG_PRINT(ERROR_DBG, "[%s] recv_udp_packet error\r\n", __func__);
+   ^~~~~~~~~
+..\Libraries\ioLibrary_Driver\Internet\TFTP\tftp.h:26:13: note: include '<stdio.h>' or provide a declaration of 'printf'
+             printf(format, ##args); \
+             ^
+..\Libraries\ioLibrary_Driver\Internet\TFTP\tftp.c:635:3: note: in expansion of macro 'DBG_PRINT'
+   DBG_PRINT(ERROR_DBG, "[%s] recv_udp_packet error\r\n", __func__);
+   ^~~~~~~~~
+..\Libraries\ioLibrary_Driver\Internet\TFTP\tftp.c: In function 'TFTP_read_request':
+..\Libraries\ioLibrary_Driver\Internet\TFTP\tftp.h:26:13: warning: incompatible implicit declaration of built-in function 'printf'
+             printf(format, ##args); \
+             ^
+..\Libraries\ioLibrary_Driver\Internet\TFTP\tftp.c:649:2: note: in expansion of macro 'DBG_PRINT'
+  DBG_PRINT(INFO_DBG, "[%s] Set Tftp Server : %x\r\n", __func__, server_ip);
+  ^~~~~~~~~
+..\Libraries\ioLibrary_Driver\Internet\TFTP\tftp.h:26:13: note: include '<stdio.h>' or provide a declaration of 'printf'
+             printf(format, ##args); \
+             ^
+..\Libraries\ioLibrary_Driver\Internet\TFTP\tftp.c:649:2: note: in expansion of macro 'DBG_PRINT'
+  DBG_PRINT(INFO_DBG, "[%s] Set Tftp Server : %x\r\n", __func__, server_ip);
+  ^~~~~~~~~
+..\Libraries\ioLibrary_Driver\Internet\TFTP\tftp.c:649:22: warning: format '%x' expects argument of type 'unsigned int', but argument 3 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+  DBG_PRINT(INFO_DBG, "[%s] Set Tftp Server : %x\r\n", __func__, server_ip);
+                      ^
+..\Libraries\ioLibrary_Driver\Internet\TFTP\tftp.h:26:20: note: in definition of macro 'DBG_PRINT'
+             printf(format, ##args); \
+                    ^~~~~~
+arm-atollic-eabi-gcc -c ..\Libraries\ioLibrary_Driver\Internet\httpServer\httpServer.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32F10X_HD -DSTM32F103VC -DUSE_STDPERIPH_DRIVER -I../src -I../Libraries/STM32F10x_StdPeriph_Driver/inc -I../Libraries/CMSIS/Device/ST/STM32F10x/Include -I../Libraries/CMSIS/Include -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver\Ethernet -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -o Libraries\ioLibrary_Driver\Internet\httpServer\httpServer.o 
+arm-atollic-eabi-gcc -c ..\src\main.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32F10X_HD -DSTM32F103VC -DUSE_STDPERIPH_DRIVER -I../src -I../Libraries/STM32F10x_StdPeriph_Driver/inc -I../Libraries/CMSIS/Device/ST/STM32F10x/Include -I../Libraries/CMSIS/Include -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver\Ethernet -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -o src\main.o 
+..\src\main.c: In function 'main':
+..\src\main.c:41:2: warning: implicit declaration of function 'timerInitialize' [-Wimplicit-function-declaration]
+  timerInitialize();
+  ^~~~~~~~~~~~~~~
+..\src\main.c:63:2: warning: implicit declaration of function 'delay' [-Wimplicit-function-declaration]
+  delay(10);
+  ^~~~~
+..\src\main.c:66:2: warning: implicit declaration of function 'W5100SInitialze' [-Wimplicit-function-declaration]
+  W5100SInitialze();
+  ^~~~~~~~~~~~~~~
+..\src\main.c:76:2: warning: implicit declaration of function 'register_read' [-Wimplicit-function-declaration]
+  register_read();
+  ^~~~~~~~~~~~~
+..\src\main.c:80:3: warning: implicit declaration of function 'loopback_tcps' [-Wimplicit-function-declaration]
+   loopback_tcps(0,ethBuf0,50000);
+   ^~~~~~~~~~~~~
+..\src\main.c:37:17: warning: unused variable 'k' [-Wunused-variable]
+  volatile int j,k;
+                 ^
+..\src\main.c:37:15: warning: unused variable 'j' [-Wunused-variable]
+  volatile int j,k;
+               ^
+..\src\main.c:36:15: warning: unused variable 'i' [-Wunused-variable]
+  volatile int i;
+               ^
+..\src\main.c: At top level:
+..\src\main.c:84:6: warning: conflicting types for 'delay'
+ void delay(unsigned int count)
+      ^~~~~
+..\src\main.c:63:2: note: previous implicit declaration of 'delay' was here
+  delay(10);
+  ^~~~~
+arm-atollic-eabi-gcc -c ..\src\serialCommand.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32F10X_HD -DSTM32F103VC -DUSE_STDPERIPH_DRIVER -I../src -I../Libraries/STM32F10x_StdPeriph_Driver/inc -I../Libraries/CMSIS/Device/ST/STM32F10x/Include -I../Libraries/CMSIS/Include -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver\Ethernet -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -o src\serialCommand.o 
+..\src\serialCommand.c: In function 'USART1_IRQHandler':
+..\src\serialCommand.c:11:10: warning: unused variable 'recvData' [-Wunused-variable]
+  uint8_t recvData;
+          ^~~~~~~~
+..\src\serialCommand.c:10:13: warning: unused variable 'flagStatus' [-Wunused-variable]
+  FlagStatus flagStatus;
+             ^~~~~~~~~~
+..\src\serialCommand.c: In function 'gets_echo':
+..\src\serialCommand.c:95:16: warning: pointer targets in passing argument 1 of 'queue_get' differ in signedness [-Wpointer-sign]
+      queue_get(&buf[i]);
+                ^
+In file included from ..\src\serialCommand.c:3:0:
+..\src\msgq.h:16:5: note: expected 'char *' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int queue_get(char *data);
+     ^~~~~~~~~
+..\src\serialCommand.c:106:16: warning: pointer targets in passing argument 2 of '_write' differ in signedness [-Wpointer-sign]
+       _write(0,&buf[i],1);
+                ^
+..\src\serialCommand.c:48:5: note: expected 'char *' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int _write(int file, char *ptr, int len)
+     ^~~~~~
+arm-atollic-eabi-gcc -c ..\Libraries\ioLibrary_Driver\Internet\MQTT\MQTTPacket\src\MQTTSubscribeClient.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32F10X_HD -DSTM32F103VC -DUSE_STDPERIPH_DRIVER -I../src -I../Libraries/STM32F10x_StdPeriph_Driver/inc -I../Libraries/CMSIS/Device/ST/STM32F10x/Include -I../Libraries/CMSIS/Include -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver\Ethernet -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -o Libraries\ioLibrary_Driver\Internet\MQTT\MQTTPacket\src\MQTTSubscribeClient.o 
+arm-atollic-eabi-gcc -c ..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_usart.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32F10X_HD -DSTM32F103VC -DUSE_STDPERIPH_DRIVER -I../src -I../Libraries/STM32F10x_StdPeriph_Driver/inc -I../Libraries/CMSIS/Device/ST/STM32F10x/Include -I../Libraries/CMSIS/Include -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver\Ethernet -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -o Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_usart.o 
+arm-atollic-eabi-gcc -c ..\Libraries\ioLibrary_Driver\Ethernet\W5100S\w5100s.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32F10X_HD -DSTM32F103VC -DUSE_STDPERIPH_DRIVER -I../src -I../Libraries/STM32F10x_StdPeriph_Driver/inc -I../Libraries/CMSIS/Device/ST/STM32F10x/Include -I../Libraries/CMSIS/Include -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver\Ethernet -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -o Libraries\ioLibrary_Driver\Ethernet\W5100S\w5100s.o 
+..\Libraries\ioLibrary_Driver\Ethernet\W5100S\w5100s.c: In function 'WIZCHIP_WRITE':
+..\Libraries\ioLibrary_Driver\Ethernet\W5100S\w5100s.c:49:6: warning: unused variable 'i' [-Wunused-variable]
+  int i;
+      ^
+..\Libraries\ioLibrary_Driver\Ethernet\W5100S\w5100s.c: In function 'WIZCHIP_READ':
+..\Libraries\ioLibrary_Driver\Ethernet\W5100S\w5100s.c:86:8: warning: unused variable 'i' [-Wunused-variable]
+    int i;
+        ^
+..\Libraries\ioLibrary_Driver\Ethernet\W5100S\w5100s.c: In function 'WIZCHIP_WRITE_BUF':
+..\Libraries\ioLibrary_Driver\Ethernet\W5100S\w5100s.c:127:12: warning: unused variable 'l' [-Wunused-variable]
+    int j,k,l;
+            ^
+..\Libraries\ioLibrary_Driver\Ethernet\W5100S\w5100s.c:127:10: warning: unused variable 'k' [-Wunused-variable]
+    int j,k,l;
+          ^
+..\Libraries\ioLibrary_Driver\Ethernet\W5100S\w5100s.c:127:8: warning: unused variable 'j' [-Wunused-variable]
+    int j,k,l;
+        ^
+arm-atollic-eabi-gcc -c ..\Libraries\ioLibrary_Driver\Ethernet\W5200\w5200.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32F10X_HD -DSTM32F103VC -DUSE_STDPERIPH_DRIVER -I../src -I../Libraries/STM32F10x_StdPeriph_Driver/inc -I../Libraries/CMSIS/Device/ST/STM32F10x/Include -I../Libraries/CMSIS/Include -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver\Ethernet -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -o Libraries\ioLibrary_Driver\Ethernet\W5200\w5200.o 
+arm-atollic-eabi-gcc -c ..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32F10X_HD -DSTM32F103VC -DUSE_STDPERIPH_DRIVER -I../src -I../Libraries/STM32F10x_StdPeriph_Driver/inc -I../Libraries/CMSIS/Device/ST/STM32F10x/Include -I../Libraries/CMSIS/Include -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver\Ethernet -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -o Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.o 
+arm-atollic-eabi-gcc -c ..\Libraries\ioLibrary_Driver\Internet\SNMP\snmp.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32F10X_HD -DSTM32F103VC -DUSE_STDPERIPH_DRIVER -I../src -I../Libraries/STM32F10x_StdPeriph_Driver/inc -I../Libraries/CMSIS/Device/ST/STM32F10x/Include -I../Libraries/CMSIS/Include -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver\Ethernet -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -o Libraries\ioLibrary_Driver\Internet\SNMP\snmp.o 
+..\Libraries\ioLibrary_Driver\Internet\SNMP\snmp.c: In function 'ipToByteArray':
+..\Libraries\ioLibrary_Driver\Internet\SNMP\snmp.c:729:30: warning: format '%u' expects argument of type 'unsigned int *', but argument 3 has type 'uint32_t * {aka long unsigned int *}' [-Wformat=]
+  sscanf((char const*)buff, "%u %u %u %u", &ip1, &ip2, &ip3, &ip4);
+                              ^
+..\Libraries\ioLibrary_Driver\Internet\SNMP\snmp.c:729:33: warning: format '%u' expects argument of type 'unsigned int *', but argument 4 has type 'uint32_t * {aka long unsigned int *}' [-Wformat=]
+  sscanf((char const*)buff, "%u %u %u %u", &ip1, &ip2, &ip3, &ip4);
+                                 ^
+..\Libraries\ioLibrary_Driver\Internet\SNMP\snmp.c:729:36: warning: format '%u' expects argument of type 'unsigned int *', but argument 5 has type 'uint32_t * {aka long unsigned int *}' [-Wformat=]
+  sscanf((char const*)buff, "%u %u %u %u", &ip1, &ip2, &ip3, &ip4);
+                                    ^
+..\Libraries\ioLibrary_Driver\Internet\SNMP\snmp.c:729:39: warning: format '%u' expects argument of type 'unsigned int *', but argument 6 has type 'uint32_t * {aka long unsigned int *}' [-Wformat=]
+  sscanf((char const*)buff, "%u %u %u %u", &ip1, &ip2, &ip3, &ip4);
+                                       ^
+arm-atollic-eabi-gcc -c ..\Libraries\ioLibrary_Driver\Internet\httpServer\httpParser.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32F10X_HD -DSTM32F103VC -DUSE_STDPERIPH_DRIVER -I../src -I../Libraries/STM32F10x_StdPeriph_Driver/inc -I../Libraries/CMSIS/Device/ST/STM32F10x/Include -I../Libraries/CMSIS/Include -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver\Ethernet -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -o Libraries\ioLibrary_Driver\Internet\httpServer\httpParser.o 
+arm-atollic-eabi-gcc -c ..\Libraries\ioLibrary_Driver\Internet\MQTT\MQTTPacket\src\MQTTSubscribeServer.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32F10X_HD -DSTM32F103VC -DUSE_STDPERIPH_DRIVER -I../src -I../Libraries/STM32F10x_StdPeriph_Driver/inc -I../Libraries/CMSIS/Device/ST/STM32F10x/Include -I../Libraries/CMSIS/Include -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver\Ethernet -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -o Libraries\ioLibrary_Driver\Internet\MQTT\MQTTPacket\src\MQTTSubscribeServer.o 
+arm-atollic-eabi-gcc -c ..\Libraries\ioLibrary_Driver\Internet\httpServer\httpUtil.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32F10X_HD -DSTM32F103VC -DUSE_STDPERIPH_DRIVER -I../src -I../Libraries/STM32F10x_StdPeriph_Driver/inc -I../Libraries/CMSIS/Device/ST/STM32F10x/Include -I../Libraries/CMSIS/Include -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver\Ethernet -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -o Libraries\ioLibrary_Driver\Internet\httpServer\httpUtil.o 
+arm-atollic-eabi-gcc -c ..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rtc.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32F10X_HD -DSTM32F103VC -DUSE_STDPERIPH_DRIVER -I../src -I../Libraries/STM32F10x_StdPeriph_Driver/inc -I../Libraries/CMSIS/Device/ST/STM32F10x/Include -I../Libraries/CMSIS/Include -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver\Ethernet -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -o Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rtc.o 
+arm-atollic-eabi-gcc -c ..\Libraries\ioLibrary_Driver\Ethernet\W5500\w5500.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32F10X_HD -DSTM32F103VC -DUSE_STDPERIPH_DRIVER -I../src -I../Libraries/STM32F10x_StdPeriph_Driver/inc -I../Libraries/CMSIS/Device/ST/STM32F10x/Include -I../Libraries/CMSIS/Include -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver\Ethernet -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -o Libraries\ioLibrary_Driver\Ethernet\W5500\w5500.o 
+arm-atollic-eabi-gcc -c ..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_sdio.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32F10X_HD -DSTM32F103VC -DUSE_STDPERIPH_DRIVER -I../src -I../Libraries/STM32F10x_StdPeriph_Driver/inc -I../Libraries/CMSIS/Device/ST/STM32F10x/Include -I../Libraries/CMSIS/Include -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver\Ethernet -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -o Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_sdio.o 
+arm-atollic-eabi-gcc -c ..\Libraries\ioLibrary_Driver\Internet\MQTT\MQTTPacket\src\MQTTUnsubscribeClient.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32F10X_HD -DSTM32F103VC -DUSE_STDPERIPH_DRIVER -I../src -I../Libraries/STM32F10x_StdPeriph_Driver/inc -I../Libraries/CMSIS/Device/ST/STM32F10x/Include -I../Libraries/CMSIS/Include -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver\Ethernet -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -o Libraries\ioLibrary_Driver\Internet\MQTT\MQTTPacket\src\MQTTUnsubscribeClient.o 
+arm-atollic-eabi-gcc -c ..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_flash.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32F10X_HD -DSTM32F103VC -DUSE_STDPERIPH_DRIVER -I../src -I../Libraries/STM32F10x_StdPeriph_Driver/inc -I../Libraries/CMSIS/Device/ST/STM32F10x/Include -I../Libraries/CMSIS/Include -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver\Ethernet -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -o Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_flash.o 
+arm-atollic-eabi-gcc -c ..\src\W5100SRelFunctions.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32F10X_HD -DSTM32F103VC -DUSE_STDPERIPH_DRIVER -I../src -I../Libraries/STM32F10x_StdPeriph_Driver/inc -I../Libraries/CMSIS/Device/ST/STM32F10x/Include -I../Libraries/CMSIS/Include -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver\Ethernet -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -o src\W5100SRelFunctions.o 
+..\src\W5100SRelFunctions.c: In function 'W5100SInitialze':
+..\src\W5100SRelFunctions.c:16:3: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+   printf("W5100S initialized fail.\r\n");
+   ^~~~~~
+..\src\W5100SRelFunctions.c:16:3: warning: incompatible implicit declaration of built-in function 'printf'
+..\src\W5100SRelFunctions.c:16:3: note: include '<stdio.h>' or provide a declaration of 'printf'
+..\src\W5100SRelFunctions.c:21:3: warning: incompatible implicit declaration of built-in function 'printf'
+   printf("W5100S interrupt\r\n");
+   ^~~~~~
+..\src\W5100SRelFunctions.c:21:3: note: include '<stdio.h>' or provide a declaration of 'printf'
+..\src\W5100SRelFunctions.c: In function 'W5100SReset':
+..\src\W5100SRelFunctions.c:89:2: warning: implicit declaration of function 'CoTickDelay' [-Wimplicit-function-declaration]
+  CoTickDelay(10);
+  ^~~~~~~~~~~
+..\src\W5100SRelFunctions.c:86:10: warning: variable 'k' set but not used [-Wunused-but-set-variable]
+  int i,j,k;
+          ^
+..\src\W5100SRelFunctions.c:86:8: warning: unused variable 'j' [-Wunused-variable]
+  int i,j,k;
+        ^
+..\src\W5100SRelFunctions.c:86:6: warning: unused variable 'i' [-Wunused-variable]
+  int i,j,k;
+      ^
+arm-atollic-eabi-gcc -c ..\Libraries\ioLibrary_Driver\Internet\DNS\dns.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32F10X_HD -DSTM32F103VC -DUSE_STDPERIPH_DRIVER -I../src -I../Libraries/STM32F10x_StdPeriph_Driver/inc -I../Libraries/CMSIS/Device/ST/STM32F10x/Include -I../Libraries/CMSIS/Include -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver\Ethernet -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -o Libraries\ioLibrary_Driver\Internet\DNS\dns.o 
+..\Libraries\ioLibrary_Driver\Internet\DNS\dns.c: In function 'parseDNSMSG':
+..\Libraries\ioLibrary_Driver\Internet\DNS\dns.c:342:25: warning: argument to 'sizeof' in 'memset' call is the same expression as the destination; did you mean to dereference it? [-Wsizeof-pointer-memaccess]
+  memset(pdhdr, 0, sizeof(pdhdr));
+                         ^
+arm-atollic-eabi-gcc -c ..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_dbgmcu.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32F10X_HD -DSTM32F103VC -DUSE_STDPERIPH_DRIVER -I../src -I../Libraries/STM32F10x_StdPeriph_Driver/inc -I../Libraries/CMSIS/Device/ST/STM32F10x/Include -I../Libraries/CMSIS/Include -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver\Ethernet -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -o Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_dbgmcu.o 
+arm-atollic-eabi-gcc -c ..\Libraries\ioLibrary_Driver\Internet\MQTT\MQTTClient.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32F10X_HD -DSTM32F103VC -DUSE_STDPERIPH_DRIVER -I../src -I../Libraries/STM32F10x_StdPeriph_Driver/inc -I../Libraries/CMSIS/Device/ST/STM32F10x/Include -I../Libraries/CMSIS/Include -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver\Ethernet -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -o Libraries\ioLibrary_Driver\Internet\MQTT\MQTTClient.o 
+arm-atollic-eabi-gcc -c ..\src\msgq.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32F10X_HD -DSTM32F103VC -DUSE_STDPERIPH_DRIVER -I../src -I../Libraries/STM32F10x_StdPeriph_Driver/inc -I../Libraries/CMSIS/Device/ST/STM32F10x/Include -I../Libraries/CMSIS/Include -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver\Ethernet -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -o src\msgq.o 
+..\src\msgq.c: In function 'queue_put':
+..\src\msgq.c:20:9: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+         printf("\n   Queue overflow.");
+         ^~~~~~
+..\src\msgq.c:20:9: warning: incompatible implicit declaration of built-in function 'printf'
+..\src\msgq.c:20:9: note: include '<stdio.h>' or provide a declaration of 'printf'
+..\src\msgq.c:25:25: warning: operation on 'serialMsgQueue.rear' may be undefined [-Wsequence-point]
+     serialMsgQueue.rear = ++(serialMsgQueue.rear) % serialMsgQueue.maxQSize;
+     ~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\src\msgq.c: In function 'queue_get':
+..\src\msgq.c:31:9: warning: incompatible implicit declaration of built-in function 'printf'
+         printf("\n  Queue underflow.");
+         ^~~~~~
+..\src\msgq.c:31:9: note: include '<stdio.h>' or provide a declaration of 'printf'
+..\src\msgq.c:36:26: warning: operation on 'serialMsgQueue.front' may be undefined [-Wsequence-point]
+     serialMsgQueue.front = ++(serialMsgQueue.front) % serialMsgQueue.maxQSize;
+     ~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+arm-atollic-eabi-gcc -c ..\Libraries\syscalls\syscalls.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32F10X_HD -DSTM32F103VC -DUSE_STDPERIPH_DRIVER -I../src -I../Libraries/STM32F10x_StdPeriph_Driver/inc -I../Libraries/CMSIS/Device/ST/STM32F10x/Include -I../Libraries/CMSIS/Include -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver\Ethernet -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -o Libraries\syscalls\syscalls.o 
+arm-atollic-eabi-gcc -c ..\Libraries\ioLibrary_Driver\Internet\MQTT\MQTTPacket\src\MQTTConnectClient.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32F10X_HD -DSTM32F103VC -DUSE_STDPERIPH_DRIVER -I../src -I../Libraries/STM32F10x_StdPeriph_Driver/inc -I../Libraries/CMSIS/Device/ST/STM32F10x/Include -I../Libraries/CMSIS/Include -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver\Ethernet -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -o Libraries\ioLibrary_Driver\Internet\MQTT\MQTTPacket\src\MQTTConnectClient.o 
+arm-atollic-eabi-gcc -c ..\Libraries\ioLibrary_Driver\Internet\MQTT\MQTTPacket\src\MQTTSerializePublish.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32F10X_HD -DSTM32F103VC -DUSE_STDPERIPH_DRIVER -I../src -I../Libraries/STM32F10x_StdPeriph_Driver/inc -I../Libraries/CMSIS/Device/ST/STM32F10x/Include -I../Libraries/CMSIS/Include -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver\Ethernet -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -o Libraries\ioLibrary_Driver\Internet\MQTT\MQTTPacket\src\MQTTSerializePublish.o 
+arm-atollic-eabi-gcc -c ..\Libraries\ioLibrary_Driver\Ethernet\W5300\w5300.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32F10X_HD -DSTM32F103VC -DUSE_STDPERIPH_DRIVER -I../src -I../Libraries/STM32F10x_StdPeriph_Driver/inc -I../Libraries/CMSIS/Device/ST/STM32F10x/Include -I../Libraries/CMSIS/Include -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver\Ethernet -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -o Libraries\ioLibrary_Driver\Ethernet\W5300\w5300.o 
+arm-atollic-eabi-gcc -c ..\Libraries\ioLibrary_Driver\Internet\SNMP\snmp_custom.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32F10X_HD -DSTM32F103VC -DUSE_STDPERIPH_DRIVER -I../src -I../Libraries/STM32F10x_StdPeriph_Driver/inc -I../Libraries/CMSIS/Device/ST/STM32F10x/Include -I../Libraries/CMSIS/Include -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver\Ethernet -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -o Libraries\ioLibrary_Driver\Internet\SNMP\snmp_custom.o 
+arm-atollic-eabi-gcc -c ..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rcc.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32F10X_HD -DSTM32F103VC -DUSE_STDPERIPH_DRIVER -I../src -I../Libraries/STM32F10x_StdPeriph_Driver/inc -I../Libraries/CMSIS/Device/ST/STM32F10x/Include -I../Libraries/CMSIS/Include -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver\Ethernet -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -o Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rcc.o 
+arm-atollic-eabi-gcc -c ..\Libraries\ioLibrary_Driver\Internet\DHCP\dhcp.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32F10X_HD -DSTM32F103VC -DUSE_STDPERIPH_DRIVER -I../src -I../Libraries/STM32F10x_StdPeriph_Driver/inc -I../Libraries/CMSIS/Device/ST/STM32F10x/Include -I../Libraries/CMSIS/Include -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver\Ethernet -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -o Libraries\ioLibrary_Driver\Internet\DHCP\dhcp.o 
+..\Libraries\ioLibrary_Driver\Internet\DHCP\dhcp.c: In function 'parseDHCPMSG':
+..\Libraries\ioLibrary_Driver\Internet\DHCP\dhcp.c:587:4: warning: this 'else' clause does not guard... [-Wmisleading-indentation]
+    else return 0;
+    ^~~~
+..\Libraries\ioLibrary_Driver\Internet\DHCP\dhcp.c:588:2: note: ...this statement, but the latter is misleadingly indented as if it is guarded by the 'else'
+  if (svr_port == DHCP_SERVER_PORT) {
+  ^~
+arm-atollic-eabi-gcc -c ..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_spi.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32F10X_HD -DSTM32F103VC -DUSE_STDPERIPH_DRIVER -I../src -I../Libraries/STM32F10x_StdPeriph_Driver/inc -I../Libraries/CMSIS/Device/ST/STM32F10x/Include -I../Libraries/CMSIS/Include -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver\Ethernet -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -o Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_spi.o 
+arm-atollic-eabi-gcc -c ..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_bkp.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32F10X_HD -DSTM32F103VC -DUSE_STDPERIPH_DRIVER -I../src -I../Libraries/STM32F10x_StdPeriph_Driver/inc -I../Libraries/CMSIS/Device/ST/STM32F10x/Include -I../Libraries/CMSIS/Include -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver\Ethernet -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -o Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_bkp.o 
+arm-atollic-eabi-gcc -c ..\Libraries\ioLibrary_Driver\Application\loopback\loopback.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32F10X_HD -DSTM32F103VC -DUSE_STDPERIPH_DRIVER -I../src -I../Libraries/STM32F10x_StdPeriph_Driver/inc -I../Libraries/CMSIS/Device/ST/STM32F10x/Include -I../Libraries/CMSIS/Include -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver\Ethernet -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -o Libraries\ioLibrary_Driver\Application\loopback\loopback.o 
+arm-atollic-eabi-gcc -c ..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_exti.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32F10X_HD -DSTM32F103VC -DUSE_STDPERIPH_DRIVER -I../src -I../Libraries/STM32F10x_StdPeriph_Driver/inc -I../Libraries/CMSIS/Device/ST/STM32F10x/Include -I../Libraries/CMSIS/Include -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver\Ethernet -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -o Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_exti.o 
+arm-atollic-eabi-gcc -c ..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_fsmc.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32F10X_HD -DSTM32F103VC -DUSE_STDPERIPH_DRIVER -I../src -I../Libraries/STM32F10x_StdPeriph_Driver/inc -I../Libraries/CMSIS/Device/ST/STM32F10x/Include -I../Libraries/CMSIS/Include -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver\Ethernet -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -o Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_fsmc.o 
+arm-atollic-eabi-gcc -c ..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_can.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32F10X_HD -DSTM32F103VC -DUSE_STDPERIPH_DRIVER -I../src -I../Libraries/STM32F10x_StdPeriph_Driver/inc -I../Libraries/CMSIS/Device/ST/STM32F10x/Include -I../Libraries/CMSIS/Include -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver\Ethernet -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -o Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_can.o 
+arm-atollic-eabi-gcc -c ..\Libraries\ioLibrary_Driver\Internet\MQTT\MQTTPacket\src\MQTTDeserializePublish.c -mthumb -mcpu=cortex-m3 -std=gnu11 -DSTM32F10X_HD -DSTM32F103VC -DUSE_STDPERIPH_DRIVER -I../src -I../Libraries/STM32F10x_StdPeriph_Driver/inc -I../Libraries/CMSIS/Device/ST/STM32F10x/Include -I../Libraries/CMSIS/Include -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver -ID:\Wiznet\WIZnet_product\W5100S-EVB\04.Firware_Source\TrueSTUDIO_workspace\Workspace1\W5100S_loopback\Libraries\ioLibrary_Driver\Ethernet -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -o Libraries\ioLibrary_Driver\Internet\MQTT\MQTTPacket\src\MQTTDeserializePublish.o 
+arm-atollic-eabi-gcc -o loopback.elf Libraries\STM32F10x_StdPeriph_Driver\src\misc.o Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_adc.o Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_bkp.o Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_can.o Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_cec.o Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_crc.o Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_dac.o Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_dbgmcu.o Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_dma.o Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_exti.o Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_flash.o Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_fsmc.o Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_gpio.o Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_i2c.o Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_iwdg.o Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_pwr.o Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rcc.o Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rtc.o Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_sdio.o Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_spi.o Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.o Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_usart.o Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_wwdg.o Libraries\ioLibrary_Driver\Application\loopback\loopback.o Libraries\ioLibrary_Driver\Ethernet\W5100\w5100.o Libraries\ioLibrary_Driver\Ethernet\W5100S\w5100s.o Libraries\ioLibrary_Driver\Ethernet\W5200\w5200.o Libraries\ioLibrary_Driver\Ethernet\W5300\w5300.o Libraries\ioLibrary_Driver\Ethernet\W5500\w5500.o Libraries\ioLibrary_Driver\Ethernet\socket.o Libraries\ioLibrary_Driver\Ethernet\wizchip_conf.o Libraries\ioLibrary_Driver\Internet\DHCP\dhcp.o Libraries\ioLibrary_Driver\Internet\DNS\dns.o Libraries\ioLibrary_Driver\Internet\FTPClient\ftpc.o Libraries\ioLibrary_Driver\Internet\FTPServer\ftpd.o Libraries\ioLibrary_Driver\Internet\MQTT\MQTTClient.o Libraries\ioLibrary_Driver\Internet\MQTT\MQTTPacket\src\MQTTConnectClient.o Libraries\ioLibrary_Driver\Internet\MQTT\MQTTPacket\src\MQTTConnectServer.o Libraries\ioLibrary_Driver\Internet\MQTT\MQTTPacket\src\MQTTDeserializePublish.o Libraries\ioLibrary_Driver\Internet\MQTT\MQTTPacket\src\MQTTFormat.o Libraries\ioLibrary_Driver\Internet\MQTT\MQTTPacket\src\MQTTPacket.o Libraries\ioLibrary_Driver\Internet\MQTT\MQTTPacket\src\MQTTSerializePublish.o Libraries\ioLibrary_Driver\Internet\MQTT\MQTTPacket\src\MQTTSubscribeClient.o Libraries\ioLibrary_Driver\Internet\MQTT\MQTTPacket\src\MQTTSubscribeServer.o Libraries\ioLibrary_Driver\Internet\MQTT\MQTTPacket\src\MQTTUnsubscribeClient.o Libraries\ioLibrary_Driver\Internet\MQTT\MQTTPacket\src\MQTTUnsubscribeServer.o Libraries\ioLibrary_Driver\Internet\MQTT\mqtt_interface.o Libraries\ioLibrary_Driver\Internet\SNMP\snmp.o Libraries\ioLibrary_Driver\Internet\SNMP\snmp_custom.o Libraries\ioLibrary_Driver\Internet\SNTP\sntp.o Libraries\ioLibrary_Driver\Internet\TFTP\netutil.o Libraries\ioLibrary_Driver\Internet\TFTP\tftp.o Libraries\ioLibrary_Driver\Internet\httpServer\httpParser.o Libraries\ioLibrary_Driver\Internet\httpServer\httpServer.o Libraries\ioLibrary_Driver\Internet\httpServer\httpUtil.o Libraries\syscalls\syscalls.o src\HALInit.o src\W5100SRelFunctions.o src\main.o src\msgq.o src\serialCommand.o src\startup_stm32f10x_hd.o src\system_stm32f10x.o -mthumb -mcpu=cortex-m3 -T../stm32_flash.ld -specs=nosys.specs -static -Wl,-cref,-u,Reset_Handler -Wl,-Map=loopback.map -Wl,--gc-sections -Wl,--defsym=malloc_getpagesize_P=0x80 -Wl,--start-group -lc -lm -Wl,--end-group 
+C:\Program Files (x86)\Atollic\TrueSTUDIO for STM32 9.0.0\ide\jre\bin\java -jar C:\Program Files (x86)\Atollic\TrueSTUDIO for STM32 9.0.0\Tools\arm-atollic-reports.jar convert hex sizeinfo list loopback.elf 
+Generate build reports...
+Converting build output to hex
+Output sent to: loopback.hex
+Converting build output to hex done
+Print size information
+   text	   data	    bss	    dec	    hex	filename
+  32100	   1760	   9088	  42948	   a7c4	loopback.elf
+Print size information done
+Generate listing file
+Output sent to: loopback.list
+Generate listing file done
+Generate build reports done
+
+15:53:35 Build Finished (took 17s.195ms)
+
