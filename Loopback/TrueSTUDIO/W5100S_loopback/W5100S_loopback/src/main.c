@@ -71,8 +71,8 @@ int main(void)
 //	printf(" CHIP Version: %02x\r\n", getVER());
 	wizchip_setnetinfo(&gWIZNETINFO);
 
-	printf("Register value after W5100S initialize!\r\n");
-	register_read();
+	//printf("Register value after W5100S initialize!\r\n");
+	//register_read();
 	print_network_information();
 	while(1)
     {
