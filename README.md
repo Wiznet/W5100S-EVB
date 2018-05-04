@@ -62,6 +62,7 @@ For more details, please refer to [W5100S-EVB page](http://wizwiki.net/wiki/doku
 
 ## Hardware material, Documents and Others
 Various materials are could be found at [W5100S-EVB page](http://wizwiki.net/wiki/doku.php?id=products:w5100s:w5100s_evb:start#technical_reference) in WIZnet Wiki.
+And refer to this link [W5100S Hardware data](https://github.com/Wiznet/Hardware-Files-of-WIZnet/tree/master/02_iEthernet) 
 - Documents
   - Getting Started: Hello world! / Downloading a new program
   - Make New W5100S-EVB Projects
