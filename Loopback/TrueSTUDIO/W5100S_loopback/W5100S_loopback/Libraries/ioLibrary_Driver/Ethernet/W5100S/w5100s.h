@@ -975,7 +975,7 @@
  * @brief Address Auto-Increment in Indirect Bus Interface
  * @details 0 : Disable auto-increment \n
  * 1 : Enable auto-incremente \n
- * At the Indirect Bus Interface mode, if this bit is set as 占쎌쥙猷욑옙占쏙옙醫롫짗占쏙옙 the address will
+ * At the Indirect Bus Interface mode, if this bit is set as �뜝�럩伊숂뙴�쉻�삕�뜝�룞�삕�넫濡レ쭢�뜝�룞�삕 the address will
  * be automatically increased by 1 whenever read and write are performed.
  */
 #define MR_AI				0x02 ///< auto-increment in indirect mode
@@ -984,7 +984,7 @@
  * @brief Indirect Bus Interface mode
  * @details 0 : Disable Indirect bus Interface mode \n
  * 1 : Enable Indirect bus Interface mode \n
- * If this bit is set as 占쎌쥙猷욑옙占쏙옙醫롫짗占쏙옙 Indirect Bus Interface mode is set.
+ * If this bit is set as �뜝�럩伊숂뙴�쉻�삕�뜝�룞�삕�넫濡レ쭢�뜝�룞�삕 Indirect Bus Interface mode is set.
  */
 #define MR_IND				0x01 ///< enable indirect mode
 
@@ -2928,7 +2928,7 @@ void     WIZCHIP_WRITE_BUF(uint32_t AddrSel, uint8_t* pBuf, uint16_t len);
  * @sa getSn_RXMEM_SIZE()
  */
 #define  setSn_RXMEM_SIZE(sn, rxmemsize) \
-		WIZCHIP_WRITE(Sn_RXBUF_SIZE(sn),rxmemsize)
+      WIZCHIP_WRITE(RMSR, (WIZCHIP_READ(RMSR) & ~(0x03 << (2*sn))) | (rxmemsize << (2*sn)))
 #define  setSn_RXBUF_SIZE(sn,rxmemsize) setSn_RXMEM_SIZE(sn,rxmemsize)
 
 /**
@@ -2939,7 +2939,7 @@ void     WIZCHIP_WRITE_BUF(uint32_t AddrSel, uint8_t* pBuf, uint16_t len);
  * @sa setSn_RXMEM_SIZE()
  */
 #define  getSn_RXMEM_SIZE(sn) \
-		WIZCHIP_READ(Sn_RXBUF_SIZE(sn))
+      ((WIZCHIP_READ(RMSR) & (0x03 << (2*sn))) >> (2*sn))
 #define  getSn_RXBUF_SIZE(sn) getSn_RXMEM_SIZE(sn)
 
 /**
@@ -2950,7 +2950,7 @@ void     WIZCHIP_WRITE_BUF(uint32_t AddrSel, uint8_t* pBuf, uint16_t len);
  * @sa getSn_TXMEM_SIZE()
  */
 #define setSn_TXMEM_SIZE(sn, txmemsize) \
-		WIZCHIP_WRITE(Sn_TXBUF_SIZE(sn),txmemsize)
+      WIZCHIP_WRITE(TMSR, (WIZCHIP_READ(TMSR) & ~(0x03 << (2*sn))) | (txmemsize << (2*sn)))
 #define  setSn_TXBUF_SIZE(sn, txmemsize) setSn_TXMEM_SIZE(sn,txmemsize)
 
 /**
@@ -2961,7 +2961,7 @@ void     WIZCHIP_WRITE_BUF(uint32_t AddrSel, uint8_t* pBuf, uint16_t len);
  * @sa setSn_TXMEM_SIZE()
  */
 #define  getSn_TXMEM_SIZE(sn) \
-		WIZCHIP_READ(Sn_TXBUF_SIZE(sn))
+      ((WIZCHIP_READ(TMSR) & (0x03 << (2*sn))) >> (2*sn))
 #define  getSn_TXBUF_SIZE(sn) getSn_TXMEM_SIZE(sn)
 
 /**

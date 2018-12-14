@@ -198,7 +198,7 @@ int8_t close(uint8_t sn)
 {
 	CHECK_SOCKNUM();
 //A20160426 : Applied the erratum 1 of W5300
-#if   (_WIZCHIP_ == 5300) 
+#if   (_WIZCHIP_ == 5300)
    //M20160503 : Wrong socket parameter. s -> sn 
    //if( ((getSn_MR(s)& 0x0F) == Sn_MR_TCP) && (getSn_TX_FSR(s) != getSn_TxMAX(s)) ) 
    if( ((getSn_MR(sn)& 0x0F) == Sn_MR_TCP) && (getSn_TX_FSR(sn) != getSn_TxMAX(sn)) ) 
@@ -616,7 +616,7 @@ int32_t recvfrom(uint8_t sn, uint8_t * buf, uint16_t len, uint8_t * addr, uint16
 	  case Sn_MR_IPRAW:
       case Sn_MR_MACRAW:
          break;
-   #if ( _WIZCHIP_ < 5200 )         
+   #if ( _WIZCHIP_ < 5200 )
       case Sn_MR_PPPoE:
          break;
    #endif
@@ -757,12 +757,12 @@ int32_t recvfrom(uint8_t sn, uint8_t * buf, uint16_t len, uint8_t * addr, uint16
 	if(sock_remained_size[sn] != 0)
 	{
 	   sock_pack_info[sn] |= PACK_REMAINED;
-   #if _WIZCHIP_ == 5300	   
+   #if _WIZCHIP_ == 5300
 	   if(pack_len & 0x01) sock_pack_info[sn] |= PACK_FIFOBYTE;
    #endif	      
 	}
 	else sock_pack_info[sn] = PACK_COMPLETED;
-#if _WIZCHIP_ == 5300	   
+#if _WIZCHIP_ == 5300
    pack_len = len;
 #endif
    //
@@ -894,7 +894,7 @@ int8_t  getsockopt(uint8_t sn, sockopt_type sotype, void* arg)
       case SO_DESTPORT:  
          *(uint16_t*) arg = getSn_DPORT(sn);
          break;
-   #if _WIZCHIP_ > 5200   
+   #if _WIZCHIP_ > 5200
       case SO_KEEPALIVEAUTO:
          CHECK_SOCKMODE(Sn_MR_TCP);
          *(uint16_t*) arg = getSn_KPALVTR(sn);

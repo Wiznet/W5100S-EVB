@@ -178,7 +178,7 @@ void     WIZCHIP_READ_BUF (uint32_t AddrSel, uint8_t* pBuf, uint16_t len)
    WIZCHIP_CRITICAL_ENTER();
    WIZCHIP.CS._select();   //M20150601 : Moved here.
    
-   #if( (_WIZCHIP_IO_MODE_ & _WIZCHIP_IO_MODE_SPI_))
+#if( (_WIZCHIP_IO_MODE_ & _WIZCHIP_IO_MODE_SPI_))
    for(i = 0; i < len; i++)
    {
      //M20160715 : Depricated "M20150601 : Remove _select() to top-side"

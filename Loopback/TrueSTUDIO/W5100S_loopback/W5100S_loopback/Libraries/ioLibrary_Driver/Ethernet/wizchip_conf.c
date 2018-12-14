@@ -140,6 +140,9 @@ void 	wizchip_spi_readburst(uint8_t* pBuf, uint16_t len) 	{}
 //void 	wizchip_spi_writeburst(uint8_t* pBuf, uint16_t len) {};
 void 	wizchip_spi_writeburst(uint8_t* pBuf, uint16_t len) {}
 
+
+void wizchip_bus_readburst(uint32_t addr,uint8_t* pBuf,uint32_t len) {}
+void wizchip_bus_writeburst(uint32_t addr, uint8_t* pBuf,uint32_t len) {}
 /**
  * @\ref _WIZCHIP instance
  */
@@ -175,6 +178,8 @@ _WIZCHIP  WIZCHIP =
       //wizchip_bus_writebyte
       wizchip_bus_readdata,
       wizchip_bus_writedata,
+	  wizchip_bus_readburst,
+	  wizchip_bus_writeburst,
 //    wizchip_spi_readbyte,
 //    wizchip_spi_writebyte
       };
@@ -217,18 +222,7 @@ void reg_wizchip_bus_cbfunc(iodata_t(*bus_rb)(uint32_t addr), void (*bus_wb)(uin
 {
    while(!(WIZCHIP.if_mode & _WIZCHIP_IO_MODE_BUS_));
    //M20150601 : Rename call back function for integrating with W5300
-   /*
-   if(!bus_rb || !bus_wb)
-   {
-      WIZCHIP.IF.BUS._read_byte   = wizchip_bus_readbyte;
-      WIZCHIP.IF.BUS._write_byte  = wizchip_bus_writebyte;
-   }
-   else
-   {
-      WIZCHIP.IF.BUS._read_byte   = bus_rb;
-      WIZCHIP.IF.BUS._write_byte  = bus_wb;
-   }
-   */
+
    if(!bus_rb || !bus_wb)
    {
       WIZCHIP.IF.BUS._read_data   = wizchip_bus_readdata;
@@ -238,6 +232,22 @@ void reg_wizchip_bus_cbfunc(iodata_t(*bus_rb)(uint32_t addr), void (*bus_wb)(uin
    {
       WIZCHIP.IF.BUS._read_data   = bus_rb;
       WIZCHIP.IF.BUS._write_data  = bus_wb;
+   }
+}
+void reg_wizchip_busburst_cbfunc(void(*bus_rb)(uint32_t addr,uint8_t* pBuf,uint32_t len), void (*bus_wb)(uint32_t addr, uint8_t* pBuf,uint32_t len))
+{
+   while(!(WIZCHIP.if_mode & _WIZCHIP_IO_MODE_BUS_));
+   //M20150601 : Rename call back function for integrating with W5300
+
+   if(!bus_rb || !bus_wb)
+   {
+      WIZCHIP.IF.BUS._read_burst   = wizchip_bus_readburst;
+      WIZCHIP.IF.BUS._write_burst  = wizchip_bus_writeburst;
+   }
+   else
+   {
+      WIZCHIP.IF.BUS._read_burst   = bus_rb;
+      WIZCHIP.IF.BUS._write_burst  = bus_wb;
    }
 }
 
@@ -276,7 +286,7 @@ void reg_wizchip_spiburst_cbfunc(void (*spi_rb)(uint8_t* pBuf, uint16_t len), vo
 
 int8_t ctlwizchip(ctlwizchip_type cwtype, void* arg)
 {
-#if	_WIZCHIP_ == W5100S || _WIZCHIP_ == W5200 || _WIZCHIP_ == W5500
+#if	_WIZCHIP_ == W5200 || _WIZCHIP_ == W5500
    uint8_t tmp = 0;
 #endif
    uint8_t* ptmp[2] = {0,0};
@@ -322,7 +332,7 @@ int8_t ctlwizchip(ctlwizchip_type cwtype, void* arg)
          ((uint8_t*)arg)[4] = WIZCHIP.id[4];
          ((uint8_t*)arg)[5] = 0;
          break;
-   #if _WIZCHIP_ == W5100S || _WIZCHIP_ == W5500
+   #if _WIZCHIP_ == W5500
       case CW_RESET_PHY:
          wizphy_reset();
          break;
@@ -337,7 +347,7 @@ int8_t ctlwizchip(ctlwizchip_type cwtype, void* arg)
       case CW_SET_PHYPOWMODE:
          return wizphy_setphypmode(*(uint8_t*)arg);
    #endif
-   #if _WIZCHIP_ == W5100S || _WIZCHIP_ == W5200 || _WIZCHIP_ == W5500
+   #if _WIZCHIP_ == W5200 || _WIZCHIP_ == W5500
       case CW_GET_PHYPOWMODE:
          tmp = wizphy_getphypmode();
          if((int8_t)tmp == -1) return -1;
@@ -395,7 +405,8 @@ void wizchip_sw_reset(void)
 #endif
 //
    getSHAR(mac);
-   getGAR(gw);  getSUBR(sn);  getSIPR(sip);
+   getGAR(gw);
+   getSUBR(sn);  getSIPR(sip);
    setMR(MR_RST);
    getMR(); // for delay
 //A2015051 : For indirect bus mode 
@@ -441,8 +452,10 @@ int8_t wizchip_init(uint8_t* txsize, uint8_t* rxsize)
 		{
 		#if __WIZCHIP_ < W5200	//2016.10.28 peter add condition for w5100 and w5100s
 			j = 0;
-			while(txsize[i] >> j != 1){j++;}
+			//while(txsize[i] >> j != 1){j++;}
+			while((txsize[i] >> j != 1)&&(txsize[i] !=0)){j++;}
 			setSn_TXBUF_SIZE(i, j);
+
 		#else
 			setSn_TXBUF_SIZE(i, txsize[i]);
 		#endif
@@ -475,14 +488,17 @@ int8_t wizchip_init(uint8_t* txsize, uint8_t* rxsize)
 		{
 		#if __WIZCHIP_ < W5200	//2016.10.28 peter add condition for w5100 and w5100s
 			j = 0;
-			while(rxsize[i] >> j != 1){j++;}
+			//while(rxsize[i] >> j != 1){j++;}
+			while((rxsize[i] >> j != 1)&&(rxsize[i] !=0)){j++;}
 			setSn_RXBUF_SIZE(i, j);
+
 		#else
 			setSn_RXBUF_SIZE(i, txsize[i]);
 		#endif
 		}
 	#endif
    }
+
    return 0;
 }
 
@@ -599,16 +615,16 @@ intr_kind wizchip_getinterruptmask(void)
 
 int8_t wizphy_getphylink(void)
 {
-   int8_t tmp = PHY_LINK_OFF;
-#if _WIZCHIP_ == W5100S
-   if(getPHYSR() & PHYSR_LNK)
-	   tmp = PHY_LINK_ON;
-#elif   _WIZCHIP_ == W5200
+   int8_t tmp;
+#if   _WIZCHIP_ == W5200
    if(getPHYSTATUS() & PHYSTATUS_LINK)
       tmp = PHY_LINK_ON;
+   else
+      tmp = PHY_LINK_OFF;
 #elif _WIZCHIP_ == W5500
    if(getPHYCFGR() & PHYCFGR_LNK_ON)
       tmp = PHY_LINK_ON;
+      tmp = PHY_LINK_OFF;
 #else
    tmp = -1;
 #endif
@@ -625,8 +641,8 @@ int8_t wizphy_getphypmode(void)
          tmp = PHY_POWER_DOWN;
       else          
          tmp = PHY_POWER_NORM;
-   #elif _WIZCHIP_ == 5500
-      if((getPHYCFGR() & PHYCFGR_OPMDC_ALLA) == PHYCFGR_OPMDC_PDOWN)
+   #elif _WIZCHIP_ == W5500
+      if(getPHYCFGR() & PHYCFGR_OPMDC_PDOWN)
          tmp = PHY_POWER_DOWN;
       else 
          tmp = PHY_POWER_NORM;
@@ -637,88 +653,6 @@ int8_t wizphy_getphypmode(void)
 }
 #endif
 
-#if _WIZCHIP_ == W5100S
-void wizphy_reset(void)
-{
-	uint16_t tmp = wiz_mdio_read(PHYMDIO_BMCR);
-	tmp |= BMCR_RESET;
-	wiz_mdio_write(PHYMDIO_BMCR, tmp);
-	while(wiz_mdio_read(PHYMDIO_BMCR)&BMCR_RESET){}
-}
-
-void wizphy_setphyconf(wiz_PhyConf* phyconf)
-{
-   uint16_t tmp = wiz_mdio_read(PHYMDIO_BMCR);
-   if(phyconf->mode == PHY_MODE_AUTONEGO)
-      tmp |= BMCR_AUTONEGO;
-   else
-   {
-	  tmp &= ~BMCR_AUTONEGO;
-      if(phyconf->duplex == PHY_DUPLEX_FULL)
-      {
-    	  tmp |= BMCR_DUP;
-      }
-      else
-      {
-    	  tmp &= ~BMCR_DUP;
-      }
-      if(phyconf->speed == PHY_SPEED_100)
-      {
-    	  tmp |= BMCR_SPEED;
-      }
-      else
-      {
-    	  tmp &= ~BMCR_SPEED;
-      }
-   }
-   wiz_mdio_write(PHYMDIO_BMCR, tmp);
-}
-
-void wizphy_getphyconf(wiz_PhyConf* phyconf)
-{
-   uint16_t tmp = 0;
-   tmp = wiz_mdio_read(PHYMDIO_BMCR);
-   phyconf->by   = PHY_CONFBY_SW;
-   if(tmp & BMCR_AUTONEGO)
-   {
-	   phyconf->mode = PHY_MODE_AUTONEGO;
-   }
-   else
-   {
-	   phyconf->mode = PHY_MODE_MANUAL;
-	   if(tmp&BMCR_DUP) phyconf->duplex = PHY_DUPLEX_FULL;
-	   else phyconf->duplex = PHY_DUPLEX_HALF;
-	   if(tmp&BMCR_SPEED) phyconf->speed = PHY_SPEED_100;
-	   else phyconf->speed = PHY_SPEED_10;
-   }
-}
-
-int8_t wizphy_setphypmode(uint8_t pmode)
-{
-   uint16_t tmp = 0;
-   tmp = wiz_mdio_read(PHYMDIO_BMCR);
-   if( pmode == PHY_POWER_DOWN)
-   {
-      tmp |= BMCR_PWDN;
-   }
-   else
-   {
-	   tmp &= ~BMCR_PWDN;
-   }
-   wiz_mdio_write(PHYMDIO_BMCR, tmp);
-   tmp = wiz_mdio_read(PHYMDIO_BMCR);
-   if( pmode == PHY_POWER_DOWN)
-   {
-      if(tmp & BMCR_PWDN) return 0;
-   }
-   else
-   {
-      if((tmp & BMCR_PWDN) != BMCR_PWDN) return 0;
-   }
-   return -1;
-}
-
-#endif
 #if _WIZCHIP_ == W5500
 void wizphy_reset(void)
 {
@@ -848,10 +782,13 @@ void wizchip_setnetinfo(wiz_NetInfo* pnetinfo)
 
 void wizchip_getnetinfo(wiz_NetInfo* pnetinfo)
 {
-   getSHAR(pnetinfo->mac);
+
    getGAR(pnetinfo->gw);
+   printf("GAR = %d,%d,%d,%d\r\n",pnetinfo->gw[0],pnetinfo->gw[1],pnetinfo->gw[2],pnetinfo->gw[3]);
    getSUBR(pnetinfo->sn);
+   getSHAR(pnetinfo->mac);
    getSIPR(pnetinfo->ip);
+
    pnetinfo->dns[0]= _DNS_[0];
    pnetinfo->dns[1]= _DNS_[1];
    pnetinfo->dns[2]= _DNS_[2];

@@ -67,6 +67,7 @@
 #define W5300						5300
 #define W5500						5500
 
+
 #ifndef _WIZCHIP_
 #define _WIZCHIP_                      W5100S   // W5100, W5100S, W5200, W5300, W5500
 #endif
@@ -74,8 +75,7 @@
 #define _WIZCHIP_IO_MODE_NONE_         0x0000
 #define _WIZCHIP_IO_MODE_BUS_          0x0100 /**< Bus interface mode */
 #define _WIZCHIP_IO_MODE_SPI_          0x0200 /**< SPI interface mode */
-//#define _WIZCHIP_IO_MODE_IIC_          0x0400
-//#define _WIZCHIP_IO_MODE_SDIO_         0x0800
+
 // Add to
 //
 
@@ -107,9 +107,32 @@
 * @brief Define interface mode.
 * @todo you should select interface mode as chip. Select one of @ref \_WIZCHIP_IO_MODE_SPI_ , @ref \_WIZCHIP_IO_MODE_BUS_DIR_ or @ref \_WIZCHIP_IO_MODE_BUS_INDIR_
 */
-	//#define _WIZCHIP_IO_MODE_           _WIZCHIP_IO_MODE_BUS_INDIR_
-	//#define _WIZCHIP_IO_MODE_           _WIZCHIP_IO_MODE_SPI_5500_
+
+
+//#define DMA
+
+
+//	#define _WIZCHIP_IO_MODE_           _WIZCHIP_IO_MODE_BUS_INDIR_
+//	#define _WIZCHIP_IO_MODE_           _WIZCHIP_IO_MODE_SPI_5500_
 	#define _WIZCHIP_IO_MODE_           _WIZCHIP_IO_MODE_SPI_
+#if (_WIZCHIP_IO_MODE_==_WIZCHIP_IO_MODE_BUS_INDIR_)
+	#define _WIZCHIP_IO_BASE_				0x60000000	// for 5100S IND
+	#ifdef DMA
+   	   #define BUS_DMA
+	#endif
+#elif(_WIZCHIP_IO_MODE_== _WIZCHIP_IO_MODE_SPI_)
+ 	#define _WIZCHIP_IO_BASE_				0x00000000	// for 5100S SPI
+	#ifdef DMA
+		#define SPI_DMA
+	#endif
+#endif
+
+
+
+
+
+
+
 
 //A20150601 : Define the unit of IO DATA.
    typedef   uint8_t   iodata_t;
@@ -193,8 +216,7 @@
  *       @ref \_WIZCHIP_IO_MODE_BUS_DIR_, @ref \_WIZCHIP_IO_MODE_BUS_INDIR_). \n\n
  *       ex> <code> #define \_WIZCHIP_IO_BASE_      0x00008000 </code>
  */
-#define _WIZCHIP_IO_BASE_				0x60000000	// for 5100S IND
-//#define _WIZCHIP_IO_BASE_				0x00000000	// for 5100S SPI
+
 
 #ifndef _WIZCHIP_IO_BASE_
 #define _WIZCHIP_IO_BASE_              0x00000000  // 0x8000
@@ -247,6 +269,7 @@ typedef struct __WIZCHIP
     */
    union _IF
    {	 
+
       /**
        * For BUS interface IO
        */
@@ -260,6 +283,8 @@ typedef struct __WIZCHIP
       {
          iodata_t  (*_read_data)   (uint32_t AddrSel);
          void      (*_write_data)  (uint32_t AddrSel, iodata_t wb);
+         void 	   (*_read_burst)   (uint32_t AddrSel,uint8_t* pBuf,uint32_t len);
+         void      (*_write_burst)  (uint32_t AddrSel, uint8_t* pBuf,uint32_t len);
       }BUS;      
 
       /**
@@ -496,6 +521,7 @@ void reg_wizchip_spi_cbfunc(uint8_t (*spi_rb)(void), void (*spi_wb)(uint8_t wb))
  */
 void reg_wizchip_spiburst_cbfunc(void (*spi_rb)(uint8_t* pBuf, uint16_t len), void (*spi_wb)(uint8_t* pBuf, uint16_t len));
 
+void reg_wizchip_busburst_cbfunc(void(*bus_rb)(uint32_t addr,uint8_t* pBuf,uint32_t len), void (*bus_wb)(uint32_t addr, uint8_t* pBuf,uint32_t len));
 /**
  * @ingroup extra_functions
  * @brief Controls to the WIZCHIP.
