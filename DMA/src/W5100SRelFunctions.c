@@ -9,7 +9,7 @@ DMA_InitTypeDef		DMA_RX_InitStructure, DMA_TX_InitStructure;
 void W5100SInitialze(void)
 {
 	intr_kind temp;
-	unsigned char W5100S_AdrSet[2][4] = {{8,0,0,0},{8,0,0,0}};
+	unsigned char W5100S_AdrSet[2][4] = {{2,2,2,2},{2,2,2,2}};
 	/*
 	 */
 	temp = IK_DEST_UNREACH;
@@ -44,8 +44,9 @@ void spiWriteByte(uint8_t byte)
 
 uint8_t spiReadBurst(uint8_t* pBuf, uint16_t len)
 {
+	unsigned char tempbuf =0xff;
 	DMA_TX_InitStructure.DMA_BufferSize = len;
-	DMA_TX_InitStructure.DMA_MemoryBaseAddr = pBuf;
+	DMA_TX_InitStructure.DMA_MemoryBaseAddr = &tempbuf;
 	DMA_Init(W5100S_DMA_CHANNEL_TX, &DMA_TX_InitStructure);
 
 	DMA_RX_InitStructure.DMA_BufferSize = len;
@@ -68,12 +69,14 @@ uint8_t spiReadBurst(uint8_t* pBuf, uint16_t len)
 
 void spiWriteBurst(uint8_t* pBuf, uint16_t len)
 {
+	unsigned char tempbuf;
 	DMA_TX_InitStructure.DMA_BufferSize = len;
 	DMA_TX_InitStructure.DMA_MemoryBaseAddr = pBuf;
 	DMA_Init(W5100S_DMA_CHANNEL_TX, &DMA_TX_InitStructure);
 
-	DMA_RX_InitStructure.DMA_BufferSize = len;
-	DMA_RX_InitStructure.DMA_MemoryBaseAddr = pBuf;
+	DMA_RX_InitStructure.DMA_BufferSize = 1;
+	DMA_RX_InitStructure.DMA_MemoryBaseAddr = &tempbuf;
+		DMA_RX_InitStructure.DMA_Mode = DMA_Mode_Circular;
 	DMA_Init(W5100S_DMA_CHANNEL_RX, &DMA_RX_InitStructure);
 
 	DMA_Cmd(W5100S_DMA_CHANNEL_RX, ENABLE);
