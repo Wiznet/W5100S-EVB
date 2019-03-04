@@ -784,7 +784,6 @@ void wizchip_getnetinfo(wiz_NetInfo* pnetinfo)
 {
 
    getGAR(pnetinfo->gw);
-   printf("GAR = %d,%d,%d,%d\r\n",pnetinfo->gw[0],pnetinfo->gw[1],pnetinfo->gw[2],pnetinfo->gw[3]);
    getSUBR(pnetinfo->sn);
    getSHAR(pnetinfo->mac);
    getSIPR(pnetinfo->ip);

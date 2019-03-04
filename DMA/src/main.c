@@ -9,10 +9,10 @@
 #include "W5100SRelFunctions.h"
 #include "serialCommand.h"
 
-wiz_NetInfo gWIZNETINFO = { .mac = {0x00,0x08,0xdc,0x78,0x91,0xFF},
-							.ip = {192,168,77,15},
+wiz_NetInfo gWIZNETINFO = { .mac = {0x00,0x08,0xdc,0x44,0x44,0x25},
+							.ip = {192,168,0,5},
 							.sn = {255, 255, 255, 0},
-							.gw = {192, 168, 77, 1},
+							.gw = {192, 168, 0, 1},
 							.dns = {168, 126, 63, 1},
 							.dhcp = NETINFO_STATIC};
 
@@ -80,7 +80,7 @@ int main(void)
 
 	while(1)
     {
-		loopback_tcps(0,ethBuf0,50000);
+		loopback_tcps(0,ethBuf0,5000);
     }
 }
 

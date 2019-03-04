@@ -3,9 +3,9 @@
 
 #include "stm32f10x_rcc.h"
 
-//#define SPI_1
-#define SPI_2  //W5100S EVB
-#define _WIZCHIP_IO_BASE_				0x60000003
+#define SPI_1
+//#define SPI_2  //W5100S EVB
+//#define _WIZCHIP_IO_BASE_				0x60000003
 #define PRINTF_USART			USART1
 #define PRINTF_USART_RCC		RCC_APB2Periph_USART1
 #define PRINTF_USART_TX_PIN		GPIO_Pin_9
@@ -14,8 +14,8 @@
 #define PRINTF_USART_RX_PORT	GPIOA
 
 #define W5100S_GPIO_RCC			RCC_APB2Periph_GPIOB | RCC_APB2Periph_GPIOC | RCC_APB2Periph_GPIOD | RCC_APB2Periph_GPIOE | RCC_APB2Periph_GPIOF
-#define W5100S_RESET_PIN		GPIO_Pin_8
-#define W5100S_RESET_PORT		GPIOD
+#define W5100S_RESET_PIN		GPIO_Pin_7
+#define W5100S_RESET_PORT		GPIOC
 
 #if defined(SPI_1)
 	#define W5100S_CS_PIN			GPIO_Pin_6
