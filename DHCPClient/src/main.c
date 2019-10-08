@@ -11,14 +11,14 @@
 #include "../Libraries/ioLibrary_Driver/Internet/DHCP/dhcp.h"
 
 wiz_NetInfo gWIZNETINFO = { .mac = {0x00,0x08,0xdc,0xff,0xff,0x89},
-							.ip = {192,168,0,5},
-							.sn = {255, 255, 255, 0},
-							.gw = {192, 168, 0, 1},
-							.dns = {168, 126, 63, 1},
-//							.dhcp = NETINFO_STATIC};
+                            .ip = {192,168,0,5},
+                            .sn = {255, 255, 255, 0},
+                            .gw = {192, 168, 0, 1},
+                            .dns = {168, 126, 63, 1},
+//                          .dhcp = NETINFO_STATIC};
                             .dhcp = NETINFO_DHCP};
 
-#define ETH_MAX_BUF_SIZE	2048
+#define ETH_MAX_BUF_SIZE    2048
 
 unsigned char ethBuf0[ETH_MAX_BUF_SIZE];
 unsigned char ethBuf1[ETH_MAX_BUF_SIZE];
@@ -37,61 +37,61 @@ void print_network_information(void);
 
 int main(void)
  {
-	volatile int i;
-	volatile int j,k;
-	uint8_t tmp1, tmp2;
-	uint32_t ret;
-	uint8_t dhcp_retry = 0;
-	uint8_t test_buf[ETH_MAX_BUF_SIZE];
+    volatile int i;
+    volatile int j,k;
+    uint8_t tmp1, tmp2;
+    uint32_t ret;
+    uint8_t dhcp_retry = 0;
+    uint8_t test_buf[ETH_MAX_BUF_SIZE];
 
-	RCCInitialize();
-	gpioInitialize();
-	usartInitialize();
-	timerInitialize();
-	printf("System start.\r\n");
+    RCCInitialize();
+    gpioInitialize();
+    usartInitialize();
+    timerInitialize();
+    printf("System start.\r\n");
 
 
 
 
 #if _WIZCHIP_IO_MODE_ & _WIZCHIP_IO_MODE_SPI_
-	/* SPI method callback registration */
-	reg_wizchip_spi_cbfunc(spiReadByte, spiWriteByte);
+    /* SPI method callback registration */
+    reg_wizchip_spi_cbfunc(spiReadByte, spiWriteByte);
 #ifdef SPI_DMA
-	reg_wizchip_spiburst_cbfunc(spiReadBurst, spiWriteBurst);
+    reg_wizchip_spiburst_cbfunc(spiReadBurst, spiWriteBurst);
 #endif
-	/* CS function register */
-	reg_wizchip_cs_cbfunc(csEnable,csDisable);
+    /* CS function register */
+    reg_wizchip_cs_cbfunc(csEnable,csDisable);
 #else
-	/* Indirect bus method callback registration */
-	reg_wizchip_bus_cbfunc(busReadByte, busWriteByte);
+    /* Indirect bus method callback registration */
+    reg_wizchip_bus_cbfunc(busReadByte, busWriteByte);
 #ifdef BUS_DMA
-	reg_wizchip_busburst_cbfunc(busReadBurst,busWriteBurst);
+    reg_wizchip_busburst_cbfunc(busReadBurst,busWriteBurst);
 
 #endif
 #endif
 #if _WIZCHIP_IO_MODE_ == _WIZCHIP_IO_MODE_BUS_INDIR_
-	FSMCInitialize();
+    FSMCInitialize();
 #else
-	spiInitailize();
+    spiInitailize();
 #endif
-	resetAssert();
-	delay(10);
-	resetDeassert();
-	delay(10);
-	W5100SInitialze();
-	printf("\r\nCHIP Version: %02x\r\n", getVER());
+    resetAssert();
+    delay(10);
+    resetDeassert();
+    delay(10);
+    W5100SInitialze();
+    printf("\r\nCHIP Version: %02x\r\n", getVER());
 
 
-	/* Wait Phy Link */
-	while(1){
+    /* Wait Phy Link */
+    while(1){
         ctlwizchip(CW_GET_PHYLINK, &tmp1 );
         ctlwizchip(CW_GET_PHYLINK, &tmp2 );
         if(tmp1==PHY_LINK_ON && tmp2==PHY_LINK_ON) break;
-	}
+    }
 
-	ctlnetwork(CN_SET_NETINFO, (void*) &gWIZNETINFO);
+    ctlnetwork(CN_SET_NETINFO, (void*) &gWIZNETINFO);
 
-	/* DHCP Process */
+    /* DHCP Process */
     DHCP_init(0, test_buf);
     reg_dhcp_cbfunc(dhcp_assign, dhcp_update, dhcp_conflict);
     if (gWIZNETINFO.dhcp == NETINFO_DHCP) {       // CHEP DHCP
@@ -103,7 +103,7 @@ int main(void)
                 printf("DHCP Success\r\n");
                 break;
             }
-            else if (ret == DHCP_FAILED) {
+                else if (ret == DHCP_FAILED) {
                 dhcp_retry++;
             }
 
@@ -114,31 +114,31 @@ int main(void)
         }
     }
     ctlnetwork(CN_SET_NETINFO, (void*) &gWIZNETINFO);
-	printf("Register value after W5100S initialize!\r\n");
-	print_network_information();
+    printf("Register value after W5100S initialize!\r\n");
+    print_network_information();
 
-	while(1)
+    while(1)
     {
-		loopback_tcps(0,ethBuf0,5000);
+        loopback_tcps(0,ethBuf0,5000);
     }
 }
 
 void delay(unsigned int count)
 {
-	int temp;
-	temp = count + TIM2_gettimer();
-	while(temp > TIM2_gettimer()){}
+    int temp;
+    temp = count + TIM2_gettimer();
+    while(temp > TIM2_gettimer()){}
 }
 
 void print_network_information(void)
 {
 
-	wizchip_getnetinfo(&gWIZNETINFO);
-	printf("Mac address: %02x:%02x:%02x:%02x:%02x:%02x\n\r",gWIZNETINFO.mac[0],gWIZNETINFO.mac[1],gWIZNETINFO.mac[2],gWIZNETINFO.mac[3],gWIZNETINFO.mac[4],gWIZNETINFO.mac[5]);
-	printf("IP address : %d.%d.%d.%d\n\r",gWIZNETINFO.ip[0],gWIZNETINFO.ip[1],gWIZNETINFO.ip[2],gWIZNETINFO.ip[3]);
-	printf("SM Mask	   : %d.%d.%d.%d\n\r",gWIZNETINFO.sn[0],gWIZNETINFO.sn[1],gWIZNETINFO.sn[2],gWIZNETINFO.sn[3]);
-	printf("Gate way   : %d.%d.%d.%d\n\r",gWIZNETINFO.gw[0],gWIZNETINFO.gw[1],gWIZNETINFO.gw[2],gWIZNETINFO.gw[3]);
-	printf("DNS Server : %d.%d.%d.%d\n\r",gWIZNETINFO.dns[0],gWIZNETINFO.dns[1],gWIZNETINFO.dns[2],gWIZNETINFO.dns[3]);
+    wizchip_getnetinfo(&gWIZNETINFO);
+    printf("Mac address: %02x:%02x:%02x:%02x:%02x:%02x\n\r",gWIZNETINFO.mac[0],gWIZNETINFO.mac[1],gWIZNETINFO.mac[2],gWIZNETINFO.mac[3],gWIZNETINFO.mac[4],gWIZNETINFO.mac[5]);
+    printf("IP address : %d.%d.%d.%d\n\r",gWIZNETINFO.ip[0],gWIZNETINFO.ip[1],gWIZNETINFO.ip[2],gWIZNETINFO.ip[3]);
+    printf("SM Mask    : %d.%d.%d.%d\n\r",gWIZNETINFO.sn[0],gWIZNETINFO.sn[1],gWIZNETINFO.sn[2],gWIZNETINFO.sn[3]);
+    printf("Gate way   : %d.%d.%d.%d\n\r",gWIZNETINFO.gw[0],gWIZNETINFO.gw[1],gWIZNETINFO.gw[2],gWIZNETINFO.gw[3]);
+    printf("DNS Server : %d.%d.%d.%d\n\r",gWIZNETINFO.dns[0],gWIZNETINFO.dns[1],gWIZNETINFO.dns[2],gWIZNETINFO.dns[3]);
 }
 
 
