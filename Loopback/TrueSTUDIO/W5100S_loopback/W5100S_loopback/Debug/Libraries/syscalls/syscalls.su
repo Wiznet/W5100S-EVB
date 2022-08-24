@@ -1,7 +1,0 @@
-syscalls.c:17:9:_sbrk	24	static
-syscalls.c:33:5:link	16	static
-syscalls.c:39:5:_close	16	static
-syscalls.c:45:5:_fstat	16	static
-syscalls.c:52:5:_isatty	16	static
-syscalls.c:58:5:_lseek	24	static
-syscalls.c:107:6:abort	4	static

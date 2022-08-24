@@ -1,3 +1,0 @@
-main.c:47:5:main	24	static
-main.c:97:6:delay	24	static
-main.c:104:6:print_network_information	32	static

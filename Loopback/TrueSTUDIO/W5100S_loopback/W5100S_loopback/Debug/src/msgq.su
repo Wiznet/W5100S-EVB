@@ -1,4 +1,0 @@
-msgq.c:13:6:clear_queue	4	static
-msgq.c:17:5:queue_put	16	static
-msgq.c:29:5:queue_get	16	static
-msgq.c:40:5:queue_isEmpty	4	static

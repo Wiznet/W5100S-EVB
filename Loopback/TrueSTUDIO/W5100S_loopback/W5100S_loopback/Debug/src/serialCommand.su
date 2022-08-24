@@ -1,6 +1,0 @@
-serialCommand.c:8:6:USART1_IRQHandler	8	static
-serialCommand.c:24:5:_read	32	static
-serialCommand.c:48:5:_write	32	static
-serialCommand.c:72:6:_getchar_nb	16	static
-serialCommand.c:80:6:_getchar_b	16	static
-serialCommand.c:89:10:gets_echo	24	static
