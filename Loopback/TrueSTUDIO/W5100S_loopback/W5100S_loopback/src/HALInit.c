@@ -13,6 +13,10 @@
 
 
 volatile unsigned long globalTimer = 0;
+#if 1
+// 20220825 taylor
+extern DMA_InitTypeDef	DMA_RX_InitStructure, DMA_TX_InitStructure;
+#endif
 
 void HardFault_Handler(void)
 {
@@ -257,6 +261,46 @@ void spiInitailize(void)
 	SPI_Init(W5100S_SPI, &SPI_InitStructure);
 
 	SPI_Cmd(W5100S_SPI,ENABLE);
+
+#if 1
+	// 20220825 taylor
+#if defined SPI_DMA
+	RCC_AHBPeriphClockCmd(RCC_AHBPeriph_DMA1, ENABLE);
+
+	SPI_I2S_DMACmd(W5100S_SPI, SPI_I2S_DMAReq_Rx | SPI_I2S_DMAReq_Tx , ENABLE);
+/* DMA SPI RX Channel */
+	DMA_RX_InitStructure.DMA_BufferSize = 0; //default
+	DMA_RX_InitStructure.DMA_DIR = DMA_DIR_PeripheralSRC;
+	DMA_RX_InitStructure.DMA_M2M = DMA_M2M_Disable;
+	DMA_RX_InitStructure.DMA_MemoryBaseAddr = 0;
+	DMA_RX_InitStructure.DMA_MemoryDataSize = DMA_MemoryDataSize_Byte;
+	DMA_RX_InitStructure.DMA_MemoryInc = DMA_MemoryInc_Enable;
+	DMA_RX_InitStructure.DMA_Mode = DMA_Mode_Normal;
+
+	DMA_RX_InitStructure.DMA_PeripheralBaseAddr = (uint32_t)(&(W5100S_SPI->DR));
+	DMA_RX_InitStructure.DMA_PeripheralDataSize = DMA_PeripheralDataSize_Byte;
+	DMA_RX_InitStructure.DMA_PeripheralInc = DMA_PeripheralInc_Disable;
+	DMA_RX_InitStructure.DMA_Priority = DMA_Priority_High;
+
+	DMA_Init(W5100S_DMA_CHANNEL_RX, &DMA_RX_InitStructure);
+
+	/* DMA SPI TX Channel */
+	DMA_TX_InitStructure.DMA_BufferSize = 0;
+	DMA_TX_InitStructure.DMA_DIR = DMA_DIR_PeripheralDST;
+	DMA_TX_InitStructure.DMA_M2M = DMA_M2M_Disable;
+	DMA_TX_InitStructure.DMA_MemoryBaseAddr = 0;
+	DMA_TX_InitStructure.DMA_MemoryDataSize = DMA_MemoryDataSize_Byte;
+	DMA_TX_InitStructure.DMA_MemoryInc = DMA_MemoryInc_Enable;
+	DMA_TX_InitStructure.DMA_Mode = DMA_Mode_Normal;
+
+	DMA_TX_InitStructure.DMA_PeripheralBaseAddr = (uint32_t)(&(W5100S_SPI->DR));
+	DMA_TX_InitStructure.DMA_PeripheralDataSize = DMA_PeripheralDataSize_Byte;
+	DMA_TX_InitStructure.DMA_PeripheralInc = DMA_PeripheralInc_Disable;
+	DMA_TX_InitStructure.DMA_Priority = DMA_Priority_High;
+
+	DMA_Init(W5100S_DMA_CHANNEL_TX, &DMA_TX_InitStructure);
+#endif
+#endif
 }
 
 void FSMCInitialize(void)

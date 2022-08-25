@@ -3,6 +3,11 @@
 #include "stm32f10x_gpio.h"
 #include "stm32f10x_spi.h"
 
+#if 1
+// 20220825 taylor
+DMA_InitTypeDef		DMA_RX_InitStructure, DMA_TX_InitStructure;
+#endif
+
 void W5100SInitialze(void)
 {
 	intr_kind temp;
@@ -44,6 +49,61 @@ void spiWriteByte(uint8_t byte)
 	while (SPI_I2S_GetFlagStatus(W5100S_SPI, SPI_I2S_FLAG_RXNE) == RESET);
 	SPI_I2S_ReceiveData(W5100S_SPI);
 }
+
+#if 1
+// 20220825 taylor
+uint8_t spiReadBurst(uint8_t* pBuf, uint16_t len)
+{
+	unsigned char tempbuf =0xff;
+	DMA_TX_InitStructure.DMA_BufferSize = len;
+	DMA_TX_InitStructure.DMA_MemoryBaseAddr = &tempbuf;
+	//DMA_TX_InitStructure.DMA_Mode = DMA_Mode_Circular;
+	DMA_Init(W5100S_DMA_CHANNEL_TX, &DMA_TX_InitStructure);
+
+	DMA_RX_InitStructure.DMA_BufferSize = len;
+	DMA_RX_InitStructure.DMA_MemoryBaseAddr = pBuf;
+	DMA_Init(W5100S_DMA_CHANNEL_RX, &DMA_RX_InitStructure);
+
+	/* Enable SPI Rx/Tx DMA Request*/
+	DMA_Cmd(W5100S_DMA_CHANNEL_RX, ENABLE);
+	DMA_Cmd(W5100S_DMA_CHANNEL_TX, ENABLE);
+
+	/* Waiting for the end of Data Transfer */
+	while(DMA_GetFlagStatus(DMA_TX_FLAG) == RESET);
+	while(DMA_GetFlagStatus(DMA_RX_FLAG) == RESET);
+
+	DMA_ClearFlag(DMA_TX_FLAG | DMA_RX_FLAG);
+
+	DMA_Cmd(W5100S_DMA_CHANNEL_TX, DISABLE);
+	DMA_Cmd(W5100S_DMA_CHANNEL_RX, DISABLE);
+}
+
+void spiWriteBurst(uint8_t* pBuf, uint16_t len)
+{
+	unsigned char tempbuf;
+	DMA_TX_InitStructure.DMA_BufferSize = len;
+	DMA_TX_InitStructure.DMA_MemoryBaseAddr = pBuf;
+	DMA_Init(W5100S_DMA_CHANNEL_TX, &DMA_TX_InitStructure);
+
+	DMA_RX_InitStructure.DMA_BufferSize = 1;
+	DMA_RX_InitStructure.DMA_MemoryBaseAddr = &tempbuf;
+	DMA_RX_InitStructure.DMA_Mode = DMA_Mode_Circular;
+	DMA_Init(W5100S_DMA_CHANNEL_RX, &DMA_RX_InitStructure);
+
+	/* Enable SPI Rx/Tx DMA Request*/
+	DMA_Cmd(W5100S_DMA_CHANNEL_RX, ENABLE);
+	DMA_Cmd(W5100S_DMA_CHANNEL_TX, ENABLE);
+
+	/* Waiting for the end of Data Transfer */
+	while(DMA_GetFlagStatus(DMA_TX_FLAG) == RESET);
+	while(DMA_GetFlagStatus(DMA_RX_FLAG) == RESET);
+
+	DMA_ClearFlag(DMA_TX_FLAG | DMA_RX_FLAG);
+
+	DMA_Cmd(W5100S_DMA_CHANNEL_TX, DISABLE);
+	DMA_Cmd(W5100S_DMA_CHANNEL_RX, DISABLE);
+}
+#endif
 
 //(*bus_wb)(uint32_t addr, iodata_t wb);
 void busWriteByte(uint32_t addr, iodata_t data)

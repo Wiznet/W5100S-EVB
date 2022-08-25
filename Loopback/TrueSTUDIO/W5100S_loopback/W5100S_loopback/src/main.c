@@ -64,6 +64,10 @@ int main(void)
 #if _WIZCHIP_IO_MODE_ & _WIZCHIP_IO_MODE_SPI_
 	// SPI method callback registration
 	reg_wizchip_spi_cbfunc(spiReadByte, spiWriteByte);
+#if 1
+	// 20220825 taylor
+	reg_wizchip_spiburst_cbfunc(spiReadBurst, spiWriteBurst);
+#endif
 	// CS function register
 	reg_wizchip_cs_cbfunc(csEnable,csDisable);
 #else

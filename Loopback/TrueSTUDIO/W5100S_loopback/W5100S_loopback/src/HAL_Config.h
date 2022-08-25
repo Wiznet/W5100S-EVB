@@ -26,4 +26,12 @@
 #define W5100S_SPI_MOSI_PIN		GPIO_Pin_15
 #define W5100S_SPI_MISO_PIN		GPIO_Pin_14
 
+#define W5100S_DMA_CHANNEL_RX	DMA1_Channel4
+#define W5100S_DMA_CHANNEL_TX	DMA1_Channel5
+
+#define DMA_RX_FLAG				DMA1_FLAG_TC4
+#define DMA_TX_FLAG				DMA1_FLAG_TC5
+
+#define SPI_DMA
+
 #endif
