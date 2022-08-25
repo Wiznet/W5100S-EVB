@@ -38,7 +38,25 @@ int main(void)
 	gpioInitialize();
 	usartInitialize();
 	timerInitialize();
+#if 1
+	// 20220824 taylor
+
+	RCC_ClocksTypeDef w5100s_evb;
+	RCC_GetClocksFreq(&w5100s_evb);
+
+	printf("\r\n===================================\r\n");
 	printf("System start.\r\n");
+	printf("Compiled Date %s Time %s\r\n", __DATE__, __TIME__);
+	printf("===================================\r\n");
+	printf("SYSCLK_Frequency %ld MHz\r\n", w5100s_evb.SYSCLK_Frequency/1000000);
+	printf("HCLK_Frequency %ld MHz\r\n", w5100s_evb.HCLK_Frequency/1000000);
+	printf("PCLK1_Frequency %ld MHz\r\n", w5100s_evb.PCLK1_Frequency/1000000);
+	printf("PCLK2_Frequency %ld MHz\r\n", w5100s_evb.PCLK2_Frequency/1000000);
+	printf("ADCCLK_Frequency %ld MHz\r\n", w5100s_evb.ADCCLK_Frequency/1000000);
+	printf("===================================\r\n\r\n");
+#else
+	printf("System start.\r\n");
+#endif
 
 
 
@@ -59,9 +77,9 @@ int main(void)
 	spiInitailize();
 #endif
 	resetAssert();
-	delay(10);
+	delay(1);
 	resetDeassert();
-	delay(10);
+	delay(60);
 	W5100SInitialze();
 //	printf("\r\nCHIP Version: %02x\r\n", getVER());
 //
