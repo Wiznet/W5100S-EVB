@@ -1,13 +1,13 @@
-#include "../../../ioLibrary_Driver/Internet/httpServer/httpServer.h"
-
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 
-#include "../../../ioLibrary_Driver/Ethernet/socket.h"
-#include "../../../ioLibrary_Driver/Ethernet/wizchip_conf.h"
-#include "../../../ioLibrary_Driver/Internet/httpServer/httpParser.h"
-#include "../../../ioLibrary_Driver/Internet/httpServer/httpUtil.h"
+#include "socket.h"
+#include "wizchip_conf.h"
+
+#include "httpServer.h"
+#include "httpParser.h"
+#include "httpUtil.h"
 
 #ifdef	_USE_SDCARD_
 #include "ff.h" 	// header file for FatFs library (FAT file system)
@@ -169,7 +169,7 @@ void httpServer_run(uint8_t seqnum)
 
 						gettime = get_httpServer_timecount();
 						// Check the TX socket buffer for End of HTTP response sends
-						while(getSn_TX_FSR(s) != (getSn_TXBUF_SIZE(s)*1024))
+						while(getSn_TX_FSR(s) != (getSn_TxMAX(s)))
 						{
 							if((get_httpServer_timecount() - gettime) > 3)
 							{

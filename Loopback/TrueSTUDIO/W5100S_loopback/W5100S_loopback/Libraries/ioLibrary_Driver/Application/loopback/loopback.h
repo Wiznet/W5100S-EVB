@@ -1,6 +1,10 @@
 #ifndef _LOOPBACK_H_
 #define _LOOPBACK_H_
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include <stdint.h>
 
 /* Loopback test debug message printout enable */
@@ -27,8 +31,8 @@ int32_t loopback_tcpc(uint8_t sn, uint8_t* buf, uint8_t* destip, uint16_t destpo
 /* UDP Loopback test example */
 int32_t loopback_udps(uint8_t sn, uint8_t* buf, uint16_t port);
 
-//todo for test
-void register_read(void);
-void socket_register_read(uint8_t sn);
+#ifdef __cplusplus
+}
+#endif
 
 #endif

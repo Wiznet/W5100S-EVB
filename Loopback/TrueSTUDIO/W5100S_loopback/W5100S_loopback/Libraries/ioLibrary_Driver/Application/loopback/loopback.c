@@ -222,37 +222,4 @@ int32_t loopback_udps(uint8_t sn, uint8_t* buf, uint16_t port)
    return 1;
 }
 
-
-void register_read(void)
-{
-	int i;
-	printf("                    ----register read----\r\n");
-	printf("Address | ");
-	for(i = 0 ; i < 16 ; i++)
-	  printf("%02x ",i);
-	printf("\r\n---------------------------------------------------------");
-	for(i = 0 ; i < 0x0090 ; i++)
-	{
-	  if(i%16 == 0) printf("\r\n  %04x  | ", i);
-	  printf("%02x ",WIZCHIP_READ(i));
-	}
-	printf("\r\n");
-}
-
-void socket_register_read(uint8_t sn)
-{
-	int i;
-	printf("                    ----register read----\r\n");
-	printf("Address | ");
-	for(i = 0 ; i < 16 ; i++)
-	  printf("%02x ",i);
-	printf("\r\n---------------------------------------------------------");
-	for(i = 0x400+(sn*(0x100)) ; i < 0x400+(sn*(0x100)+0x35) ; i++)
-	{
-	  if(i%16 == 0) printf("\r\n0x%04x  | ", i);
-	  printf("%02x ",WIZCHIP_READ(i));
-	}
-	printf("\r\n");
-}
-
 #endif

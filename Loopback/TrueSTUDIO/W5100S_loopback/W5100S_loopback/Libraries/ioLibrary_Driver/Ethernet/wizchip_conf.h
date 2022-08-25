@@ -36,7 +36,7 @@
 //! LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR 
 //! CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF 
 //! SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
-//! INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN 
+//! INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
 //! CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
 //! ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF 
 //! THE POSSIBILITY OF SUCH DAMAGE.
@@ -54,6 +54,10 @@
 #ifndef  _WIZCHIP_CONF_H_
 #define  _WIZCHIP_CONF_H_
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include <stdint.h>
 /**
  * @brief Select WIZCHIP.
@@ -67,7 +71,6 @@
 #define W5300						5300
 #define W5500						5500
 
-
 #ifndef _WIZCHIP_
 #define _WIZCHIP_                      W5100S   // W5100, W5100S, W5200, W5300, W5500
 #endif
@@ -75,7 +78,8 @@
 #define _WIZCHIP_IO_MODE_NONE_         0x0000
 #define _WIZCHIP_IO_MODE_BUS_          0x0100 /**< Bus interface mode */
 #define _WIZCHIP_IO_MODE_SPI_          0x0200 /**< SPI interface mode */
-
+//#define _WIZCHIP_IO_MODE_IIC_          0x0400
+//#define _WIZCHIP_IO_MODE_SDIO_         0x0800
 // Add to
 //
 
@@ -107,32 +111,9 @@
 * @brief Define interface mode.
 * @todo you should select interface mode as chip. Select one of @ref \_WIZCHIP_IO_MODE_SPI_ , @ref \_WIZCHIP_IO_MODE_BUS_DIR_ or @ref \_WIZCHIP_IO_MODE_BUS_INDIR_
 */
-
-
-//#define DMA
-
-
 //	#define _WIZCHIP_IO_MODE_           _WIZCHIP_IO_MODE_BUS_INDIR_
-//	#define _WIZCHIP_IO_MODE_           _WIZCHIP_IO_MODE_SPI_5500_
+	//#define _WIZCHIP_IO_MODE_           _WIZCHIP_IO_MODE_SPI_5500_
 	#define _WIZCHIP_IO_MODE_           _WIZCHIP_IO_MODE_SPI_
-#if (_WIZCHIP_IO_MODE_==_WIZCHIP_IO_MODE_BUS_INDIR_)
-	#define _WIZCHIP_IO_BASE_				0x60000000	// for 5100S IND
-	#ifdef DMA
-   	   #define BUS_DMA
-	#endif
-#elif(_WIZCHIP_IO_MODE_== _WIZCHIP_IO_MODE_SPI_)
- 	#define _WIZCHIP_IO_BASE_				0x00000000	// for 5100S SPI
-	#ifdef DMA
-		#define SPI_DMA
-	#endif
-#endif
-
-
-
-
-
-
-
 
 //A20150601 : Define the unit of IO DATA.
    typedef   uint8_t   iodata_t;
@@ -181,8 +162,8 @@
  * @todo you should select interface mode as chip. Select one of @ref \_WIZCHIP_IO_MODE_SPI_ , @ref \_WIZCHIP_IO_MODE_BUS_DIR_ or @ref \_WIZCHIP_IO_MODE_BUS_INDIR_
  */
 #ifndef _WIZCHIP_IO_MODE_
-//   #define _WIZCHIP_IO_MODE_           _WIZCHIP_IO_MODE_BUS_DIR_
- #define _WIZCHIP_IO_MODE_           _WIZCHIP_IO_MODE_BUS_INDIR_
+   #define _WIZCHIP_IO_MODE_           _WIZCHIP_IO_MODE_BUS_DIR_
+// #define _WIZCHIP_IO_MODE_           _WIZCHIP_IO_MODE_BUS_INDIR_
 #endif
 
 //A20150601 : Define the unit and bus width of IO DATA. 
@@ -191,7 +172,7 @@
     * @todo you should select the bus width. Select one of 8 or 16.
     */
    #ifndef _WIZCHIP_IO_BUS_WIDTH_
-   #define _WIZCHIP_IO_BUS_WIDTH_       8  // 16
+   #define _WIZCHIP_IO_BUS_WIDTH_       16  // 8
    #endif
    #if _WIZCHIP_IO_BUS_WIDTH_ == 8
       typedef   uint8_t   iodata_t;
@@ -216,7 +197,12 @@
  *       @ref \_WIZCHIP_IO_MODE_BUS_DIR_, @ref \_WIZCHIP_IO_MODE_BUS_INDIR_). \n\n
  *       ex> <code> #define \_WIZCHIP_IO_BASE_      0x00008000 </code>
  */
-
+#if _WIZCHIP_IO_MODE_ & _WIZCHIP_IO_MODE_BUS_
+//	#define _WIZCHIP_IO_BASE_				0x60000000	// for 5100S IND
+	#define _WIZCHIP_IO_BASE_				0x68000000	// for W5300
+#elif _WIZCHIP_IO_MODE_ & _WIZCHIP_IO_MODE_SPI_
+	#define _WIZCHIP_IO_BASE_				0x00000000	// for 5100S SPI
+#endif
 
 #ifndef _WIZCHIP_IO_BASE_
 #define _WIZCHIP_IO_BASE_              0x00000000  // 0x8000
@@ -247,7 +233,7 @@
 typedef struct __WIZCHIP
 {
    uint16_t  if_mode;               ///< host interface mode
-   uint8_t   id[6];                 ///< @b WIZCHIP ID such as @b 5100, @b 5200, @b 5500, and so on.
+   uint8_t   id[8];                 ///< @b WIZCHIP ID such as @b 5100, @b 5100S, @b 5200, @b 5500, and so on.
    /**
     * The set of critical section callback func.
     */
@@ -269,7 +255,6 @@ typedef struct __WIZCHIP
     */
    union _IF
    {	 
-
       /**
        * For BUS interface IO
        */
@@ -283,8 +268,6 @@ typedef struct __WIZCHIP
       {
          iodata_t  (*_read_data)   (uint32_t AddrSel);
          void      (*_write_data)  (uint32_t AddrSel, iodata_t wb);
-         void 	   (*_read_burst)   (uint32_t AddrSel,uint8_t* pBuf,uint32_t len);
-         void      (*_write_burst)  (uint32_t AddrSel, uint8_t* pBuf,uint32_t len);
       }BUS;      
 
       /**
@@ -521,7 +504,6 @@ void reg_wizchip_spi_cbfunc(uint8_t (*spi_rb)(void), void (*spi_wb)(uint8_t wb))
  */
 void reg_wizchip_spiburst_cbfunc(void (*spi_rb)(uint8_t* pBuf, uint16_t len), void (*spi_wb)(uint8_t* pBuf, uint16_t len));
 
-void reg_wizchip_busburst_cbfunc(void(*bus_rb)(uint32_t addr,uint8_t* pBuf,uint32_t len), void (*bus_wb)(uint32_t addr, uint8_t* pBuf,uint32_t len));
 /**
  * @ingroup extra_functions
  * @brief Controls to the WIZCHIP.
@@ -672,5 +654,8 @@ void wizchip_settimeout(wiz_NetTimeout* nettime);
  * @param nettime @ref _RTR_ value and @ref _RCR_ value. Refer to @ref wiz_NetTimeout. 
  */
 void wizchip_gettimeout(wiz_NetTimeout* nettime);
+#ifdef __cplusplus
+ }
+#endif
 
 #endif   // _WIZCHIP_CONF_H_
