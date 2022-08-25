@@ -1056,20 +1056,12 @@ static void SetSysClockTo72(void)
     RCC->CFGR |= (uint32_t)(RCC_CFGR_PLLXTPRE_PREDIV1 | RCC_CFGR_PLLSRC_PREDIV1 | 
                             RCC_CFGR_PLLMULL9); 
 #else
-#if 1
-    // 20220824 taylor
     // HSE 12MHz * 6 = 72MHz
 
     /*  PLL configuration: PLLCLK = HSE * 6 = 72 MHz */
 	RCC->CFGR &= (uint32_t)((uint32_t)~(RCC_CFGR_PLLSRC | RCC_CFGR_PLLXTPRE |
 										RCC_CFGR_PLLMULL));
 	RCC->CFGR |= (uint32_t)(RCC_CFGR_PLLSRC_HSE | RCC_CFGR_PLLMULL6);
-#else
-    /*  PLL configuration: PLLCLK = HSE * 9 = 72 MHz */
-    RCC->CFGR &= (uint32_t)((uint32_t)~(RCC_CFGR_PLLSRC | RCC_CFGR_PLLXTPRE |
-                                        RCC_CFGR_PLLMULL));
-    RCC->CFGR |= (uint32_t)(RCC_CFGR_PLLSRC_HSE | RCC_CFGR_PLLMULL9);
-#endif
 #endif /* STM32F10X_CL */
 
     /* Enable PLL */

@@ -3,10 +3,7 @@
 #include "stm32f10x_gpio.h"
 #include "stm32f10x_spi.h"
 
-#if 1
-// 20220825 taylor
 DMA_InitTypeDef		DMA_RX_InitStructure, DMA_TX_InitStructure;
-#endif
 
 void W5100SInitialze(void)
 {
@@ -50,8 +47,6 @@ void spiWriteByte(uint8_t byte)
 	SPI_I2S_ReceiveData(W5100S_SPI);
 }
 
-#if 1
-// 20220825 taylor
 uint8_t spiReadBurst(uint8_t* pBuf, uint16_t len)
 {
 	unsigned char tempbuf =0xff;
@@ -103,7 +98,6 @@ void spiWriteBurst(uint8_t* pBuf, uint16_t len)
 	DMA_Cmd(W5100S_DMA_CHANNEL_TX, DISABLE);
 	DMA_Cmd(W5100S_DMA_CHANNEL_RX, DISABLE);
 }
-#endif
 
 //(*bus_wb)(uint32_t addr, iodata_t wb);
 void busWriteByte(uint32_t addr, iodata_t data)

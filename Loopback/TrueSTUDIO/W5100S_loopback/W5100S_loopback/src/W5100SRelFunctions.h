@@ -8,11 +8,8 @@
 uint8_t spiReadByte(void);
 void spiWriteByte(uint8_t byte);
 
-#if 1
-// 20220825 taylor
 uint8_t spiReadBurst(uint8_t* pBuf, uint16_t len);
 void spiWriteBurst(uint8_t* pBuf, uint16_t len);
-#endif
 
 iodata_t busReadByte(uint32_t addr);
 void busWriteByte(uint32_t addr, iodata_t data);

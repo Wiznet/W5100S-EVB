@@ -38,8 +38,6 @@ int main(void)
 	gpioInitialize();
 	usartInitialize();
 	timerInitialize();
-#if 1
-	// 20220824 taylor
 
 	RCC_ClocksTypeDef w5100s_evb;
 	RCC_GetClocksFreq(&w5100s_evb);
@@ -54,20 +52,12 @@ int main(void)
 	printf("PCLK2_Frequency %ld MHz\r\n", w5100s_evb.PCLK2_Frequency/1000000);
 	printf("ADCCLK_Frequency %ld MHz\r\n", w5100s_evb.ADCCLK_Frequency/1000000);
 	printf("===================================\r\n\r\n");
-#else
-	printf("System start.\r\n");
-#endif
-
-
-
 
 #if _WIZCHIP_IO_MODE_ & _WIZCHIP_IO_MODE_SPI_
 	// SPI method callback registration
 	reg_wizchip_spi_cbfunc(spiReadByte, spiWriteByte);
-#if 1
-	// 20220825 taylor
 	reg_wizchip_spiburst_cbfunc(spiReadBurst, spiWriteBurst);
-#endif
+
 	// CS function register
 	reg_wizchip_cs_cbfunc(csEnable,csDisable);
 #else
