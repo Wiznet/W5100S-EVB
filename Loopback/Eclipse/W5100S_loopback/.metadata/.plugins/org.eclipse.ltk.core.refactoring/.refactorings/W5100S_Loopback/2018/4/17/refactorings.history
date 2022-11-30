@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename resource &apos;W5100S_Loopback/src/ioLibrary_Driver-master&apos; to &apos;ioLibrary_Driver&apos;" description="Rename resource &apos;ioLibrary_Driver-master&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/ioLibrary_Driver-master" name="ioLibrary_Driver" stamp="1524559811603" updateReferences="true"/>
-</session>
