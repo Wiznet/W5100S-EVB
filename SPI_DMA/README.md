@@ -110,4 +110,4 @@ Link
 [link-w5100s-evb-terminal-start]: https://github.com/Wiznet/W5100S-EVB/blob/master/static/images/w5100s-evb-terminal-start.png
 [link-connect_to_loopback_server_using_hercules_tcp_client_1]: https://github.com/Wiznet/W5100S-EVB/blob/master/static/images/connect_to_loopback_server_using_hercules_tcp_client_1.png
 [link-connect_to_loopback_server_using_hercules_tcp_client_2]: https://github.com/Wiznet/W5100S-EVB/blob/master/static/images/connect_to_loopback_server_using_hercules_tcp_client_2.png
-[link-receive_back_sent_message]: https://github.com/Wiznet/W5100S-EVB/blob/master/static/images/loopback/receive_back_sent_message.png
+[link-receive_back_sent_message]: https://github.com/Wiznet/W5100S-EVB/blob/master/static/images/receive_back_sent_message.png
