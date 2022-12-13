@@ -66,7 +66,7 @@ static wiz_NetInfo g_net_info =
 
 
 ## Step 5: Upload and Run
-# Flash programming via UART
+### Flash programming via UART
 STMicroelectronics Flash loader demonstrator is a program to perform in-system programming (ISP) of the MCU flash via its UART.
 
 1. Press the 'Boot0' push button switch on board until turn on the board after reset or power supply.
@@ -108,6 +108,6 @@ Link
 [link-flash_down]: https://github.com/Wiznet/W5100S-EVB/blob/master/static/images/flash_down.png
 [link-flash_down2]: https://github.com/Wiznet/W5100S-EVB/blob/master/static/images/flash_down2.png
 [link-w5100s-evb-terminal-start]: https://github.com/Wiznet/W5100S-EVB/blob/master/static/images/w5100s-evb-terminal-start.png
-[link-connect_to_loopback_server_using_hercules_tcp_client_1]: https://github.com/Wiznet/W5100S-EVB/blob/master/static/images/loopback/connect_to_loopback_server_using_hercules_tcp_client_1.png
-[link-connect_to_loopback_server_using_hercules_tcp_client_2]: https://github.com/Wiznet/W5100S-EVB/blob/master/static/images/loopback/connect_to_loopback_server_using_hercules_tcp_client_2.png
+[link-connect_to_loopback_server_using_hercules_tcp_client_1]: https://github.com/Wiznet/W5100S-EVB/blob/master/static/images/connect_to_loopback_server_using_hercules_tcp_client_1.png
+[link-connect_to_loopback_server_using_hercules_tcp_client_2]: https://github.com/Wiznet/W5100S-EVB/blob/master/static/images/connect_to_loopback_server_using_hercules_tcp_client_2.png
 [link-receive_back_sent_message]: https://github.com/Wiznet/W5100S-EVB/blob/master/static/images/loopback/receive_back_sent_message.png
