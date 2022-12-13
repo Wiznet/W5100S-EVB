@@ -22,11 +22,13 @@ For more details, please refer to [W5100S-EVB page](https://docs.wiznet.io/Produ
 - 2 x Push button switch(SW), 1 x RGB LED
 - 1-Channel 10/100Mbps Ethernet Connector (RJ-45 with transformer) – (If you want to RJ-45, Contact us)
 - Micro USB B connector and 5-pin(2.54mm) Cortex debug connector for SWD(Serial Wire Debug)
+
 - W5100S-EVB Arduino Compatible Pinout
 ![W5100S-EVB Arduino Compatible Pinout](https://docs.wiznet.io/assets/images/arduino_swd_pinout-6dd964d0354541e6aa999bfee62d903a.png "W5100S-EVB Arduino Compatible Pinout")
 
 - W5100S-EVB External Pinout(left)
 ![W5100S-EVB External Pinout(left)](https://docs.wiznet.io/assets/images/expansion_pinout_left_v3-0c83eddd276bc8f4af413d9f7e50cb79.png "W5100S-EVB External Pinout(left)")
+
 - W5100S-EVB External Pinout(Right)
 ![W5100S-EVB External Pinout(Right)](https://docs.wiznet.io/assets/images/expansion_pinout_right_v3-06712f1ef8b750365707af62baa36920.png "W5100S-EVB External Pinout(Right)")
 
@@ -34,30 +36,26 @@ For more details, please refer to [W5100S-EVB page](https://docs.wiznet.io/Produ
 These are libraries source code and example projects based on STM32CubeIDE
 If you want to base on TrueStudio or Ecplipse, change git branch master to truestudio_ver
 - W5100S-EVB TrueStudio or Ecplipse Git
-![W5100S-EVB TrueStudio or Ecplipse Git](https://github.com/Wiznet/W5100S-EVB/tree/truestudio_ver "W5100S-EVB TrueStudio or Ecplipse Git")
+ [W5100S-EVB TrueStudio or Ecplipse Git](https://github.com/Wiznet/W5100S-EVB/tree/truestudio_ver)
 
 The tree of Directory is below.
 
 ```
 W5100S-EVB
-    ┃
-		┣FSMC_DMA or SPI_DMA
-		┃
-		┣ Core
-		┃		┣ Inc
-		┃		┃  ┗ main.h
-		┃		┣ Src
-		┃		┃	 ┗ main.c
-		┃		┗ Startup
-		┗ Drivers
-		    ┣ CMSIS
-				┃
-		    ┣ STM32F1xx_HAL_Driver
-				┃
-        ┗ ioLibrary_Driver
-           ┣ Application
-           ┣ Ethernet
-           ┗ Internet
+    ┣ FSMC_DMA or SPI_DMA
+    ┣ Core
+    ┃  ┣ Inc
+    ┃  ┃  ┗ main.h
+    ┃  ┣ Src
+    ┃  ┃  ┗ main.c
+    ┃  ┗ Startup
+    ┗ Drivers
+       ┣ CMSIS
+       ┣ STM32F1xx_HAL_Driver
+       ┗ ioLibrary_Driver
+          ┣ Application
+          ┣ Ethernet
+          ┗ Internet
 
 ```
 
@@ -81,5 +79,5 @@ And refer to this link [W5100S Hardware data](https://github.com/Wiznet/Hardware
 
 
 ## Revision History
-First release : May. 2018
-0.0.0.2       : Dec. 2022
+- First release : May. 2018
+- 0.0.0.2       : Dec. 2022
