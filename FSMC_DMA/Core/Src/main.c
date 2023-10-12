@@ -21,11 +21,12 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include <stdio.h>
+#include "Application/loopback/loopback.h"
 #include "socket.h"
 #include "Internet/DHCP/dhcp.h"
 #include "wizchip_conf.h"
 #include "W5100S/w5100s.h"
-
 
 /* USER CODE END Includes */
 
@@ -37,19 +38,24 @@
 /* USER CODE BEGIN PD */
 
 /* DMA */
+#if 1
 #define USE_DMA
+#endif
+
+#if 0
+#define BUS_DMA_INT
+#else
+#define BUS_DMA_POL
+#endif
 
 /* CHIP SETTING */
 #define RESET_W5100S_GPIO_Port	GPIOD
 #define RESET_W5100S_Pin		GPIO_PIN_8
 
-/* ETH*/
-#define ETH_MAX_BUF_SIZE	2048
+/* ETH */
+#define ETH_MAX_BUF_SIZE		2048
 
-#define SOCKET_DHCP  		1
-#define SOCKET_LOOP  		2
-
-#define PORT_LOOP			5000
+#define SOCKET_DHCP 3
 
 /* USER CODE END PD */
 
@@ -59,6 +65,8 @@
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
+TIM_HandleTypeDef htim2;
+
 UART_HandleTypeDef huart1;
 
 DMA_HandleTypeDef hdma_memtomem_dma1_channel4;
@@ -66,16 +74,24 @@ DMA_HandleTypeDef hdma_memtomem_dma1_channel5;
 SRAM_HandleTypeDef hsram1;
 
 /* USER CODE BEGIN PV */
-/* UART */
 
-wiz_NetInfo gWIZNETINFO = { .mac = {0x00,0x08,0xdc,0x11,0x22,0x56},
-							.ip = {192,168,11,102},
-							.sn = {255, 255, 255, 0},
-							.gw = {192, 168, 11, 1},
-							.dns = {8, 8, 8, 8},
-							.dhcp = NETINFO_STATIC};
+/* NET */
+wiz_NetInfo gWIZNETINFO = {
+		.mac = {0x00, 0x08, 0xdc, 0x6f, 0x00, 0x8a},
+		.ip = {192, 168, 11, 109},
+		.sn = {255, 255, 255, 0},
+		.gw = {192, 168, 11, 1},
+		.dns = {8, 8, 8, 8},
+		.dhcp = NETINFO_DHCP
+};
 
-unsigned char ethBuf[ETH_MAX_BUF_SIZE];
+uint8_t ethBuf0[ETH_MAX_BUF_SIZE];
+uint8_t ethBuf1[ETH_MAX_BUF_SIZE];
+uint8_t ethBuf2[ETH_MAX_BUF_SIZE];
+uint8_t ethBuf3[ETH_MAX_BUF_SIZE];
+
+uint8_t dma_ch4_comp = 0;
+uint8_t dma_ch5_comp = 0;
 
 /* USER CODE END PV */
 
@@ -85,118 +101,34 @@ static void MX_GPIO_Init(void);
 static void MX_DMA_Init(void);
 static void MX_USART1_UART_Init(void);
 static void MX_FSMC_Init(void);
+static void MX_TIM2_Init(void);
 /* USER CODE BEGIN PFP */
-
-/* DHCP */
-static void wizchip_dhcp_init(void);
+void print_network_information();
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim);
 static void wizchip_dhcp_assign(void);
 static void wizchip_dhcp_conflict(void);
+void wizchip_dhcp_init(void);
+
+void busDmaWriteByte(uint32_t addr, iodata_t data);
+iodata_t busDmaReadByte(uint32_t addr);
+void busDmaWriteBurst(uint32_t addr, uint8_t* pBuf ,uint32_t len,uint8_t addr_inc);
+void busDmaReadBurst(uint32_t addr,uint8_t* pBuf, uint32_t len,uint8_t addr_inc);
+void XferCpltCallback_ch4(DMA_HandleTypeDef *hdma);
+void XferCpltCallback_ch5(DMA_HandleTypeDef *hdma);
+
+void wizchip_reset();
+void wizchip_check(void);
+void wizchip_initialize(void);
 
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 
-/* UART */
-int _write(int fd, char *str, int len)
-{
-	for(int i=0; i<len; i++)
-	{
-		HAL_UART_Transmit(&huart1, (uint8_t *)&str[i], 1, 0xFFFF);
-	}
-	return len;
-}
+/* USER CODE END PFP */
 
-/* CHIP INIT */
-void wizchip_reset()
-{
-	HAL_GPIO_WritePin(RESET_W5100S_GPIO_Port, RESET_W5100S_Pin, GPIO_PIN_RESET);
-	HAL_Delay(10);
-	HAL_GPIO_WritePin(RESET_W5100S_GPIO_Port, RESET_W5100S_Pin, GPIO_PIN_SET);
-	HAL_Delay(100);
-}
-
-void wizchip_check(void)
-{
-    if (getVER() != 0x51) // W5100S
-    {
-        printf(" ACCESS ERR : VERSIONR != 0x51, read value = 0x%02x\n", getVER());
-        while (1);
-    }
-}
-
-void wizchip_initialize(void)
-{
-	intr_kind temp= IK_DEST_UNREACH;
-	intr_kind temp1, temp2;
-	unsigned char W5100S_AdrSet[2][4] = {{2,2,2,2},{2,2,2,2}};
-
-	wizchip_reset();
-	if(ctlwizchip(CW_INIT_WIZCHIP,(void*)W5100S_AdrSet) == -1)
-		printf("W5100S initialized fail.\r\n");
-
-	if(ctlwizchip(CW_SET_INTRMASK,&temp) == -1)
-		printf("W5100S interrupt\r\n");
-
-	wizchip_check();
-
-}
-
-
-void print_network_information(void)
-{
-	wizchip_getnetinfo(&gWIZNETINFO);
-
-	printf("Mac address: %02x:%02x:%02x:%02x:%02x:%02x\n\r",gWIZNETINFO.mac[0],gWIZNETINFO.mac[1],gWIZNETINFO.mac[2],gWIZNETINFO.mac[3],gWIZNETINFO.mac[4],gWIZNETINFO.mac[5]);
-	printf("IP address : %d.%d.%d.%d\n\r",gWIZNETINFO.ip[0],gWIZNETINFO.ip[1],gWIZNETINFO.ip[2],gWIZNETINFO.ip[3]);
-	printf("SM Mask	   : %d.%d.%d.%d\n\r",gWIZNETINFO.sn[0],gWIZNETINFO.sn[1],gWIZNETINFO.sn[2],gWIZNETINFO.sn[3]);
-	printf("Gate way   : %d.%d.%d.%d\n\r",gWIZNETINFO.gw[0],gWIZNETINFO.gw[1],gWIZNETINFO.gw[2],gWIZNETINFO.gw[3]);
-	printf("DNS Server : %d.%d.%d.%d\n\r",gWIZNETINFO.dns[0],gWIZNETINFO.dns[1],gWIZNETINFO.dns[2],gWIZNETINFO.dns[3]);
-}
-
-/* BUS_DMA */
-void busDmaWriteByte(uint32_t addr, iodata_t data)
-{
-	while (HAL_DMA_GetState(&hdma_memtomem_dma1_channel4) != HAL_DMA_STATE_READY);
-	HAL_DMA_Start_IT(&hdma_memtomem_dma1_channel4, &data, (uint32_t)addr, 1);
-	while (HAL_DMA_GetState(&hdma_memtomem_dma1_channel4) == HAL_DMA_STATE_RESET);
-}
-
-iodata_t busDmaReadByte(uint32_t addr)
-{
-	iodata_t ret;
-
-	while (HAL_DMA_GetState(&hdma_memtomem_dma1_channel5) != HAL_DMA_STATE_READY);
-	HAL_DMA_Start_IT(&hdma_memtomem_dma1_channel5, (uint32_t)addr, &ret, 1);
-	while (HAL_DMA_GetState(&hdma_memtomem_dma1_channel5) == HAL_DMA_STATE_RESET);
-
-	return ret;
-}
-
-/* DHCP */
-static void wizchip_dhcp_assign(void)
-{
-    getIPfromDHCP(gWIZNETINFO.ip);
-    getGWfromDHCP(gWIZNETINFO.gw);
-    getSNfromDHCP(gWIZNETINFO.sn);
-    getDNSfromDHCP(gWIZNETINFO.dns);
-    gWIZNETINFO.dhcp = NETINFO_DHCP;
-
-    ctlnetwork(CN_SET_NETINFO, &gWIZNETINFO);
-    printf("\r\n----------DHCP Net Information--------------\r\n");
-    print_network_information();
-}
-
-static void wizchip_dhcp_conflict(void)
-{
-	printf("wizchip_dhcp_conflict\r\n");
-}
-
-void wizchip_dhcp_init(void)
-{
-    DHCP_init(SOCKET_DHCP, ethBuf);
-    reg_dhcp_cbfunc(wizchip_dhcp_assign, wizchip_dhcp_assign, wizchip_dhcp_conflict);
-}
+/* Private user code ---------------------------------------------------------*/
+/* USER CODE BEGIN 0 */
 
 /* USER CODE END 0 */
 
@@ -207,7 +139,7 @@ void wizchip_dhcp_init(void)
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-
+  uint8_t svr_ipv4[4] = {192, 168, 177, 235};
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -223,9 +155,7 @@ int main(void)
   SystemClock_Config();
 
   /* USER CODE BEGIN SysInit */
-#ifdef USE_DMA
-  reg_wizchip_bus_cbfunc(busDmaReadByte, busDmaWriteByte);
-#endif
+
   /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */
@@ -233,15 +163,39 @@ int main(void)
   MX_DMA_Init();
   MX_USART1_UART_Init();
   MX_FSMC_Init();
-
+  MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
-  printf("\r\n system start (%d Hz)\r\n", HAL_RCC_GetSysClockFreq());
+
+  printf("\r\n");
+  printf("===========================================================\r\n");
+  printf("Compiled @ %s %s\r\n", __DATE__, __TIME__);
+  printf("W5100S-EVB FSMC\r\n");
+  printf("System start (%ld Hz)\r\n", HAL_RCC_GetSysClockFreq());
+  printf("===========================================================\r\n");
+
+  HAL_TIM_Base_Start_IT(&htim2);
+
+#ifdef USE_DMA
+  reg_wizchip_bus_cbfunc(busDmaReadByte, busDmaWriteByte);
+  reg_wizchip_busbuf_cbfunc(busDmaReadBurst, busDmaWriteBurst);
+#else
+  reg_wizchip_bus_cbfunc(0, 0);
+  reg_wizchip_busbuf_cbfunc(0, 0);
+#endif
 
   wizchip_initialize();
+
+  wizchip_setnetinfo(&gWIZNETINFO);
+
+  printf("Network Information\r\n");
+  print_network_information();
+
   if (gWIZNETINFO.dhcp == NETINFO_DHCP) // DHCP
   {
+    printf("DHCP init()\r\n");
 	  wizchip_dhcp_init();
 
+    printf("DHCP run()\r\n");
 	  while (DHCP_run() != DHCP_IP_LEASED)
 	      wiz_delay_ms(1000);
   }
@@ -249,7 +203,7 @@ int main(void)
   {
 	  ctlnetwork(CN_SET_NETINFO, &gWIZNETINFO);
 	  printf("\r\n----------STATIC Net Information--------------\r\n");
-      print_network_information();
+    print_network_information();
   }
 
   /* USER CODE END 2 */
@@ -258,13 +212,27 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-    /* Assigned IP through DHCP */
-	  if(gWIZNETINFO.dhcp == NETINFO_DHCP)
+#if 1
+	  loopback_udps(0, ethBuf0, 50000);
+#endif
+
+#if 0
+	  loopback_tcpc(1, ethBuf1, svr_ipv4, 50001);
+#endif
+
+#if 1
+	  loopback_tcps(2, ethBuf2, 50002);
+#endif
+
+	  /* Assigned IP through DHCP */
+    if (gWIZNETINFO.dhcp == NETINFO_DHCP)
+    {
 		  DHCP_run();
+    }
+
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	  loopback_tcps(SOCKET_LOOP, ethBuf, PORT_LOOP);
   }
   /* USER CODE END 3 */
 }
@@ -306,6 +274,51 @@ void SystemClock_Config(void)
   {
     Error_Handler();
   }
+}
+
+/**
+  * @brief TIM2 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_TIM2_Init(void)
+{
+
+  /* USER CODE BEGIN TIM2_Init 0 */
+
+  /* USER CODE END TIM2_Init 0 */
+
+  TIM_ClockConfigTypeDef sClockSourceConfig = {0};
+  TIM_MasterConfigTypeDef sMasterConfig = {0};
+
+  /* USER CODE BEGIN TIM2_Init 1 */
+
+  /* USER CODE END TIM2_Init 1 */
+  htim2.Instance = TIM2;
+  htim2.Init.Prescaler = 1000;
+  htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim2.Init.Period = 6999;
+  htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  htim2.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_ENABLE;
+  if (HAL_TIM_Base_Init(&htim2) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
+  if (HAL_TIM_ConfigClockSource(&htim2, &sClockSourceConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+  if (HAL_TIMEx_MasterConfigSynchronization(&htim2, &sMasterConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN TIM2_Init 2 */
+
+  /* USER CODE END TIM2_Init 2 */
+
 }
 
 /**
@@ -477,6 +490,237 @@ static void MX_FSMC_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
+
+/* UART */
+int _write(int fd, char *str, int len)
+{
+	for(int i=0; i<len; i++)
+	{
+		HAL_UART_Transmit(&huart1, (uint8_t *)&str[i], 1, 0xFFFF);
+	}
+	return len;
+}
+
+void print_network_information(void)
+{
+	wizchip_getnetinfo(&gWIZNETINFO);
+
+	printf("Mac address: %02x:%02x:%02x:%02x:%02x:%02x\r\n",gWIZNETINFO.mac[0],gWIZNETINFO.mac[1],gWIZNETINFO.mac[2],gWIZNETINFO.mac[3],gWIZNETINFO.mac[4],gWIZNETINFO.mac[5]);
+	printf("IP address : %d.%d.%d.%d\r\n",gWIZNETINFO.ip[0],gWIZNETINFO.ip[1],gWIZNETINFO.ip[2],gWIZNETINFO.ip[3]);
+	printf("SM Mask	   : %d.%d.%d.%d\r\n",gWIZNETINFO.sn[0],gWIZNETINFO.sn[1],gWIZNETINFO.sn[2],gWIZNETINFO.sn[3]);
+	printf("Gate way   : %d.%d.%d.%d\r\n",gWIZNETINFO.gw[0],gWIZNETINFO.gw[1],gWIZNETINFO.gw[2],gWIZNETINFO.gw[3]);
+	printf("DNS Server : %d.%d.%d.%d\r\n",gWIZNETINFO.dns[0],gWIZNETINFO.dns[1],gWIZNETINFO.dns[2],gWIZNETINFO.dns[3]);
+}
+
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+	DHCP_time_handler();
+}
+
+/* DHCP */
+static void wizchip_dhcp_assign(void)
+{
+    getIPfromDHCP(gWIZNETINFO.ip);
+    getGWfromDHCP(gWIZNETINFO.gw);
+    getSNfromDHCP(gWIZNETINFO.sn);
+    getDNSfromDHCP(gWIZNETINFO.dns);
+    gWIZNETINFO.dhcp = NETINFO_DHCP;
+
+    ctlnetwork(CN_SET_NETINFO, &gWIZNETINFO);
+    printf("\r\n----------DHCP Net Information--------------\r\n");
+    print_network_information();
+}
+
+static void wizchip_dhcp_conflict(void)
+{
+	printf("wizchip_dhcp_conflict\r\n");
+}
+
+void wizchip_dhcp_init(void)
+{
+    DHCP_init(SOCKET_DHCP, ethBuf3);
+    reg_dhcp_cbfunc(wizchip_dhcp_assign, wizchip_dhcp_assign, wizchip_dhcp_conflict);
+}
+
+#ifdef USE_DMA
+/* BUS_DMA */
+
+void busDmaWriteByte(uint32_t addr, iodata_t data)
+{
+#ifdef BUS_DMA_INT
+	hdma_memtomem_dma1_channel4.XferCpltCallback = &XferCpltCallback_ch4;
+	HAL_DMA_Start_IT(&hdma_memtomem_dma1_channel4, &data, (uint32_t)addr, 1);
+	while(dma_ch4_comp != 1);
+	dma_ch4_comp = 0;
+#elif defined BUS_DMA_POL
+	HAL_DMA_Start(&hdma_memtomem_dma1_channel4, (uint32_t)&data, (uint32_t)addr, 1);
+	HAL_StatusTypeDef status;
+	status = HAL_DMA_PollForTransfer(&hdma_memtomem_dma1_channel4, HAL_DMA_FULL_TRANSFER, 100);
+	if(status != HAL_OK)
+	{
+		printf("status = %d\r\n", status);
+	}
+#endif
+}
+
+iodata_t busDmaReadByte(uint32_t addr)
+{
+	iodata_t ret;
+
+#ifdef BUS_DMA_INT
+	hdma_memtomem_dma1_channel5.XferCpltCallback = &XferCpltCallback_ch5;
+	HAL_DMA_Start_IT(&hdma_memtomem_dma1_channel5, (uint32_t)addr, &ret, 1);
+	while(dma_ch5_comp != 1);
+	dma_ch5_comp = 0;
+#elif defined BUS_DMA_POL
+	HAL_DMA_Start(&hdma_memtomem_dma1_channel5, (uint32_t)addr, (uint32_t)&ret, 1);
+	HAL_StatusTypeDef status;
+	status = HAL_DMA_PollForTransfer(&hdma_memtomem_dma1_channel5, HAL_DMA_FULL_TRANSFER, 100);
+	if(status != HAL_OK)
+	{
+		printf("status = %d\r\n", status);
+	}
+#endif
+	return ret;
+}
+
+void busDmaWriteBurst(uint32_t addr, uint8_t* pBuf ,uint32_t len,uint8_t addr_inc)
+{
+	HAL_DMA_DeInit(&hdma_memtomem_dma1_channel4);
+
+	hdma_memtomem_dma1_channel4.Init.PeriphInc = DMA_PINC_ENABLE;
+
+	if(addr_inc)
+	{
+		hdma_memtomem_dma1_channel4.Init.MemInc = DMA_MINC_ENABLE;
+	}
+	else
+	{
+		hdma_memtomem_dma1_channel4.Init.MemInc = DMA_MINC_DISABLE;
+	}
+
+	hdma_memtomem_dma1_channel4.Instance = DMA1_Channel4;
+	hdma_memtomem_dma1_channel4.Init.Direction = DMA_MEMORY_TO_MEMORY;
+	//hdma_memtomem_dma1_channel4.Init.PeriphInc = DMA_PINC_DISABLE;
+	//hdma_memtomem_dma1_channel4.Init.MemInc = DMA_MINC_ENABLE;
+	hdma_memtomem_dma1_channel4.Init.PeriphDataAlignment = DMA_PDATAALIGN_BYTE;
+	hdma_memtomem_dma1_channel4.Init.MemDataAlignment = DMA_MDATAALIGN_BYTE;
+	hdma_memtomem_dma1_channel4.Init.Mode = DMA_NORMAL;
+	hdma_memtomem_dma1_channel4.Init.Priority = DMA_PRIORITY_HIGH;
+
+#ifdef BUS_DMA_INT
+	hdma_memtomem_dma1_channel4.XferCpltCallback = &XferCpltCallback_ch4;
+#endif
+
+	if (HAL_DMA_Init(&hdma_memtomem_dma1_channel4) != HAL_OK)
+	{
+		Error_Handler( );
+	}
+
+	while (HAL_DMA_GetState(&hdma_memtomem_dma1_channel4) != HAL_DMA_STATE_READY);
+#ifdef BUS_DMA_POL
+	HAL_DMA_Start(&hdma_memtomem_dma1_channel4, (uint32_t)pBuf, (uint32_t)addr, len);
+	HAL_StatusTypeDef status;
+	status = HAL_DMA_PollForTransfer(&hdma_memtomem_dma1_channel4, HAL_DMA_FULL_TRANSFER, 100);
+	if(status != HAL_OK)
+	{
+		printf("status = %d\r\n", status);
+	}
+#elif defined BUS_DMA_INT
+	HAL_DMA_Start_IT(&hdma_memtomem_dma1_channel4, pBuf, (uint32_t)addr, len);
+	while(dma_ch4_comp != 1);
+	dma_ch4_comp = 0;
+#endif
+}
+
+void busDmaReadBurst(uint32_t addr,uint8_t* pBuf, uint32_t len,uint8_t addr_inc)
+{
+	HAL_DMA_DeInit(&hdma_memtomem_dma1_channel5);
+
+	hdma_memtomem_dma1_channel5.Instance = DMA1_Channel5;
+	hdma_memtomem_dma1_channel5.Init.Direction = DMA_MEMORY_TO_MEMORY;
+	hdma_memtomem_dma1_channel5.Init.PeriphInc = DMA_PINC_DISABLE;
+	hdma_memtomem_dma1_channel5.Init.MemInc = DMA_MINC_ENABLE;
+	hdma_memtomem_dma1_channel5.Init.PeriphDataAlignment = DMA_PDATAALIGN_BYTE;
+	hdma_memtomem_dma1_channel5.Init.MemDataAlignment = DMA_MDATAALIGN_BYTE;
+	hdma_memtomem_dma1_channel5.Init.Mode = DMA_NORMAL;
+	hdma_memtomem_dma1_channel5.Init.Priority = DMA_PRIORITY_HIGH;
+
+#ifdef BUS_DMA_INT
+	hdma_memtomem_dma1_channel5.XferCpltCallback = &XferCpltCallback_ch5;
+#endif
+
+	if (HAL_DMA_Init(&hdma_memtomem_dma1_channel5) != HAL_OK)
+	{
+		Error_Handler( );
+	}
+
+	while (HAL_DMA_GetState(&hdma_memtomem_dma1_channel5) != HAL_DMA_STATE_READY);
+#ifdef BUS_DMA_POL
+	HAL_DMA_Start(&hdma_memtomem_dma1_channel5, (uint32_t)addr, (uint32_t)pBuf, len);
+	HAL_StatusTypeDef status;
+	status = HAL_DMA_PollForTransfer(&hdma_memtomem_dma1_channel5, HAL_DMA_FULL_TRANSFER, 100);
+	if(status != HAL_OK)
+	{
+		printf("status = %d\r\n", status);
+	}
+#elif defined BUS_DMA_INT
+	HAL_DMA_Start_IT(&hdma_memtomem_dma1_channel5, (uint32_t)addr, pBuf, len);
+	while(dma_ch5_comp != 1);
+	dma_ch5_comp = 0;
+#endif
+}
+
+void XferCpltCallback_ch4(DMA_HandleTypeDef *hdma)
+{
+	dma_ch4_comp = 1;
+}
+
+void XferCpltCallback_ch5(DMA_HandleTypeDef *hdma)
+{
+	dma_ch5_comp = 1;
+}
+#endif
+
+/* CHIP INIT */
+void wizchip_reset()
+{
+	HAL_GPIO_WritePin(RESET_W5100S_GPIO_Port, RESET_W5100S_Pin, GPIO_PIN_RESET);
+	HAL_Delay(10);
+	HAL_GPIO_WritePin(RESET_W5100S_GPIO_Port, RESET_W5100S_Pin, GPIO_PIN_SET);
+	HAL_Delay(100);
+}
+
+void wizchip_check(void)
+{
+    if (getVER() != 0x51) // W5100S
+    {
+        printf(" ACCESS ERR : VERSIONR != 0x51, read value = 0x%02x\n", getVER());
+        while (1);
+    }
+}
+
+void wizchip_initialize(void)
+{
+	uint8_t W5100S_AdrSet[2][4] = {{2,2,2,2},{2,2,2,2}};
+	uint8_t tmp1, tmp2;
+	intr_kind temp= IK_DEST_UNREACH;
+
+	wizchip_reset();
+	if(ctlwizchip(CW_INIT_WIZCHIP,(void*)W5100S_AdrSet) == -1)
+		printf(">>>>W5100s memory initialization failed\r\n");
+
+	if(ctlwizchip(CW_SET_INTRMASK,&temp) == -1)
+		printf("W5100S interrupt\r\n");
+
+	wizchip_check();
+  while(1)
+	{
+		ctlwizchip(CW_GET_PHYLINK, &tmp1 );
+		ctlwizchip(CW_GET_PHYLINK, &tmp2 );
+		if(tmp1==PHY_LINK_ON && tmp2==PHY_LINK_ON) break;
+	}
+}
 
 /* USER CODE END 4 */
 

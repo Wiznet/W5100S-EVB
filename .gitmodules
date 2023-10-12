@@ -1,3 +1,9 @@
 [submodule "DHCPClient/Libraries/ioLibrary_Driver"]
 	path = DHCPClient/Libraries/ioLibrary_Driver
 	url = https://github.com/Wiznet/ioLibrary_Driver
+[submodule "SPI_DMA/Drivers/ioLibrary"]
+	path = SPI_DMA/Drivers/ioLibrary
+	url = https://github.com/Wiznet-OpenHardware/ioLibrary.git
+[submodule "Drivers/ioLibrary"]
+	path = FSMC_DMA/Drivers/ioLibrary
+	url = https://github.com/Wiznet-OpenHardware/ioLibrary.git

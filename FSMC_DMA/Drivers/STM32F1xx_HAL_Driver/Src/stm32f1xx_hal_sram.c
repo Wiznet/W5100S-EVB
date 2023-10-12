@@ -709,9 +709,11 @@ HAL_StatusTypeDef HAL_SRAM_Write_DMA(SRAM_HandleTypeDef *hsram, uint32_t *pAddre
 
     /* Update the SRAM controller state */
     hsram->State = HAL_SRAM_STATE_BUSY;
+
     /* Configure DMA user callbacks */
     hsram->hdma->XferCpltCallback = SRAM_DMACplt;
     hsram->hdma->XferErrorCallback = SRAM_DMAError;
+
     /* Enable the DMA Stream */
     status = HAL_DMA_Start_IT(hsram->hdma, (uint32_t)pSrcBuffer, (uint32_t)pAddress, (uint32_t)BufferSize);
 
