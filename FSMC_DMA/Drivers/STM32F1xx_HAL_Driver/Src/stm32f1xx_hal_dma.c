@@ -374,6 +374,7 @@ HAL_StatusTypeDef HAL_DMA_Start_IT(DMA_HandleTypeDef *hdma, uint32_t SrcAddress,
     /* Change DMA peripheral state */
     hdma->State = HAL_DMA_STATE_BUSY;
     hdma->ErrorCode = HAL_DMA_ERROR_NONE;
+    
     /* Disable the peripheral */
     __HAL_DMA_DISABLE(hdma);
     
@@ -399,6 +400,7 @@ HAL_StatusTypeDef HAL_DMA_Start_IT(DMA_HandleTypeDef *hdma, uint32_t SrcAddress,
   {      
     /* Process Unlocked */
     __HAL_UNLOCK(hdma); 
+
     /* Remain BUSY */
     status = HAL_BUSY;
   }    
